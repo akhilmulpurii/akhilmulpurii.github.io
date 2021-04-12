@@ -15,7 +15,7 @@ const HeroSection = () => {
       <ParticlesBackground />
       Akhil Mulpuri,
       <br />
-      UI/UX Developer
+      UI-UX Developer
     </Section>
   );
 };
