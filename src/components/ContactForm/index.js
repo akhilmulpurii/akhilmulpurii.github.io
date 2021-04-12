@@ -8,7 +8,7 @@ import Envelope from "../../images/envelope.png";
 const ContactForm = () => {
   return (
     <>
-      <div id="contact"></div>
+      <div id="contact" style={{ paddingBottom: 50 }}></div>
       <Section
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

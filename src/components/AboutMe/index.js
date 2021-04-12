@@ -82,12 +82,22 @@ const Wrapper = styled.div`
   }
   & p {
     font-size: 24px;
+    @media only screen and (max-width: 640px) {
+      font-size: 20px;
+    }
   }
   ul {
     list-style-type: circle;
+    @media only screen and (max-width: 640px) {
+      padding-left: 20px;
+    }
   }
   li {
     font-size: 20px;
+    @media only screen and (max-width: 640px) {
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
   }
 `;
 
