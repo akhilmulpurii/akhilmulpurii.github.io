@@ -50,7 +50,7 @@ const AboutMe = () => {
               <li>Exploring video game development</li>
               <li>Write bots for chat apps like discord</li>
               <li>
-                I'm play lots and lots of video games and i'm a spotify addict
+                I play lots and lots of video games and i'm a spotify addict
               </li>
             </ul>
           </motion.p>
@@ -94,6 +94,7 @@ const Wrapper = styled.div`
   }
   li {
     font-size: 20px;
+    height: auto;
     @media only screen and (max-width: 640px) {
       margin-bottom: 10px;
       font-size: 16px;
