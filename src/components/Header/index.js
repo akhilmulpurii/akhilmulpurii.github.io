@@ -46,7 +46,7 @@ const Header = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            onClick={() => navigate("/#contact")}
+            onClick={() => navigate("/#about")}
           >
             About Me
           </ListItem>
