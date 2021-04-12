@@ -9,7 +9,7 @@ export const data = {
       image: justactImage,
       urlSlug: "justact",
       background:
-        "background:linear-gradient(90deg, #c9ffbf 0%,#ffafbd 100% );",
+        "background:linear-gradient(-40deg, #c9ffbf 0%,#ffafbd 100% );",
       large: true,
     },
     {
@@ -17,7 +17,7 @@ export const data = {
       image: noisefitImage,
       urlSlug: "noisefit",
       background:
-        "background:linear-gradient(90deg, #43c6ac 0%,#191654 100% );",
+        "background:linear-gradient(40deg, #43c6ac 0%,#191654 100% );",
       large: false,
     },
     {
@@ -25,7 +25,7 @@ export const data = {
       image: heyheyImage,
       urlSlug: "heyhey",
       background:
-        "background:linear-gradient(90deg, #00c3ff 0%,#ffff1c 100% );",
+        "background:linear-gradient(90deg, #dd5e89 0%,#f7bb97 100% );",
       large: false,
     },
   ],
