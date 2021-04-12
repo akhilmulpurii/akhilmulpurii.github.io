@@ -125,6 +125,9 @@ li i {
   ul {
     padding-inline-start: 0;
   }
+  .footer {
+    margin-top: 60px;
+  }
 }
 
 /* you can toggle the media screen view accordingly by changing the (max-width: px) to your convenience */
