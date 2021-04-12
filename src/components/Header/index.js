@@ -70,6 +70,7 @@ const NavBar = styled.nav`
   position: sticky;
   top: 0;
   transition: background-color 200ms linear;
+  z-index: 9999999;
 `;
 
 const Title = styled(motion.div)`
