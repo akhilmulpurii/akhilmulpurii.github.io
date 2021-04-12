@@ -93,6 +93,9 @@ const WidthFixer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media only screen and (max-width: 1440px) {
+    padding: 0 20px;
+  }
 `;
 
 const List = styled.ul`
