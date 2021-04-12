@@ -149,6 +149,7 @@ const Section = styled(motion.section)`
   @media only screen and (max-width: 1440px) {
     max-width: calc(100vw - 40px);
     margin: 0 20px;
+    padding: 20px;
   }
   @media only screen and (max-width: 940px) {
   }
@@ -159,6 +160,9 @@ const Heading = styled(motion.h1)`
   margin: 0px;
   font-size: 3vw;
   margin-bottom: 30px;
+  @media only screen and (max-width: 640px) {
+    font-size: 5vw;
+  }
 `;
 
 const StyledForm = styled(Form)`
@@ -212,6 +216,9 @@ const InputContainer = styled(motion.div)`
     box-shadow: none;
     border-radius: 5px;
     padding: 20px;
+    @media only screen and (max-width: 640px) {
+      padding: 14px;
+    }
   }
   textarea {
     min-height: 120px;
