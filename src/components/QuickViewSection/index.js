@@ -8,6 +8,7 @@ import { navigate } from "gatsby";
 const QuickViewSection = () => {
   return (
     <Section
+      id="portfolio"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1, delay: 0.7 }}
@@ -17,7 +18,7 @@ const QuickViewSection = () => {
           .filter((_, i) => i < 3)
           .map((project, index) => (
             <ProjectImageContainer
-              onClick={() => navigate(`/projects/${project.urlSlug}`)}
+              // onClick={() => navigate(`/projects/${project.urlSlug}`)}
               title={project.title}
               large={project.large}
               initial={{ opacity: 0, scale: 1.2, y: 20 }}

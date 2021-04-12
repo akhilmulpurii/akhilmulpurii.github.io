@@ -7,127 +7,130 @@ import Envelope from "../../images/envelope.png";
 
 const ContactForm = () => {
   return (
-    <Section
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{
-        duration: 0.75,
-        delay: 1,
-        ease: "easeOut",
-      }}
-    >
-      <Heading
-        initial={{ opacity: 0, scale: 1.2, y: 20 }}
-        animate={{ opacity: 1, scale: 1, y: 0 }}
+    <>
+      <div id="contact" style={{ marginBottom: 70 }}></div>
+      <Section
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{
           duration: 0.75,
-          delay: 1.5,
+          delay: 1,
           ease: "easeOut",
         }}
       >
-        Get in touch
-      </Heading>
-      <Formik
-        initialValues={{ fullName: "", email: "", message: "" }}
-        enableReinitialize
-        validateOnChange
-        validateOnBlur
-        validationSchema={ContactUsSchema}
-      >
-        {({
-          handleBlur,
-          handleChange,
-          handleSubmit,
-          errors,
-          touched,
-          values,
-        }) => (
-          <StyledForm onSubmit={handleSubmit}>
-            <Left>
-              <motion.img
-                initial={{ opacity: 0, scale: 1.2, y: 20 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                transition={{
-                  duration: 0.75,
-                  delay: 1.7,
-                  ease: "easeOut",
-                }}
-                src={Envelope}
-              />
-            </Left>
-            <Right>
-              <InputContainer
-                initial={{ opacity: 0, scale: 1.2, y: 20 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                transition={{
-                  duration: 0.75,
-                  delay: 1.7,
-                  ease: "easeOut",
-                }}
-              >
-                <label for="fullName">
-                  Full Name <span>*</span>
-                </label>
-                <input
-                  name="fullName"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.fullName}
+        <Heading
+          initial={{ opacity: 0, scale: 1.2, y: 20 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{
+            duration: 0.75,
+            delay: 1.5,
+            ease: "easeOut",
+          }}
+        >
+          Get in touch
+        </Heading>
+        <Formik
+          initialValues={{ fullName: "", email: "", message: "" }}
+          enableReinitialize
+          validateOnChange
+          validateOnBlur
+          validationSchema={ContactUsSchema}
+        >
+          {({
+            handleBlur,
+            handleChange,
+            handleSubmit,
+            errors,
+            touched,
+            values,
+          }) => (
+            <StyledForm onSubmit={handleSubmit}>
+              <Left>
+                <motion.img
+                  initial={{ opacity: 0, scale: 1.2, y: 20 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  transition={{
+                    duration: 0.75,
+                    delay: 1.7,
+                    ease: "easeOut",
+                  }}
+                  src={Envelope}
                 />
-                {errors.fullName && touched.fullName && (
-                  <ErrorMessage>{errors.fullName}</ErrorMessage>
-                )}
-              </InputContainer>
-              <InputContainer
-                initial={{ opacity: 0, scale: 1.2, y: 20 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                transition={{
-                  duration: 0.75,
-                  delay: 2,
-                  ease: "easeOut",
-                }}
-              >
-                <label for="email">
-                  Email <span>*</span>
-                </label>
-                <input
-                  name="email"
-                  onBlur={handleBlur}
-                  onChange={handleChange}
-                  value={values.email}
-                />
-                {errors.email && touched.email && (
-                  <ErrorMessage>{errors.email}</ErrorMessage>
-                )}
-              </InputContainer>
-              <InputContainer
-                initial={{ opacity: 0, scale: 1.2, y: 20 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                transition={{
-                  duration: 0.75,
-                  delay: 2.3,
-                  ease: "easeOut",
-                }}
-              >
-                <label for="message">
-                  Message <span>*</span>
-                </label>
-                <textarea
-                  name="message"
-                  onBlur={handleBlur}
-                  onChange={handleChange}
-                  value={values.message}
-                />
-                {errors.message && touched.message && (
-                  <ErrorMessage>{errors.message}</ErrorMessage>
-                )}
-              </InputContainer>
-              <RippleButton onClick={handleSubmit}>Submit</RippleButton>
-            </Right>
-          </StyledForm>
-        )}
-      </Formik>
-    </Section>
+              </Left>
+              <Right>
+                <InputContainer
+                  initial={{ opacity: 0, scale: 1.2, y: 20 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  transition={{
+                    duration: 0.75,
+                    delay: 1.7,
+                    ease: "easeOut",
+                  }}
+                >
+                  <label for="fullName">
+                    Full Name <span>*</span>
+                  </label>
+                  <input
+                    name="fullName"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.fullName}
+                  />
+                  {errors.fullName && touched.fullName && (
+                    <ErrorMessage>{errors.fullName}</ErrorMessage>
+                  )}
+                </InputContainer>
+                <InputContainer
+                  initial={{ opacity: 0, scale: 1.2, y: 20 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  transition={{
+                    duration: 0.75,
+                    delay: 2,
+                    ease: "easeOut",
+                  }}
+                >
+                  <label for="email">
+                    Email <span>*</span>
+                  </label>
+                  <input
+                    name="email"
+                    onBlur={handleBlur}
+                    onChange={handleChange}
+                    value={values.email}
+                  />
+                  {errors.email && touched.email && (
+                    <ErrorMessage>{errors.email}</ErrorMessage>
+                  )}
+                </InputContainer>
+                <InputContainer
+                  initial={{ opacity: 0, scale: 1.2, y: 20 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  transition={{
+                    duration: 0.75,
+                    delay: 2.3,
+                    ease: "easeOut",
+                  }}
+                >
+                  <label for="message">
+                    Message <span>*</span>
+                  </label>
+                  <textarea
+                    name="message"
+                    onBlur={handleBlur}
+                    onChange={handleChange}
+                    value={values.message}
+                  />
+                  {errors.message && touched.message && (
+                    <ErrorMessage>{errors.message}</ErrorMessage>
+                  )}
+                </InputContainer>
+                <RippleButton onClick={handleSubmit}>Submit</RippleButton>
+              </Right>
+            </StyledForm>
+          )}
+        </Formik>
+      </Section>
+    </>
   );
 };
 
@@ -142,12 +145,12 @@ const Section = styled(motion.section)`
   padding: 40px;
   border-radius: 10px;
   margin-bottom: 60px;
+
   @media only screen and (max-width: 1440px) {
     max-width: calc(100vw - 40px);
     margin: 0 20px;
   }
   @media only screen and (max-width: 940px) {
-    margin-top: 60px;
   }
 `;
 

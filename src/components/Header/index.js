@@ -1,6 +1,8 @@
 import * as React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { Link, animateScroll as scroll } from "react-scroll";
+import { navigate } from "gatsby-link";
 
 // markup
 const Header = () => {
@@ -34,6 +36,7 @@ const Header = () => {
             transition={{ duration: 0.5 }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
+            onClick={() => navigate("/#portfolio")}
           >
             Portfolio
           </ListItem>
@@ -43,6 +46,7 @@ const Header = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
+            onClick={() => navigate("/#contact")}
           >
             About Me
           </ListItem>
@@ -52,6 +56,7 @@ const Header = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
+            onClick={() => navigate("/#contact")}
           >
             Contact
           </ListItem>
