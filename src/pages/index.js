@@ -5,6 +5,7 @@ import "../main.css";
 import QuickViewSection from "../components/QuickViewSection";
 import ContactForm from "../components/ContactForm";
 import Footer from "../components/Footer";
+import AboutMe from "../components/AboutMe";
 
 // markup
 const IndexPage = () => {
@@ -13,6 +14,7 @@ const IndexPage = () => {
       <Header />
       <HeroSection />
       <QuickViewSection />
+      <AboutMe />
       <ContactForm />
       <Footer />
     </main>
