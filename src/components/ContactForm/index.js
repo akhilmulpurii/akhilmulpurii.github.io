@@ -8,7 +8,7 @@ import Envelope from "../../images/envelope.png";
 const ContactForm = () => {
   return (
     <>
-      <div id="contact" style={{ marginBottom: 70 }}></div>
+      <div id="contact"></div>
       <Section
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -144,7 +144,6 @@ const Section = styled(motion.section)`
   background-color: #545454;
   padding: 40px;
   border-radius: 10px;
-  margin-bottom: 60px;
 
   @media only screen and (max-width: 1440px) {
     max-width: calc(100vw - 40px);
@@ -153,6 +152,8 @@ const Section = styled(motion.section)`
   }
   @media only screen and (max-width: 940px) {
   }
+  margin-bottom: 60px;
+  margin-top: 70px;
 `;
 
 const Heading = styled(motion.h1)`

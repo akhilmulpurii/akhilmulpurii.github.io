@@ -108,10 +108,16 @@ const List = styled.ul`
   list-style-type: none;
   color: ${({ color }) => (color ? color : "#fff")};
   transition: color 200ms linear;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
 `;
 
 const ListItem = styled(motion.li)`
   padding: 0 0 0 24px;
   font-weight: 600;
   cursor: pointer;
+  margin: 0;
+  height: auto;
 `;
