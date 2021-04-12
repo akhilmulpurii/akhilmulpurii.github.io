@@ -1,7 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { Link, animateScroll as scroll } from "react-scroll";
 import { navigate } from "gatsby-link";
 
 // markup
