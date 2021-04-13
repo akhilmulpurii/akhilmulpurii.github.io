@@ -2,6 +2,7 @@ import * as React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { navigate } from "gatsby-link";
+import logoIcon from "../../images/favicon.png";
 
 // markup
 const Header = () => {
@@ -21,13 +22,16 @@ const Header = () => {
   return (
     <NavBar backgroundColor={mode === "dark" ? "transparent" : "#fff"}>
       <WidthFixer>
-        <Title
+        <Logo
+          alt="logo"
+          onClick={() => navigate("/")}
+          src={logoIcon}
           initial={{ opacity: 0, scale: 1.4 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
-        >
-          A
-        </Title>
+          transition={{ duration: 0.2 }}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.8 }}
+        />
         <List color={mode === "dark" ? "#fff" : "#141414"}>
           <ListItem
             initial={{ opacity: 0 }}
@@ -77,11 +81,11 @@ const NavBar = styled.nav`
   z-index: 9999999;
 `;
 
-const Title = styled(motion.div)`
+const Logo = styled(motion.img)`
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: linear-gradient(90deg, #ff512f 0%, #dd2476 100%);
+  background: lightcyan;
   display: flex;
   justify-content: center;
   align-items: center;
