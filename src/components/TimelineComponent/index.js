@@ -2,16 +2,23 @@ import * as React from "react";
 import { data } from "../../components/QuickViewSection/data";
 import "./styles.scss";
 import { navigate } from "gatsby-link";
+import { motion } from "framer-motion";
 
 const { projects } = data;
 
 export default function TimelineComponent() {
   return (
-    <div id="cd-timeline" class="cd-container">
-      {projects.map((project) => (
-        <TimelineItem {...project} />
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1, delay: 0.5 }}
+      id="cd-timeline"
+      class="cd-container"
+    >
+      {projects.map((project, index) => (
+        <TimelineItem key={index} {...project} index={index} />
       ))}
-    </div>
+    </motion.div>
   );
 }
 
@@ -22,9 +29,13 @@ function TimelineItem({
   description = "",
   platform = "",
   urlSlug = "",
+  index,
 }) {
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 20, scale: 1.2 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      transition={{ duration: 1, delay: 0.5 + index * 0.5, ease: "easeInOut" }}
       class="cd-timeline-block"
       onClick={() => navigate(`/projects/${urlSlug}`)}
     >
@@ -41,6 +52,6 @@ function TimelineItem({
           ))}
         </ul>
       </div>
-    </div>
+    </motion.div>
   );
 }
