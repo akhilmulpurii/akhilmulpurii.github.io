@@ -2,7 +2,7 @@ import * as React from "react";
 import styled, { css } from "styled-components";
 import { motion } from "framer-motion";
 import { data } from "./data";
-import { navigate } from "gatsby";
+// import { navigate } from "gatsby";
 
 // markup
 const QuickViewSection = () => {
@@ -18,6 +18,7 @@ const QuickViewSection = () => {
           .filter((_, i) => i < 3)
           .map((project, index) => (
             <ProjectImageContainer
+              key={project.title}
               // onClick={() => navigate(`/projects/${project.urlSlug}`)}
               title={project.title}
               large={project.large}
@@ -30,7 +31,7 @@ const QuickViewSection = () => {
               }}
               background={project.background}
             >
-              <img src={project.image} />
+              <img alt={project.title} src={project.image} />
             </ProjectImageContainer>
           ))}
       </Grid>

@@ -43,17 +43,32 @@ const AboutMe = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 2 }}
+            style={{ marginBottom: 0 }}
           >
             I’m also into…
-            <ul>
-              <li>Scrapping the web for useful data (Legally 😛)</li>
-              <li>Exploring video game development</li>
-              <li>Write bots for chat apps like discord</li>
-              <li>
-                I play lots and lots of video games and i'm a spotify addict
-              </li>
-            </ul>
           </motion.p>
+          <motion.ul
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 2 }}
+          >
+            <li>
+              Scrapping the web for useful data (Legally{" "}
+              <span
+                role="img"
+                aria-label="emoji-smile"
+                aria-labelledby="emoji-smile"
+              >
+                😛
+              </span>
+              )
+            </li>
+            <li>Exploring video game development</li>
+            <li>Write bots for chat apps like discord</li>
+            <li>
+              I play lots and lots of video games and i'm a spotify addict
+            </li>
+          </motion.ul>
         </Wrapper>
         <BannerContainer>
           <motion.img

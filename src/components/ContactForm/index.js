@@ -67,7 +67,7 @@ const ContactForm = () => {
                     ease: "easeOut",
                   }}
                 >
-                  <label for="fullName">
+                  <label htmlFor="fullName">
                     Full Name <span>*</span>
                   </label>
                   <input
@@ -89,7 +89,7 @@ const ContactForm = () => {
                     ease: "easeOut",
                   }}
                 >
-                  <label for="email">
+                  <label htmlFor="email">
                     Email <span>*</span>
                   </label>
                   <input
@@ -111,7 +111,7 @@ const ContactForm = () => {
                     ease: "easeOut",
                   }}
                 >
-                  <label for="message">
+                  <label htmlFor="message">
                     Message <span>*</span>
                   </label>
                   <textarea
