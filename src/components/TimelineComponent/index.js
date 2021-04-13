@@ -24,7 +24,7 @@ export default function TimelineComponent() {
 
 function TimelineItem({
   title = "",
-  image = "",
+  banner_image = "",
   technologies = [],
   description = "",
   platform = "",
@@ -39,13 +39,14 @@ function TimelineItem({
       class="cd-timeline-block"
       onClick={() => navigate(`/projects/${urlSlug}`)}
     >
-      <div class="cd-timeline-img cd-picture"></div>
+      <div class="cd-timeline-img cd-picture" />
       <div class="cd-timeline-content">
         <h2>{title}</h2>
         <div class="timeline-content-info">
           <span class="timeline-content-info-title">{platform}</span>
         </div>
         <p>{description}</p>
+        <img className="timeline-image" alt="project-logo" src={banner_image} />
         <ul class="content-skills">
           {technologies.map((tech) => (
             <li key={tech}>{tech}</li>

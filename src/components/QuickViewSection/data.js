@@ -1,12 +1,15 @@
 import justactImage from "../../images/justact.png";
 import noisefitImage from "../../images/noisefit.png";
+import noisefitBannerImage from "../../images/noise_banner.png";
 import heyheyImage from "../../images/heyhey.png";
+import visitlyImage from "../../images/visitly.png";
 
 export const data = {
   projects: [
     {
       title: "JustAct",
       image: justactImage,
+      banner_image: justactImage,
       urlSlug: "justact",
       background:
         "background:linear-gradient(-40deg, #c9ffbf 0%,#ffafbd 100% );",
@@ -19,6 +22,7 @@ export const data = {
     {
       title: "NoiseFit",
       image: noisefitImage,
+      banner_image: noisefitBannerImage,
       urlSlug: "noisefit",
       background:
         "background:linear-gradient(40deg, #43c6ac 0%,#191654 100% );",
@@ -31,6 +35,7 @@ export const data = {
     {
       title: "HeyHey",
       image: heyheyImage,
+      banner_image: heyheyImage,
       urlSlug: "heyhey",
       background:
         "background:linear-gradient(90deg, #dd5e89 0%,#f7bb97 100% );",
@@ -42,7 +47,8 @@ export const data = {
     },
     {
       title: "My Visitly",
-      image: heyheyImage,
+      image: visitlyImage,
+      banner_image: visitlyImage,
       urlSlug: "my-visitly",
       background:
         "background:linear-gradient(90deg, #89f7fe 0%,#66a6ff 100% );",

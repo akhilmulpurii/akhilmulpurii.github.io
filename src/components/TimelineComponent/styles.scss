@@ -105,6 +105,9 @@ Main components
   background: #2a2a2a;
   border-radius: 2px;
   padding: 1em;
+  .timeline-image {
+    width: 100%;
+  }
   .timeline-content-info {
     color: rgba(255, 255, 255, 0.7);
     font-size: 12px;
