@@ -3,6 +3,9 @@ import noisefitImage from "../../images/noisefit.png";
 import noisefitBannerImage from "../../images/noise_banner.png";
 import heyheyImage from "../../images/heyhey.png";
 import visitlyImage from "../../images/visitly.png";
+import punchImage from "../../images/punch.png";
+import winekeyImage from "../../images/winekey.png";
+import rangdeImage from "../../images/rangde.png";
 
 export const data = {
   projects: [
@@ -53,10 +56,50 @@ export const data = {
       background:
         "background:linear-gradient(90deg, #89f7fe 0%,#66a6ff 100% );",
       large: false,
-      technologies: ["React", "React Native", "Firebase"],
+      technologies: ["React Native", "Firebase", "Redux"],
       platform: "iOS, Android",
       description:
         "My Visitly is a cross-platform application that provides sign-in/out capabilities to organizations working at premises during the COVID-19 pandemic. It offers a hands-free method of logging into the portal without the risk of physical contact.",
+    },
+
+    {
+      title: "Punch App",
+      image: punchImage,
+      banner_image: punchImage,
+      urlSlug: "punchapp",
+      background:
+        "background:linear-gradient(90deg, #ec008c 0%,#fc6767 100% );",
+      large: false,
+      technologies: ["React Native", "Firebase", "Intercomm"],
+      platform: "iOS, Android",
+      description:
+        "Punch is a free messaging app that enables B2B ecommerce. From orders to payments and everything in between. Welcome to hassle free wholesale",
+    },
+    {
+      title: "Winekey",
+      image: winekeyImage,
+      banner_image: winekeyImage,
+      urlSlug: "winekey",
+      background:
+        "background:linear-gradient(90deg, #bbd2c5 0%,#536976 50%,#292e49 100% );",
+      large: false,
+      technologies: ["React", "NextJS", "AWS"],
+      platform: "Web",
+      description:
+        "Winekey makes it easy to plan your next client event, team bonding activity or group event. Browse experiences or talk to an event planner below",
+    },
+    {
+      title: "RangDe",
+      image: rangdeImage,
+      banner_image: rangdeImage,
+      urlSlug: "rangde",
+      background:
+        "background:linear-gradient(90deg, #e65c00 0%,#f9d423 100% );",
+      large: false,
+      technologies: ["React Native", "Firebase", "AWS"],
+      platform: "iOS, Android",
+      description:
+        "RangDe APP is a Contractor's Personal Assistant to shop, learn & earn. Shop Paints, Waterproofing, Polishing material at best prices at your most convenience.",
     },
   ],
 };
