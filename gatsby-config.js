@@ -16,5 +16,17 @@ module.exports = {
       },
       __key: "images",
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Akhil Mulpuri`,
+        short_name: `Akhil`,
+        start_url: `/`,
+        background_color: `#f7f0eb`,
+        theme_color: `#a2466c`,
+        display: `standalone`,
+        icon: "src/images/favicon.png",
+      },
+    },
   ],
 };
