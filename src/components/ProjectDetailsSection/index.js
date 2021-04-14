@@ -118,6 +118,7 @@ const Heading = styled(motion.h2)`
 const Caption = styled(motion.p)`
   font-size: 20px;
   margin-top: 30px;
+  line-height: 1.5;
 `;
 
 const Seperator = styled.div`

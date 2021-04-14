@@ -2,6 +2,7 @@ import justactImage from "../../images/justact.png";
 import justact2Image from "../../images/justact-2.png";
 import justact3Image from "../../images/justact-3.png";
 import noisefitImage from "../../images/noisefit.png";
+import noisefit2Image from "../../images/noise-fit.png";
 import noisefitBannerImage from "../../images/noise_banner.png";
 import heyheyImage from "../../images/heyhey.png";
 import visitlyImage from "../../images/visitly.png";
@@ -54,7 +55,20 @@ export const data = {
       platform: "iOS, Android",
       description:
         "NoiseFit is a cross-platform mobile application that acts as a companion app for Noise smart wearable devices that track user activity such as sleep, steps, heart rate, etc.",
-      sections: [{}, {}],
+      sections: [
+        {
+          image: noisefit2Image,
+          heading: "Fast. Responsive. Cross Platform.",
+          caption:
+            "NoiseFit is a cross-platform mobile application that acts as a companion app for Noise smart wearable devices that track user activity such as sleep, steps, heart rate, etc.",
+        },
+        {
+          image: noisefitBannerImage,
+          heading: "App has a inbuilt store for quick purchases",
+          caption:
+            "The app has a shop section backed by the Shopify API's to allow users to purchase the products at their leisure. The shop is built completely with Shopify Storefront APIs & Pure React Native Code. ( No Webviews Included )",
+        },
+      ],
       appstore_url:
         "https://apps.apple.com/in/app/noisefit-health-fitness/id1498457147",
       playstore_url:
