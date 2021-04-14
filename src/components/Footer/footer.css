@@ -1,7 +1,7 @@
 /* FOOTER */
 .footer {
   width: 100%;
-  background: #181b23;
+  background: #0e0e0e;
   display: block;
 }
 
@@ -95,7 +95,7 @@ li i {
 
 .footer-bottom {
   padding: 10px;
-  background: #00121b;
+  background: #131313;
   color: #fff;
   font-size: 12px;
   text-align: center;
