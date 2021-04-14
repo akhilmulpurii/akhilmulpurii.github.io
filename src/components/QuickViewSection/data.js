@@ -127,7 +127,14 @@ export const data = {
       platform: "iOS, Android",
       description:
         "My Visitly is a cross-platform application that provides sign-in/out capabilities to organizations working at premises during the COVID-19 pandemic. It offers a hands-free method of logging into the portal without the risk of physical contact.",
-      sections: [],
+      sections: [
+        {
+          image: visitlyImage,
+          heading: "Contactless Easy Sign-In/Off",
+          caption:
+            "My Visitly is a cross-platform application that provides sign-in/out capabilities to organizations working at premises during the COVID-19 pandemic. It offers a hands-free method of logging into the portal without the risk of physical contact.",
+        },
+      ],
       appstore_url: "https://apps.apple.com/us/app/my-visitly/id1500199942",
       playstore_url:
         "https://play.google.com/store/apps/details?id=com.visitlyapp",
