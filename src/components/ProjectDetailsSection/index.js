@@ -123,4 +123,8 @@ const Caption = styled(motion.p)`
 
 const Seperator = styled.div`
   width: 50px;
+  @media only screen and (max-width: 940px) {
+    width: 100%;
+    height: 50px;
+  }
 `;
