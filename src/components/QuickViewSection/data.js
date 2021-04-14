@@ -38,6 +38,9 @@ export const data = {
             "JustAct offers you ready, relaxed resolution that embodies the spirit of ADR in its purest form by using independent and credible resolution techniques / professionals who are trained to resolve disputes amicably. It also offers all ADR services – Negotiation, Mediation / Conciliation and Arbitration in one place.",
         },
       ],
+      web_url: "https://justact.co.in/",
+      appstore_url: null,
+      playstore_url: null,
     },
     {
       title: "NoiseFit",

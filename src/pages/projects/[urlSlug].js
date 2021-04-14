@@ -8,6 +8,7 @@ import styled from "styled-components";
 import Loader from "../../components/Loader";
 import ProjectDetailsHero from "../../components/ProjectDetailsHero";
 import ProjectDetailsSection from "../../components/ProjectDetailsSection";
+import DownloadLinks from "../../components/DownloadLinks";
 import TechStack from "../../components/TechStack";
 
 // markup
@@ -50,6 +51,7 @@ const IndexPage = ({ params: { urlSlug } }) => {
           {project?.sections?.map((section, index) => (
             <ProjectDetailsSection key={index} {...section} index={index} />
           ))}
+          <DownloadLinks {...project} />
         </Wrapper>
       )}
       <Footer />
