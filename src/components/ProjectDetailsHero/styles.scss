@@ -13,7 +13,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
+  @media only screen and (max-width: 940px) {
+    height: 25vh;
+  }
   .box {
     width: 250px;
     height: 250px;
