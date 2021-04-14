@@ -12,6 +12,7 @@ import visitlyImage from "../../images/visitly.png";
 import punchImage from "../../images/punch.png";
 import winekeyImage from "../../images/winekey.png";
 import rangdeImage from "../../images/rangde.png";
+import rangde2Image from "../../images/rangde2.png";
 
 export const data = {
   projects: [
@@ -201,16 +202,16 @@ export const data = {
       sections: [
         {
           image: rangdeImage,
+          heading: "Purchase range of paints with few clicks.",
+          caption:
+            "RangDe APP has a complete checkout system built within it as well as other services such as chat support using Freshchat & also has Zoho Creator Portal integrated for contractors.",
+        },
+        {
+          image: rangde2Image,
           heading:
             "Helping contractors to move paints & washing business online.",
           caption:
             "RangDe APP is a Contractor's Personal Assistant to shop, learn & earn. Shop Paints, Waterproofing, Polishing material at best prices at your most convenience.",
-        },
-        {
-          image: rangdeImage,
-          heading: "Purchase range of paints with few clicks.",
-          caption:
-            "RangDe APP has a complete checkout system built within it as well as other services such as chat support using Freshchat & also has Zoho Creator Portal integrated for contractors.",
         },
       ],
       playstore_url: "https://play.google.com/store/apps/details?id=com.rangde",
