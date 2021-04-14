@@ -50,11 +50,15 @@ export const data = {
       background:
         "background:linear-gradient(40deg, #43c6ac 0%,#191654 100% );",
       large: false,
-      technologies: ["React Native", "Firebase", "Redux"],
+      technologies: ["React Native", "Firebase", "Redux", "Shopify"],
       platform: "iOS, Android",
       description:
         "NoiseFit is a cross-platform mobile application that acts as a companion app for Noise smart wearable devices that track user activity such as sleep, steps, heart rate, etc.",
       sections: [{}, {}],
+      appstore_url:
+        "https://apps.apple.com/in/app/noisefit-health-fitness/id1498457147",
+      playstore_url:
+        "https://play.google.com/store/apps/details?id=com.noisefit",
     },
     {
       title: "HeyHey",
@@ -69,6 +73,10 @@ export const data = {
       description:
         "HeyHey is the destination where you can book personalized video shout outs from your favorite celebrities for all occasions. Our mission is to deliver memorable moments and experiences to you from the artists you love most.",
       sections: [{}, {}],
+      appstore_url:
+        "https://apps.apple.com/us/app/heyhey-talent-fan-videos/id1509874968",
+      playstore_url: "https://play.google.com/store/apps/details?id=com.heyhey",
+      web_url: "https://heyheyglobal.com/",
     },
     {
       title: "My Visitly",
@@ -83,6 +91,9 @@ export const data = {
       description:
         "My Visitly is a cross-platform application that provides sign-in/out capabilities to organizations working at premises during the COVID-19 pandemic. It offers a hands-free method of logging into the portal without the risk of physical contact.",
       sections: [{}, {}],
+      appstore_url: "https://apps.apple.com/us/app/my-visitly/id1500199942",
+      playstore_url:
+        "https://play.google.com/store/apps/details?id=com.visitlyapp",
     },
 
     {
@@ -98,6 +109,9 @@ export const data = {
       description:
         "Punch is a free messaging app that enables B2B ecommerce. From orders to payments and everything in between. Welcome to hassle free wholesale",
       sections: [{}, {}],
+      appstore_url: "https://apps.apple.com/us/app/id1506871435",
+      playstore_url:
+        "https://play.google.com/store/apps/details?id=com.punchapp",
     },
     {
       title: "Winekey",
@@ -112,6 +126,7 @@ export const data = {
       description:
         "Winekey makes it easy to plan your next client event, team bonding activity or group event. Browse experiences or talk to an event planner below",
       sections: [{}, {}],
+      web_url: "https://winekey.co/",
     },
     {
       title: "RangDe",
@@ -126,6 +141,7 @@ export const data = {
       description:
         "RangDe APP is a Contractor's Personal Assistant to shop, learn & earn. Shop Paints, Waterproofing, Polishing material at best prices at your most convenience.",
       sections: [{}, {}],
+      playstore_url: "https://play.google.com/store/apps/details?id=com.rangde",
     },
   ],
 };
