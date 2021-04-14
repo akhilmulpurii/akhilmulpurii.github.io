@@ -206,6 +206,12 @@ export const data = {
           caption:
             "RangDe APP is a Contractor's Personal Assistant to shop, learn & earn. Shop Paints, Waterproofing, Polishing material at best prices at your most convenience.",
         },
+        {
+          image: rangdeImage,
+          heading: "Purchase range of paints with few clicks.",
+          caption:
+            "RangDe APP has a complete checkout system built within it as well as other services such as chat support using Freshchat & also has Zoho Creator Portal integrated for contractors.",
+        },
       ],
       playstore_url: "https://play.google.com/store/apps/details?id=com.rangde",
     },
