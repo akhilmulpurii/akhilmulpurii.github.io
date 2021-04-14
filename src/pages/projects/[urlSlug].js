@@ -8,6 +8,7 @@ import styled from "styled-components";
 import Loader from "../../components/Loader";
 import ProjectDetailsHero from "../../components/ProjectDetailsHero";
 import ProjectDetailsSection from "../../components/ProjectDetailsSection";
+import TechStack from "../../components/TechStack";
 
 // markup
 const IndexPage = ({ params: { urlSlug } }) => {
@@ -45,6 +46,7 @@ const IndexPage = ({ params: { urlSlug } }) => {
       ) : (
         <Wrapper>
           <ProjectDetailsHero {...project} />
+          <TechStack {...project} />
           {project?.sections?.map((section, index) => (
             <ProjectDetailsSection key={index} {...section} index={index} />
           ))}
