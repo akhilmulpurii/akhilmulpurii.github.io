@@ -5,6 +5,9 @@ import noisefitImage from "../../images/noisefit.png";
 import noisefit2Image from "../../images/noise-fit.png";
 import noisefitBannerImage from "../../images/noise_banner.png";
 import heyheyImage from "../../images/heyhey.png";
+import heyheyWeb from "../../images/heyheyweb.png";
+import heyheyUser from "../../images/heyheyuser.png";
+import heyheyTalent from "../../images/heyheytalent.png";
 import visitlyImage from "../../images/visitly.png";
 import punchImage from "../../images/punch.png";
 import winekeyImage from "../../images/winekey.png";
@@ -86,7 +89,27 @@ export const data = {
       platform: "Web, iOS, Android",
       description:
         "HeyHey is the destination where you can book personalized video shout outs from your favorite celebrities for all occasions. Our mission is to deliver memorable moments and experiences to you from the artists you love most.",
-      sections: [{}, {}],
+      sections: [
+        {
+          image: heyheyWeb,
+          heading: "Quick & Accessible Web app at your finger tips.",
+          caption:
+            "HeyHey has a fast and responsive web app which allows users to purchase celebrity shoutouts as well as allows celebrities to manage their bookings through the celebrity portal.",
+        },
+        {
+          image: heyheyUser,
+          heading:
+            "Cross-platform app to browse and book your favorite celebs.",
+          caption:
+            "Discover and book customized video shout-outs from your favourite actors, athletes, musicians, reality television stars, YouTubers and influencers! Reserve your unique HeyHey today, it's the perfect wedding, anniversary or birthday present.",
+        },
+        {
+          image: heyheyTalent,
+          heading: "App Dedicated for Celebrities",
+          caption:
+            "The app is completely built with UX keeping a celebrity in mind by providing a simple UI to record the shoutouts in the least possible clicks. The video gets processed in AWS & is sent back to the users after the request is completed.",
+        },
+      ],
       appstore_url:
         "https://apps.apple.com/us/app/heyhey-talent-fan-videos/id1509874968",
       playstore_url: "https://play.google.com/store/apps/details?id=com.heyhey",
@@ -104,7 +127,7 @@ export const data = {
       platform: "iOS, Android",
       description:
         "My Visitly is a cross-platform application that provides sign-in/out capabilities to organizations working at premises during the COVID-19 pandemic. It offers a hands-free method of logging into the portal without the risk of physical contact.",
-      sections: [{}, {}],
+      sections: [],
       appstore_url: "https://apps.apple.com/us/app/my-visitly/id1500199942",
       playstore_url:
         "https://play.google.com/store/apps/details?id=com.visitlyapp",
@@ -122,7 +145,7 @@ export const data = {
       platform: "iOS, Android",
       description:
         "Punch is a free messaging app that enables B2B ecommerce. From orders to payments and everything in between. Welcome to hassle free wholesale",
-      sections: [{}, {}],
+      sections: [],
       appstore_url: "https://apps.apple.com/us/app/id1506871435",
       playstore_url:
         "https://play.google.com/store/apps/details?id=com.punchapp",
@@ -139,7 +162,7 @@ export const data = {
       platform: "Web",
       description:
         "Winekey makes it easy to plan your next client event, team bonding activity or group event. Browse experiences or talk to an event planner below",
-      sections: [{}, {}],
+      sections: [],
       web_url: "https://winekey.co/",
     },
     {
@@ -154,7 +177,7 @@ export const data = {
       platform: "iOS, Android",
       description:
         "RangDe APP is a Contractor's Personal Assistant to shop, learn & earn. Shop Paints, Waterproofing, Polishing material at best prices at your most convenience.",
-      sections: [{}, {}],
+      sections: [],
       playstore_url: "https://play.google.com/store/apps/details?id=com.rangde",
     },
   ],
