@@ -11,6 +11,7 @@ import heyheyTalent from "../../images/heyheytalent.png";
 import visitlyImage from "../../images/visitly.png";
 import punchImage from "../../images/punch.png";
 import winekeyImage from "../../images/winekey.png";
+import winekey2Image from "../../images/winkey2.png";
 import rangdeImage from "../../images/rangde.png";
 import rangde2Image from "../../images/rangde2.png";
 
@@ -171,7 +172,7 @@ export const data = {
       banner_image: winekeyImage,
       urlSlug: "winekey",
       background:
-        "background:linear-gradient(90deg, #bbd2c5 0%,#536976 50%,#292e49 100% );",
+        "background:linear-gradient(-90deg, #e5008d 30%,#ff070b 100% );",
       large: false,
       technologies: ["React", "NextJS", "AWS"],
       platform: "Web",
@@ -183,6 +184,12 @@ export const data = {
           heading: "Virtual Events & Wine tastings experiences",
           caption:
             "Winekey makes it easy to plan your next client event, team bonding activity or group event. Browse experiences or talk to an event planner below.",
+        },
+        {
+          image: winekey2Image,
+          heading: "Planning a corporate event?",
+          caption:
+            "Winekey customizes each virtual tasting to fit your organization’s needs. Hence we provide sofisticated order management & tracking system to fit your needs by analzing the requirements and targeting the correct expectations of the customers.",
         },
       ],
       web_url: "https://winekey.co/",
