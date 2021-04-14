@@ -11,9 +11,22 @@ const TechStack = ({ technologies = [], background }) => {
       background={background}
     >
       <Wrapper>
-        <Text>TECH STACK</Text>
-        {technologies.map((tech) => (
-          <Chip key={tech}>{tech}</Chip>
+        <Text
+          initial={{ opacity: 0, scale: 1.1 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, delay: 0.8 }}
+        >
+          TECH STACK
+        </Text>
+        {technologies.map((tech, index) => (
+          <Chip
+            initial={{ opacity: 0, scale: 1.1 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.7 + index * 0.3 }}
+            key={tech}
+          >
+            {tech}
+          </Chip>
         ))}
       </Wrapper>
     </Container>
@@ -47,7 +60,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const Chip = styled.div`
+const Chip = styled(motion.div)`
   background-color: #141414;
   padding: 10px 20px;
   margin: 0 10px;
@@ -58,7 +71,7 @@ const Chip = styled.div`
   }
 `;
 
-const Text = styled.span`
+const Text = styled(motion.span)`
   color: #141414;
   font-size: 24px;
   font-weight: 300;

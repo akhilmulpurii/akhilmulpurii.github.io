@@ -28,7 +28,7 @@ const IndexPage = ({ params: { urlSlug } }) => {
     } finally {
       setTimeout(() => {
         setLoading(false);
-      }, 2000);
+      }, 1000);
     }
   }, []);
 
