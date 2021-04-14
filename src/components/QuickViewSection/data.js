@@ -152,7 +152,14 @@ export const data = {
       platform: "iOS, Android",
       description:
         "Punch is a free messaging app that enables B2B ecommerce. From orders to payments and everything in between. Welcome to hassle free wholesale",
-      sections: [],
+      sections: [
+        {
+          image: punchImage,
+          heading: "Ease of Access with single app for Buyers & Sellers",
+          caption:
+            "Punch is a free messaging app that enables B2B ecommerce. From orders to payments and everything in between. Welcome to hassle free wholesale.",
+        },
+      ],
       appstore_url: "https://apps.apple.com/us/app/id1506871435",
       playstore_url:
         "https://play.google.com/store/apps/details?id=com.punchapp",
@@ -169,7 +176,14 @@ export const data = {
       platform: "Web",
       description:
         "Winekey makes it easy to plan your next client event, team bonding activity or group event. Browse experiences or talk to an event planner below",
-      sections: [],
+      sections: [
+        {
+          image: winekeyImage,
+          heading: "Virtual Events & Wine tastings experiences",
+          caption:
+            "Winekey makes it easy to plan your next client event, team bonding activity or group event. Browse experiences or talk to an event planner below.",
+        },
+      ],
       web_url: "https://winekey.co/",
     },
     {
@@ -184,7 +198,15 @@ export const data = {
       platform: "iOS, Android",
       description:
         "RangDe APP is a Contractor's Personal Assistant to shop, learn & earn. Shop Paints, Waterproofing, Polishing material at best prices at your most convenience.",
-      sections: [],
+      sections: [
+        {
+          image: rangdeImage,
+          heading:
+            "Helping contractors to move paints & washing business online.",
+          caption:
+            "RangDe APP is a Contractor's Personal Assistant to shop, learn & earn. Shop Paints, Waterproofing, Polishing material at best prices at your most convenience.",
+        },
+      ],
       playstore_url: "https://play.google.com/store/apps/details?id=com.rangde",
     },
   ],
