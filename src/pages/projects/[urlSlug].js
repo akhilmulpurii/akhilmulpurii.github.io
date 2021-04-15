@@ -51,7 +51,7 @@ const IndexPage = ({ params: { urlSlug } }) => {
           {project?.sections?.map((section, index) => (
             <ProjectDetailsSection key={index} {...section} index={index} />
           ))}
-          <DownloadLinks {...project} />
+          {/* <DownloadLinks {...project} /> */}
         </Wrapper>
       )}
       <Footer />
