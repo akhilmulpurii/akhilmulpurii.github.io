@@ -7,9 +7,10 @@ import useLoader from "../../hooks/useLoader";
 import Envelope from "../../images/envelope.png";
 import Firebase from "../../service/firebase";
 import Snackbar from "node-snackbar";
+import { LoaderContext } from "../../providers/LoaderProvider";
 
 const ContactForm = () => {
-  const { setLoader = () => {} } = useLoader();
+  const { setLoader } = React.useContext(LoaderContext);
 
   async function handleSubmit(values) {
     setLoader(true);
@@ -29,7 +30,9 @@ const ContactForm = () => {
         duration: 2000,
       });
     } finally {
-      setLoader(false);
+      setTimeout(() => {
+        setLoader(false);
+      }, 1500);
     }
   }
 

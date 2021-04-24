@@ -8,17 +8,17 @@ import styled from "styled-components";
 import Loader from "../../components/Loader";
 import ProjectDetailsHero from "../../components/ProjectDetailsHero";
 import ProjectDetailsSection from "../../components/ProjectDetailsSection";
-import DownloadLinks from "../../components/DownloadLinks";
 import TechStack from "../../components/TechStack";
+import useLoader from "../../hooks/useLoader";
 
 // markup
 const IndexPage = ({ params: { urlSlug } }) => {
   const [project, setProject] = React.useState({});
-  const [loading, setLoading] = React.useState(true);
+  const { setLoader } = useLoader();
 
   React.useEffect(() => {
     try {
-      setLoading(true);
+      setLoader(true);
       const findProject = data.projects.find(
         (project) => project.urlSlug === urlSlug
       );
@@ -27,9 +27,9 @@ const IndexPage = ({ params: { urlSlug } }) => {
       }
     } catch (error) {
     } finally {
-      // setTimeout(() => {
-      setLoading(false);
-      // }, 1000);
+      setTimeout(() => {
+        setLoader(false);
+      }, 1000);
     }
   }, []);
 
@@ -40,33 +40,20 @@ const IndexPage = ({ params: { urlSlug } }) => {
         <title>{project?.title || "Akhil Mulpuri"}</title>
       </Helmet>
       <Header />
-      {loading ? (
-        <LoadingContainer>
-          <Loader />
-        </LoadingContainer>
-      ) : (
-        <Wrapper>
-          <ProjectDetailsHero {...project} />
-          <TechStack {...project} />
-          {project?.sections?.map((section, index) => (
-            <ProjectDetailsSection key={index} {...section} index={index} />
-          ))}
-          {/* <DownloadLinks {...project} /> */}
-        </Wrapper>
-      )}
+      <Wrapper>
+        <ProjectDetailsHero {...project} />
+        <TechStack {...project} />
+        {project?.sections?.map((section, index) => (
+          <ProjectDetailsSection key={index} {...section} index={index} />
+        ))}
+        {/* <DownloadLinks {...project} /> */}
+      </Wrapper>
       <Footer />
     </main>
   );
 };
 
 export default IndexPage;
-
-const LoadingContainer = styled.div`
-  height: calc(100vh - 70px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
 
 const Wrapper = styled.div`
   min-height: calc(100vh - 70px);

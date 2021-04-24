@@ -8,5 +8,7 @@ export default function FirebaseProvider({ children }) {
     Firebase.initFirebase();
   }, []);
 
-  return <FirebaseContext.Provider>{children}</FirebaseContext.Provider>;
+  return (
+    <FirebaseContext.Provider value={{}}>{children}</FirebaseContext.Provider>
+  );
 }
