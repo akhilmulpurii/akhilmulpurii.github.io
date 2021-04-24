@@ -5,7 +5,6 @@ import Footer from "../../components/Footer";
 import { Helmet } from "react-helmet";
 import { data } from "../../components/QuickViewSection/data";
 import styled from "styled-components";
-import Loader from "../../components/Loader";
 import ProjectDetailsHero from "../../components/ProjectDetailsHero";
 import ProjectDetailsSection from "../../components/ProjectDetailsSection";
 import TechStack from "../../components/TechStack";

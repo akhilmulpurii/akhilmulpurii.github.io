@@ -27,7 +27,7 @@ const DownloadLinks = ({
         </Text>
         <ButtonContainer>
           {!!web_url && (
-            <WebButton target="_blank" href={web_url}>
+            <WebButton href={web_url}>
               <div className="small">Check out the</div>
               <div className="large">Web Application</div>
             </WebButton>
@@ -39,7 +39,6 @@ const DownloadLinks = ({
                 justifyContent: "center",
                 alignItems: "center",
               }}
-              target="_blank"
               href={appstore_url}
             >
               <StoreBadge src={AppStore} />
@@ -52,7 +51,6 @@ const DownloadLinks = ({
                 justifyContent: "center",
                 alignItems: "center",
               }}
-              target="_blank"
               href={playstore_url}
             >
               <StoreBadge src={PlayStore} />
