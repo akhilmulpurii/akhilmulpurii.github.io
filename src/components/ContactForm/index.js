@@ -3,9 +3,36 @@ import { motion } from "framer-motion";
 import * as React from "react";
 import styled from "styled-components";
 import { ContactUsSchema } from "../../helpers/validationSchema";
+import useLoader from "../../hooks/useLoader";
 import Envelope from "../../images/envelope.png";
+import Firebase from "../../service/firebase";
+import Snackbar from "node-snackbar";
 
 const ContactForm = () => {
+  const { setLoader = () => {} } = useLoader();
+
+  async function handleSubmit(values) {
+    setLoader(true);
+    try {
+      await Firebase.addDataToCollection(values);
+      Snackbar.show({
+        text: "Message has been recieved successfully. I will follow up soon!",
+        pos: "bottom-center",
+        actionTextColor: "#ec6ead",
+      });
+    } catch (error) {
+      Snackbar.show({
+        text: error?.message || "Something went wrong! Please try again",
+        pos: "bottom-center",
+        actionTextColor: "#ec6ead",
+        showAction: false,
+        duration: 2000,
+      });
+    } finally {
+      setLoader(false);
+    }
+  }
+
   return (
     <>
       <div id="contact" style={{ paddingBottom: 50 }}></div>
@@ -35,6 +62,7 @@ const ContactForm = () => {
           validateOnChange
           validateOnBlur
           validationSchema={ContactUsSchema}
+          onSubmit={handleSubmit}
         >
           {({
             handleBlur,
