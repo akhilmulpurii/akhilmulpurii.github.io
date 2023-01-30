@@ -38,6 +38,8 @@ export async function getServerSideProps(context) {
     `${scheme}://${process.env.VERCEL_URL}/config/projects.json`
   );
   const projects = res.data?.projects || [];
+  console.log(projects);
+  console.log(typeof projects);
   const project = projects.find((project) => project.urlSlug === urlSlug) || {};
   if (project) {
     return {

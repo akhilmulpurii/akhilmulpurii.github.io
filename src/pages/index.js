@@ -29,6 +29,8 @@ export async function getStaticProps() {
     `${scheme}://${process.env.VERCEL_URL}/config/projects.json`
   );
   const projects = res.data?.projects || [];
+  console.log(projects);
+  console.log(typeof projects);
   // By returning { props: { posts } }, the Blog component
   // will receive `posts` as a prop at build time
   return {
