@@ -6,7 +6,8 @@ import ProjectDetailsSection from "../../components/ProjectDetailsSection";
 import TechStack from "../../components/TechStack";
 import Head from "next/head";
 import DownloadLinks from "@/components/DownloadLinks";
-import axios from "axios";
+import data from "../../../helpers/projects.json";
+const projects = data?.projects || [];
 
 const IndexPage = ({ project = {} }) => {
   return (
@@ -31,13 +32,6 @@ const IndexPage = ({ project = {} }) => {
 
 export async function getServerSideProps(context) {
   const { urlSlug } = context.params;
-  // Call an external API endpoint to get posts.
-  // You can use any data fetching library
-  const scheme = process.env.VERCEL_ENV !== "development" ? "https" : "http";
-  const res = await axios.get(
-    `${scheme}://${process.env.VERCEL_URL}/config/projects.json`
-  );
-  const projects = res.data?.projects || [];
 
   const project = projects.find((project) => project.urlSlug === urlSlug) || {};
   if (project) {

@@ -4,7 +4,8 @@ import Footer from "../../components/Footer";
 import ProjectsListHero from "../../components/ProjectsListHero";
 import TimelineComponent from "../../components/TimelineComponent";
 import Head from "next/head";
-import axios from "axios";
+import data from "../../../helpers/projects.json";
+const projects = data?.projects || [];
 
 // markup
 const IndexPage = ({ projects }) => {
@@ -23,16 +24,6 @@ const IndexPage = ({ projects }) => {
 };
 
 export async function getStaticProps() {
-  // Call an external API endpoint to get posts.
-  // You can use any data fetching library
-  const scheme = process.env.VERCEL_ENV !== "development" ? "https" : "http";
-  const res = await axios.get(
-    `${scheme}://${process.env.VERCEL_URL}/config/projects.json`
-  );
-  const projects = res.data?.projects || [];
-
-  // By returning { props: { posts } }, the Blog component
-  // will receive `posts` as a prop at build time
   return {
     props: {
       projects,
