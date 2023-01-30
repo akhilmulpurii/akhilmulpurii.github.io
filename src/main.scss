@@ -18,7 +18,11 @@ body {
 .footer {
   width: 100%;
   background: #0e0e0e;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 .inner-footer {
@@ -115,6 +119,7 @@ li i {
   color: #fff;
   font-size: 12px;
   text-align: center;
+  width: 100%;
 }
 
 /* for tablet mode view */
@@ -182,13 +187,13 @@ li i {
 }
 
 .about-me-section {
-  margin-top: 90px;
+  padding-top: 90px;
+  background-color: #141414;
 }
 
 .about-me-banner {
   height: 70vh;
   margin-top: 100px;
-  margin-bottom: 60px;
   overflow: hidden;
   & img {
     height: 100%;
@@ -318,6 +323,7 @@ li i {
   align-items: center;
   position: relative;
   min-height: 100vh;
+  background-color: #141414;
 }
 
 .quick-view-grid {
@@ -469,6 +475,7 @@ li i {
   display: flex;
   flex-direction: column;
   max-width: 1360px;
+  width: 100%;
   margin: 0 auto;
   background-color: #545454;
   padding: 40px;

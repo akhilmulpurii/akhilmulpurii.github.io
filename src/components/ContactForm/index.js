@@ -1,4 +1,3 @@
-"use client";
 import { Form, Formik } from "formik";
 import { motion } from "framer-motion";
 import * as React from "react";
@@ -35,7 +34,7 @@ const ContactForm = () => {
   }
 
   return (
-    <>
+    <section className="quick-view-section">
       <div id="contact" style={{ paddingBottom: 50 }}></div>
       <motion.section
         className="contact-form-section"
@@ -171,7 +170,7 @@ const ContactForm = () => {
           )}
         </Formik>
       </motion.section>
-    </>
+    </section>
   );
 };
 
