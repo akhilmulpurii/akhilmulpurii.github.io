@@ -10,7 +10,6 @@ const HeroSection = () => {
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 1, delay: 0.5 }}
     >
-      <script src="https://cdn.rawgit.com/progers/pathseg/master/pathseg.js"></script>
       Akhil Mulpuri,
       <br />
       UI-UX Developer
