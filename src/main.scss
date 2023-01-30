@@ -657,6 +657,11 @@ li i {
   position: absolute;
   width: 100%;
   height: 100%;
+  pointer-events: none !important;
+
+  & canvas {
+    pointer-events: none !important;
+  }
 }
 
 .project-details-hero-section {
