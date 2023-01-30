@@ -25,12 +25,12 @@ export async function getStaticProps() {
   // Call an external API endpoint to get posts.
   // You can use any data fetching library
   const scheme = process.env.VERCEL_ENV !== "development" ? "https" : "http";
-  const res = await axios.get(
-    `${scheme}://${process.env.VERCEL_URL}/config/projects.json`
-  );
+  const url = `${scheme}://${process.env.VERCEL_URL}/config/projects.json`;
+  const res = await axios.get(url);
   const projects = res.data?.projects || [];
   console.log(projects);
   console.log(typeof projects);
+  console.log(scheme, url, res.data);
   // By returning { props: { posts } }, the Blog component
   // will receive `posts` as a prop at build time
   return {
