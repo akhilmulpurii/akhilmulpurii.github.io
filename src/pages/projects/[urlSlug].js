@@ -37,8 +37,8 @@ export async function getServerSideProps(context) {
   const res = await axios.get(
     `${scheme}://${process.env.VERCEL_URL}/config/projects.json`
   );
-  const projects = res.data?.projects;
-  const project = projects.find((project) => project.urlSlug === urlSlug);
+  const projects = res.data?.projects || [];
+  const project = projects.find((project) => project.urlSlug === urlSlug) || {};
   if (project) {
     return {
       props: {

@@ -28,7 +28,7 @@ export async function getStaticProps() {
   const res = await axios.get(
     `${scheme}://${process.env.VERCEL_URL}/config/projects.json`
   );
-  const projects = res.data?.projects;
+  const projects = res.data?.projects || [];
   // By returning { props: { posts } }, the Blog component
   // will receive `posts` as a prop at build time
   return {
