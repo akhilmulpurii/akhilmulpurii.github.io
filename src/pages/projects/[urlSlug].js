@@ -6,7 +6,7 @@ import ProjectDetailsSection from "../../components/ProjectDetailsSection";
 import TechStack from "../../components/TechStack";
 import Head from "next/head";
 import DownloadLinks from "@/components/DownloadLinks";
-import data from "../helpers/projects.json";
+import data from "../../helpers/projects.json";
 const projects = data?.projects || [];
 
 const IndexPage = ({ project = {} }) => {

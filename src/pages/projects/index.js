@@ -4,7 +4,7 @@ import Footer from "../../components/Footer";
 import ProjectsListHero from "../../components/ProjectsListHero";
 import TimelineComponent from "../../components/TimelineComponent";
 import Head from "next/head";
-import data from "../helpers/projects.json";
+import data from "../../helpers/projects.json";
 const projects = data?.projects || [];
 
 // markup
