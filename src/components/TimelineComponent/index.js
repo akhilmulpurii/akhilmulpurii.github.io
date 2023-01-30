@@ -1,12 +1,8 @@
 import * as React from "react";
-import { data } from "../../components/QuickViewSection/data";
-import "./styles.scss";
-import { navigate } from "gatsby-link";
 import { motion } from "framer-motion";
+import { useRouter } from "next/router";
 
-const { projects } = data;
-
-export default function TimelineComponent() {
+export default function TimelineComponent({ projects = [] }) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -31,13 +27,14 @@ function TimelineItem({
   urlSlug = "",
   index,
 }) {
+  const router = useRouter();
   return (
     <motion.div
       initial={{ opacity: 0, y: 20, scale: 1.2 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ duration: 1, delay: 0.5 + index * 0.5, ease: "easeInOut" }}
       class="cd-timeline-block"
-      onClick={() => navigate(`/projects/${urlSlug}`)}
+      onClick={() => router.push(`/projects/${urlSlug}`)}
     >
       <div class="cd-timeline-img cd-picture" />
       <div class="cd-timeline-content">

@@ -1,16 +1,15 @@
 import * as React from "react";
-import styled, { css } from "styled-components";
 import { motion } from "framer-motion";
-import "./styles.scss";
 
 // markup
 const ProjectDetailsHero = ({ title, background, platform }) => {
   return (
-    <Section
+    <motion.section
+      style={{ background }}
+      className="project-details-hero-section"
       initial={{ opacity: 0, scale: 1.2 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 1, delay: 0.5 }}
-      background={background}
     >
       <div class="container">
         <div class="box">
@@ -28,17 +27,8 @@ const ProjectDetailsHero = ({ title, background, platform }) => {
           </div>
         </div>
       </div>
-    </Section>
+    </motion.section>
   );
 };
 
 export default ProjectDetailsHero;
-
-const Section = styled(motion.section)`
-  overflow: hidden;
-  ${({ background }) =>
-    background &&
-    css`
-      ${background};
-    `}
-`;

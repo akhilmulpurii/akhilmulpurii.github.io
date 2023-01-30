@@ -1,19 +1,18 @@
 import * as React from "react";
-import styled from "styled-components";
 import { motion } from "framer-motion";
-import banner from "../../images/banner.jpeg";
 
 // markup
 const AboutMe = () => {
   return (
     <>
       <span id="about" />
-      <Section
+      <motion.section
+        className="about-me-section"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 0.5 }}
       >
-        <Wrapper>
+        <div className="about-me-wrapper">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -69,63 +68,18 @@ const AboutMe = () => {
               I play lots and lots of video games and i'm a spotify addict
             </li>
           </motion.ul>
-        </Wrapper>
-        <BannerContainer>
+        </div>
+        <div className="about-me-banner">
           <motion.img
             initial={{ opacity: 0, y: 20, scale: 1.2 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 1, delay: 2 }}
-            src={banner}
+            src={"/images/banner.jpeg"}
           />
-        </BannerContainer>
-      </Section>
+        </div>
+      </motion.section>
     </>
   );
 };
 
 export default AboutMe;
-
-const Section = styled(motion.section)`
-  margin-top: 90px;
-`;
-
-const Wrapper = styled.div`
-  max-width: 1440px;
-  margin: 0 auto;
-  @media only screen and (max-width: 1440px) {
-    padding: 0 20px;
-  }
-  & p {
-    font-size: 24px;
-    @media only screen and (max-width: 640px) {
-      font-size: 20px;
-    }
-  }
-  ul {
-    list-style-type: circle;
-    @media only screen and (max-width: 640px) {
-      padding-left: 20px;
-    }
-  }
-  li {
-    font-size: 20px;
-    height: auto;
-    @media only screen and (max-width: 640px) {
-      margin-bottom: 10px;
-      font-size: 16px;
-    }
-  }
-`;
-
-const BannerContainer = styled.div`
-  height: 70vh;
-  margin-top: 100px;
-  margin-bottom: 60px;
-  overflow: hidden;
-  & img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    object-position: center;
-  }
-`;

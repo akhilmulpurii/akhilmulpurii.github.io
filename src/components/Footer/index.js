@@ -1,9 +1,8 @@
 import React from "react";
-import "./footer.css";
 
 export default function Footer() {
   return (
-    <div className="footer">
+    <section className="footer">
       <div className="inner-footer">
         <div className="footer-items">
           <h1>Mulpuri Sai Akhil</h1>
@@ -53,15 +52,15 @@ export default function Footer() {
           <div className="border1"></div>
           <ul>
             <li>
-              <i className="fa fa-map-marker" aria-hidden="true"></i>Hyderabad,
-              India - 500094
+              <i className="fa fa-map-marker" aria-hidden="true"></i>Edmond,
+              Oklahoma - 73034
             </li>
             <li>
-              <i className="fa fa-phone" aria-hidden="true"></i>+91 8125125999
+              <i className="fa fa-phone" aria-hidden="true"></i>+1 4058568154
             </li>
             <li>
               <i className="fa fa-envelope" aria-hidden="true"></i>
-              akhilfilms02@gmail.com
+              reachme@akhil.pro
             </li>
           </ul>
         </div>
@@ -70,6 +69,6 @@ export default function Footer() {
       <div className="footer-bottom">
         Akhil Mulpuri {new Date().getFullYear()}.
       </div>
-    </div>
+    </section>
   );
 }

@@ -1,62 +1,53 @@
 import * as React from "react";
-import "../../main.css";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import { Helmet } from "react-helmet";
-import { data } from "../../components/QuickViewSection/data";
-import styled from "styled-components";
 import ProjectDetailsHero from "../../components/ProjectDetailsHero";
 import ProjectDetailsSection from "../../components/ProjectDetailsSection";
 import TechStack from "../../components/TechStack";
-import useLoader from "../../hooks/useLoader";
+import Head from "next/head";
+import DownloadLinks from "@/components/DownloadLinks";
+import axios from "axios";
 
-// markup
-const IndexPage = ({ params: { urlSlug } }) => {
-  const [project, setProject] = React.useState({});
-  const { setLoader } = useLoader();
-
-  React.useEffect(() => {
-    try {
-      setLoader(true);
-      const findProject = data.projects.find(
-        (project) => project.urlSlug === urlSlug
-      );
-      if (findProject) {
-        setProject(findProject);
-      }
-    } catch (error) {
-    } finally {
-      setTimeout(() => {
-        setLoader(false);
-      }, 1000);
-    }
-  }, []);
-
+const IndexPage = ({ project = {} }) => {
   return (
     <main>
-      <Helmet>
+      <Head>
         <meta charSet="utf-8" />
         <title>{project?.title || "Akhil Mulpuri"}</title>
-      </Helmet>
+      </Head>
       <Header />
-      <Wrapper>
+      <div className="project-wrapper">
         <ProjectDetailsHero {...project} />
         <TechStack {...project} />
         {project?.sections?.map((section, index) => (
           <ProjectDetailsSection key={index} {...section} index={index} />
         ))}
-        {/* <DownloadLinks {...project} /> */}
-      </Wrapper>
+        <DownloadLinks {...project} />
+      </div>
       <Footer />
     </main>
   );
 };
 
-export default IndexPage;
+export async function getServerSideProps(context) {
+  const { urlSlug } = context.params;
+  // Call an external API endpoint to get posts.
+  // You can use any data fetching library
+  const scheme = process.env.VERCEL_ENV !== "development" ? "https" : "http";
+  const res = await axios.get(
+    `${scheme}://${process.env.VERCEL_URL}/config/projects.json`
+  );
+  const projects = res.data?.projects;
+  const project = projects.find((project) => project.urlSlug === urlSlug);
+  if (project) {
+    return {
+      props: {
+        project,
+      },
+    };
+  } else {
+    return { notFound: true };
+  }
+}
 
-const Wrapper = styled.div`
-  min-height: calc(100vh - 70px);
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-`;
+export default IndexPage;
