@@ -1,11 +1,10 @@
 import * as React from "react";
 import { motion } from "framer-motion";
-import { data } from "./data";
 import { useRouter } from "next/navigation";
 import styled from "styled-components";
 
 // markup
-const QuickViewSection = () => {
+const QuickViewSection = ({ projects }) => {
   const router = useRouter();
   return (
     <motion.section
@@ -16,7 +15,7 @@ const QuickViewSection = () => {
       transition={{ duration: 1, delay: 0.7 }}
     >
       <div className="quick-view-grid">
-        {data.projects
+        {projects
           .filter((_, i) => i < 3)
           .map((project, index) => (
             <ProjectImageContainer

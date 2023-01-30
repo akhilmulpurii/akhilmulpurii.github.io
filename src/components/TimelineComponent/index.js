@@ -1,11 +1,8 @@
 import * as React from "react";
-import { data } from "../../components/QuickViewSection/data";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 
-const { projects } = data;
-
-export default function TimelineComponent() {
+export default function TimelineComponent({ projects = [] }) {
   return (
     <motion.div
       initial={{ opacity: 0 }}

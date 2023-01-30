@@ -1,43 +1,14 @@
 import * as React from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import { data } from "../../components/QuickViewSection/data";
 import ProjectDetailsHero from "../../components/ProjectDetailsHero";
 import ProjectDetailsSection from "../../components/ProjectDetailsSection";
 import TechStack from "../../components/TechStack";
-import useLoader from "../../hooks/useLoader";
-import { useRouter } from "next/router";
 import Head from "next/head";
 import DownloadLinks from "@/components/DownloadLinks";
+import axios from "axios";
 
-// markup
-const IndexPage = () => {
-  const [project, setProject] = React.useState({});
-  const router = useRouter();
-  const { urlSlug } = router.query;
-
-  const { setLoader } = useLoader();
-
-  React.useEffect(() => {
-    if (urlSlug) {
-      try {
-        setLoader(true);
-        const findProject = data.projects.find(
-          (project) => project.urlSlug === urlSlug
-        );
-        if (findProject) {
-          setProject(findProject);
-        }
-      } catch (error) {
-      } finally {
-        setTimeout(() => {
-          setLoader(false);
-        }, 1000);
-      }
-    }
-  }, [urlSlug]);
-  console.log(123, project);
-
+const IndexPage = ({ project = {} }) => {
   return (
     <main>
       <Head>
@@ -57,5 +28,26 @@ const IndexPage = () => {
     </main>
   );
 };
+
+export async function getServerSideProps(context) {
+  const { urlSlug } = context.params;
+  // Call an external API endpoint to get posts.
+  // You can use any data fetching library
+  const scheme = process.env.VERCEL_ENV !== "development" ? "https" : "http";
+  const res = await axios.get(
+    `${scheme}://${process.env.VERCEL_URL}/config/projects.json`
+  );
+  const projects = res.data?.projects;
+  const project = projects.find((project) => project.urlSlug === urlSlug);
+  if (project) {
+    return {
+      props: {
+        project,
+      },
+    };
+  } else {
+    return { notFound: true };
+  }
+}
 
 export default IndexPage;
