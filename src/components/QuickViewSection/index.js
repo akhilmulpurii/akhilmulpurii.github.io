@@ -2,6 +2,7 @@ import * as React from "react";
 import { motion } from "framer-motion";
 import { data } from "./data";
 import { useRouter } from "next/navigation";
+import styled from "styled-components";
 
 // markup
 const QuickViewSection = () => {
@@ -18,7 +19,7 @@ const QuickViewSection = () => {
         {data.projects
           .filter((_, i) => i < 3)
           .map((project, index) => (
-            <motion.div
+            <ProjectImageContainer
               className="quick-view-grid-item"
               key={project.title}
               onClick={() => router.push(`/projects/${project.urlSlug}`)}
@@ -41,7 +42,7 @@ const QuickViewSection = () => {
               }}
             >
               <img alt={project.title} src={project.image} />
-            </motion.div>
+            </ProjectImageContainer>
           ))}
       </div>
     </motion.section>
@@ -49,3 +50,9 @@ const QuickViewSection = () => {
 };
 
 export default QuickViewSection;
+
+const ProjectImageContainer = styled(motion.div)`
+  &:after {
+    content: ${({ title }) => "'" + title + "'" || ""};
+  }
+`;
