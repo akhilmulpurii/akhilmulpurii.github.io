@@ -7,6 +7,7 @@ const DownloadLinks = ({
   appstore_url,
   playstore_url,
 }) => {
+  if (!web_url && !appstore_url && !playstore_url) return <></>;
   return (
     <motion.section
       className="download-links-container"

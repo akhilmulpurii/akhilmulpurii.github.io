@@ -51,6 +51,7 @@
       "appstore_url": "https://apps.apple.com/in/app/noisefit-health-fitness/id1498457147",
       "playstore_url": "https://play.google.com/store/apps/details?id=com.noisefit"
     },
+
     {
       "title": "HeyHey",
       "image": "/images/heyhey.png",
@@ -81,6 +82,24 @@
       "appstore_url": "https://apps.apple.com/us/app/heyhey-talent-fan-videos/id1509874968",
       "playstore_url": "https://play.google.com/store/apps/details?id=com.heyhey",
       "web_url": "https://heyheyglobal.com/"
+    },
+    {
+      "title": "Pharmaclock",
+      "image": "/images/pharmaclock.png",
+      "banner_image": "/images/pharmaclock.png",
+      "urlSlug": "pharmaclock",
+      "background": "linear-gradient(40deg, #E71561 0%,#f56e9f 100% )",
+      "large": false,
+      "technologies": ["React Native", "Firebase", "ExpressJS", "PostgreSQL"],
+      "platform": "iOS, Android, Backend",
+      "description": "Pharmaclock is a cross-platform mobile application used to track medication intake and remind users to take their medication on time. The app also allows users to track their doctors appointments and common symptoms.",
+      "sections": [
+        {
+          "image": "/images/pharmaclock.png",
+          "heading": "Fast. Responsive. Cross Platform.",
+          "caption": "Pharmaclock is a cross-platform mobile application used to track medication intake and remind users to take their medication on time. The app also allows users to track their doctors appointments and common symptoms."
+        }
+      ]
     },
     {
       "title": "My Visitly",
