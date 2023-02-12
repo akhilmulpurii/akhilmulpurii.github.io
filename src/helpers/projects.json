@@ -102,6 +102,24 @@
       ]
     },
     {
+      "title": "HealthApp",
+      "image": "/images/healthapp.png",
+      "banner_image": "/images/healthapp2.png",
+      "urlSlug": "healthapp",
+      "background": "linear-gradient(40deg, #E71561 0%,#f56e9f 100% )",
+      "large": false,
+      "technologies": ["Flutter", "Firebase"],
+      "platform": "iOS, Android",
+      "description": "Healthapp is a cross-platform mobile application that allows wheelchair users to track their health and fitness. The app allows users to track their daily activities, sleep, and weight.",
+      "sections": [
+        {
+          "image": "/images/healthapp2.png",
+          "heading": "Fast. Responsive. Cross Platform.",
+          "caption": "Healthapp is a cross-platform mobile application that allows wheelchair users to track their health and fitness. The app allows users to track their daily activities, sleep, and weight."
+        }
+      ]
+    },
+    {
       "title": "My Visitly",
       "image": "/images/visitly.png",
       "banner_image": "/images/visitly.png",
