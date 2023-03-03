@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { useCallback } from "react";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
+import styled from "styled-components";
 
 // markup
 const HeroSection = () => {
@@ -18,17 +19,14 @@ const HeroSection = () => {
   const particlesLoaded = useCallback(async (container) => {
     await console.log(container);
   }, []);
-
   return (
-    <motion.section
-      className="hero-section"
+    <Section
       initial={{ opacity: 0, scale: 1.2 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 1, delay: 0.5 }}
     >
-      <Particles
-        className="hero-section-particles"
-        id="tsparticles"
+      <script src="https://cdn.rawgit.com/progers/pathseg/master/pathseg.js"></script>
+      <ParticlesBackground
         url="/config/particlesjs-config.json"
         init={particlesInit}
         loaded={particlesLoaded}
@@ -36,8 +34,29 @@ const HeroSection = () => {
       Akhil Mulpuri,
       <br />
       UI-UX Developer
-    </motion.section>
+    </Section>
   );
 };
 
 export default HeroSection;
+
+const Section = styled(motion.section)`
+  font-size: 10vw;
+  font-weight: 800;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+`;
+
+const ParticlesBackground = styled(Particles)`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none !important;
+
+  & canvas {
+    pointer-events: none !important;
+  }
+`;
