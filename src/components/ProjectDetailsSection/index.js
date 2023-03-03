@@ -1,34 +1,18 @@
 import { motion } from "framer-motion";
 import * as React from "react";
+import styled, { css } from "styled-components";
 
 const ProjectDetailsSection = ({ index, heading, caption, image }) => {
   return (
-    <motion.section
-      className="project-details-container"
+    <Container
       initial={{ opacity: 0, scale: 1.1 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 1, delay: 0.7 + index * 0.7 }}
-      style={
-        !(index % 2 === 0)
-          ? {
-              backgroundColor: "#232323",
-            }
-          : {}
-      }
+      isEven={index % 2 === 0}
     >
-      <div
-        style={
-          !(index % 2 === 0)
-            ? {
-                flexDirection: "row-reverse",
-              }
-            : {}
-        }
-        className="project-details-wrapper"
-      >
-        <div className="project-details-text-section">
-          <motion.h2
-            className="project-details-heading"
+      <Wrapper isEven={index % 2 === 0}>
+        <TextSection>
+          <Heading
             initial={{ opacity: 0, scale: 1.1, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{
@@ -38,9 +22,8 @@ const ProjectDetailsSection = ({ index, heading, caption, image }) => {
             }}
           >
             {heading}
-          </motion.h2>
-          <motion.p
-            className="project-details-caption"
+          </Heading>
+          <Caption
             initial={{ opacity: 0, scale: 1.1, y: 20, x: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0, x: 0 }}
             transition={{
@@ -50,13 +33,12 @@ const ProjectDetailsSection = ({ index, heading, caption, image }) => {
             }}
           >
             {caption}
-          </motion.p>
-        </div>
-        <div className="project-details-seperator" />
-        <div className="project-details-image-section">
+          </Caption>
+        </TextSection>
+        <Seperator />
+        <ImageSection>
           {image && (
-            <motion.img
-              className="project-details-image"
+            <Image
               initial={{ opacity: 0, scale: 1.1 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{
@@ -68,10 +50,81 @@ const ProjectDetailsSection = ({ index, heading, caption, image }) => {
               alt="img"
             />
           )}
-        </div>
-      </div>
-    </motion.section>
+        </ImageSection>
+      </Wrapper>
+    </Container>
   );
 };
 
 export default ProjectDetailsSection;
+
+const Container = styled(motion.section)`
+  display: flex;
+  width: 100%;
+  min-height: 80vh;
+  ${({ isEven }) =>
+    !isEven &&
+    css`
+      background-color: #232323;
+    `}
+`;
+
+const Wrapper = styled.div`
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  width: 100%;
+  @media only screen and (max-width: 1440px) {
+    padding: 0 20px;
+  }
+  @media only screen and (max-width: 940px) {
+    padding: 32px 24px;
+    flex-direction: column;
+  }
+  ${({ isEven }) =>
+    !isEven &&
+    css`
+      flex-direction: row-reverse;
+      @media only screen and (max-width: 940px) {
+        flex-direction: column;
+      }
+    `}
+`;
+
+const TextSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 4;
+  justify-content: center;
+`;
+
+const ImageSection = styled.div`
+  flex: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Image = styled(motion.img)`
+  width: 100%;
+  object-fit: contain;
+  border-radius: 6px;
+`;
+
+const Heading = styled(motion.h2)`
+  font-size: 36px;
+`;
+
+const Caption = styled(motion.p)`
+  font-size: 20px;
+  margin-top: 30px;
+  line-height: 1.5;
+`;
+
+const Seperator = styled.div`
+  width: 50px;
+  @media only screen and (max-width: 940px) {
+    width: 100%;
+    height: 50px;
+  }
+`;
