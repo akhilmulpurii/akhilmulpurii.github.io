@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import * as React from "react";
+import styled, { css } from "styled-components";
 
 const DownloadLinks = ({
   background,
@@ -7,30 +8,27 @@ const DownloadLinks = ({
   appstore_url,
   playstore_url,
 }) => {
-  if (!web_url && !appstore_url && !playstore_url) return <></>;
   return (
-    <motion.section
-      className="download-links-container"
+    <Container
       initial={{ opacity: 0, scale: 1.1 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 1, delay: 2 }}
-      style={{ background }}
+      background={background}
     >
-      <div className="download-links-wrapper">
-        <motion.div
-          className="download-links-text"
+      <Wrapper>
+        <Text
           initial={{ opacity: 0, scale: 1.1 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 2.2 }}
         >
           Want to check out the app? Use the links below!
-        </motion.div>
-        <div className="download-links-button-container">
+        </Text>
+        <ButtonContainer>
           {!!web_url && (
-            <a href={web_url} className="download-link-url">
+            <WebButton href={web_url}>
               <div className="small">Check out the</div>
               <div className="large">Web Application</div>
-            </a>
+            </WebButton>
           )}
           {!!appstore_url && (
             <a
@@ -41,7 +39,7 @@ const DownloadLinks = ({
               }}
               href={appstore_url}
             >
-              <img className="app-badge" src={"/images/appstore-badge.png"} />
+              <StoreBadge src={"/images/appstore-badge.png"} />
             </a>
           )}
           {!!playstore_url && (
@@ -53,13 +51,81 @@ const DownloadLinks = ({
               }}
               href={playstore_url}
             >
-              <img className="app-badge" src={"/images/playstore-badge.png"} />
+              <StoreBadge src={"/images/playstore-badge.png"} />
             </a>
           )}
-        </div>
-      </div>
-    </motion.section>
+        </ButtonContainer>
+      </Wrapper>
+    </Container>
   );
 };
 
 export default DownloadLinks;
+
+const Container = styled(motion.section)`
+  display: flex;
+  width: 100%;
+  ${({ background }) =>
+    background &&
+    css`
+      ${background}
+    `}
+`;
+
+const Wrapper = styled.div`
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 36px;
+  flex-direction: column;
+`;
+
+const Text = styled(motion.div)`
+  color: #141414;
+  font-size: 32px;
+  font-weight: 600;
+`;
+
+const ButtonContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  grid-gap: 24px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  @media only screen and (max-width: 640px) {
+    flex-direction: column;
+  }
+`;
+
+const WebButton = styled.a`
+  text-decoration: none;
+  color: white;
+  background-color: #141414;
+  font-weight: 600;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  border-radius: 4px;
+  height: 57px;
+  cursor: pointer;
+  & .small {
+    font-size: 12px;
+    padding-left: 40px;
+    display: inline-block;
+  }
+  & .large {
+    display: block;
+    padding-left: 40px;
+  }
+`;
+
+const StoreBadge = styled.img`
+  width: 200px;
+  cursor: pointer;
+`;
