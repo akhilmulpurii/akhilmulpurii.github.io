@@ -1,11 +1,11 @@
 import * as React from "react";
+import styled from "styled-components";
 import { motion } from "framer-motion";
 
 // markup
 const ProjectsListHero = () => {
   return (
-    <motion.section
-      className="projects-list-hero-section"
+    <Section
       initial={{ opacity: 0, scale: 1.2 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 1, delay: 0 }}
@@ -108,8 +108,21 @@ const ProjectsListHero = () => {
           </svg>
         </div>
       </div>
-    </motion.section>
+    </Section>
   );
 };
 
 export default ProjectsListHero;
+
+const Section = styled(motion.section)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: calc(65vh);
+  font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+  font-weight: 300;
+  overflow: hidden;
+  color: white;
+  text-align: center;
+`;
