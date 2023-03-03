@@ -1,18 +1,19 @@
 import React from "react";
+import styled from "styled-components";
 
 export default function Footer() {
   return (
-    <section className="footer">
-      <div className="inner-footer">
-        <div className="footer-items">
+    <FooterSection>
+      <InnerFooter>
+        <FooterItem>
           <h1>Mulpuri Sai Akhil</h1>
           <p className="designation">Frontend Developer.</p>
-        </div>
+        </FooterItem>
 
-        <div className="footer-items">
+        <FooterItem>
           <h3>Quick Links</h3>
-          <div className="border1"></div>
-          <ul>
+          <FooterBorder />
+          <FooterList>
             <a href="https://www.linkedin.com/in/akhil-mulpuri-94634b166/">
               <li>LinkedIn</li>
             </a>
@@ -25,13 +26,13 @@ export default function Footer() {
             <a href="https://www.youtube.com/channel/UC5r8Fd1h17Eb-7Mong-ff4g">
               <li>Youtube</li>
             </a>
-          </ul>
-        </div>
+          </FooterList>
+        </FooterItem>
 
-        <div className="footer-items">
+        <FooterItem>
           <h3>More Links</h3>
-          <div className="border1"></div>
-          <ul>
+          <FooterBorder />
+          <FooterList>
             <a href="https://github.com/akhilmulpurii">
               <li>GitHub</li>
             </a>
@@ -44,31 +45,107 @@ export default function Footer() {
             <a href="https://medium.com/@akhilfilms02">
               <li>Medium</li>
             </a>
-          </ul>
-        </div>
+          </FooterList>
+        </FooterItem>
 
-        <div className="footer-items">
+        <FooterItem>
           <h3>Contact me</h3>
-          <div className="border1"></div>
+          <FooterBorder />
           <ul>
-            <li>
-              <i className="fa fa-map-marker" aria-hidden="true"></i>Edmond,
-              Oklahoma - 73034
-            </li>
-            <li>
-              <i className="fa fa-phone" aria-hidden="true"></i>+1 4058568154
-            </li>
-            <li>
-              <i className="fa fa-envelope" aria-hidden="true"></i>
-              reachme@akhil.pro
-            </li>
+            <li>Edmond, Oklahoma - 73034</li>
+            <li>+1 4058568154</li>
+            <li>reachme@akhil.pro</li>
           </ul>
-        </div>
-      </div>
+        </FooterItem>
+      </InnerFooter>
 
-      <div className="footer-bottom">
-        Akhil Mulpuri {new Date().getFullYear()}.
-      </div>
-    </section>
+      <FooterBottom>Akhil Mulpuri {new Date().getFullYear()}.</FooterBottom>
+    </FooterSection>
   );
 }
+
+const FooterSection = styled.section`
+  width: 100%;
+  background: #0e0e0e;
+  display: block;
+  @media screen and (max-width: 660px) {
+    text-align: center !important;
+  }
+`;
+
+const InnerFooter = styled.div`
+  width: 95%;
+  margin: auto;
+  padding: 30px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  justify-content: center;
+`;
+
+const FooterItem = styled.div`
+  width: 25%;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  color: #fff;
+
+  & p {
+    font-size: 16px;
+    text-align: justify;
+    line-height: 25px;
+    color: #fff;
+  }
+
+  & h1 {
+    color: #fff;
+  }
+  @media screen and (max-width: 1275px) {
+    width: 50%;
+  }
+  @media screen and (max-width: 660px) {
+    width: 100%;
+  }
+`;
+
+const FooterBorder = styled.div`
+  height: 3px;
+  width: 40px;
+  background: #ff9800;
+  color: #ff9800;
+  background-color: #ff9800;
+  border: 0px;
+  @media screen and (max-width: 660px) {
+    display: none;
+  }
+`;
+
+const FooterBottom = styled.div`
+  padding: 10px;
+  background: #131313;
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+`;
+
+const FooterList = styled.ul`
+  list-style: none;
+  color: #fff;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+
+  & a {
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    transition: 0.3s;
+  }
+
+  & a:hover {
+    color: #ff9800;
+  }
+
+  & li {
+    margin: 10px 0;
+    height: 25px;
+  }
+`;
