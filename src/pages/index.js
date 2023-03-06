@@ -1,21 +1,25 @@
 import * as React from "react";
 import Header from "../components/Header";
 import HeroSection from "../components/HeroSection";
-import QuickViewSection from "../components/QuickViewSection";
-import ContactForm from "../components/ContactForm";
 import Footer from "../components/Footer";
-import AboutMe from "../components/AboutMe";
-import data from "../helpers/projects.json";
-const projects = data?.projects || [];
+import data from "../helpers/landingStatic.json";
+import MinimalCardSection from "@/components/MinimalCardSection";
 
-const IndexPage = ({ projects = [] }) => {
+const IndexPage = ({ staticContent = [] }) => {
   return (
     <main>
       <Header />
       <HeroSection />
-      <QuickViewSection {...{ projects }} />
-      <AboutMe />
-      <ContactForm />
+      {staticContent.map(
+        ({ heading, info, backgroundColor, imageUrl }, index) => (
+          <MinimalCardSection
+            key={index}
+            isTwisted={index % 2 === 0}
+            delayAmount={index * 0.2}
+            {...{ heading, info, backgroundColor, imageUrl }}
+          />
+        )
+      )}
       <Footer />
     </main>
   );
@@ -24,7 +28,7 @@ const IndexPage = ({ projects = [] }) => {
 export async function getStaticProps() {
   return {
     props: {
-      projects,
+      staticContent: data,
     },
   };
 }
