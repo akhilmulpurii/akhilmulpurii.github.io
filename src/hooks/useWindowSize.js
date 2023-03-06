@@ -7,7 +7,6 @@ export default function useWindowSize() {
     width: undefined,
     height: undefined,
   });
-
   useEffect(() => {
     // only execute all the code below in client side
     // Handler to call on window resize
