@@ -104,7 +104,7 @@ const ButtonContainer = styled.div`
 const WebButton = styled.a`
   text-decoration: none;
   color: white;
-  background-color: #030d03;
+  background-color: #353d35;
   font-weight: 600;
   width: 200px;
   display: flex;
