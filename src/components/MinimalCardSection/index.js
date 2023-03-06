@@ -69,7 +69,9 @@ const Card = styled(motion.div)`
     `};
   ${({ order }) =>
     css`
-      order: ${order};
+      @media only screen and (min-width: 600px) {
+        order: ${order};
+      }
     `};
 
   width: 50vw;
@@ -81,7 +83,7 @@ const Card = styled(motion.div)`
   padding: ${({ padding }) => padding || 0};
   @media only screen and (max-width: 600px) {
     width: 100vw;
-    height: 50vh;
+    min-height: 50vh;
   }
 
   & h1 {
@@ -91,6 +93,9 @@ const Card = styled(motion.div)`
     line-height: 1.4em;
     letter-spacing: 0.02em;
     word-wrap: break-word;
+    @media only screen and (max-width: 600px) {
+      font-size: 28px;
+    }
   }
 
   & h4 {
@@ -100,11 +105,17 @@ const Card = styled(motion.div)`
     font-size: 18px;
     line-height: 1.4em;
     letter-spacing: 0.01em;
+    @media only screen and (max-width: 600px) {
+      font-size: 16px;
+    }
   }
 
   & img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    @media only screen and (max-width: 600px) {
+      object-position: ${({ order }) => (order !== 1 ? "left" : "right")};
+    }
   }
 `;
