@@ -5,7 +5,7 @@ export const config = () => ({
   },
   auth: {
     tokenHost: "https://github.com",
-    tokenPath: "/oauth/token",
-    authorizePath: "/oauth/authorize",
+    tokenPath: "/login/oauth/access_token",
+    authorizePath: "/login/oauth/authorize",
   },
 });
