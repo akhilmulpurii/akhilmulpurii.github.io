@@ -14,9 +14,6 @@ const HeroSection = () => {
         Akhil
         <ClipText>UI-UX Developer</ClipText>
       </MainTitle>
-      {/* Akhil Mulpuri,
-      <br />
-      UI-UX Developer */}
     </Section>
   );
 };
@@ -46,6 +43,18 @@ const MainTitle = styled.h1`
   user-select: none;
   padding: 0;
   margin: 0;
+  /* Extra small devices (phones, 600px and down) */
+  @media only screen and (max-width: 600px) {
+    font-size: 24vw;
+    text-shadow: 5px 5px 0 #676d67;
+    -webkit-text-shadow: 5px 5px 0 #676d67;
+    -moz-text-shadow: 5px 5px 0 #676d67;
+  }
+
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  @media only screen and (min-width: 600px) {
+    font-size: 24vw;
+  }
 `;
 
 const ClipText = styled.div`
@@ -64,4 +73,19 @@ const ClipText = styled.div`
   text-align: center;
   padding: 5px 0;
   tranform: translateY(-40%);
+  /* Extra small devices (phones, 600px and down) */
+  @media only screen and (max-width: 600px) {
+    font-size: 4vw;
+    white-space: nowrap;
+    letter-spacing: 0.5rem;
+    top: 40%;
+  }
+
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  @media only screen and (min-width: 600px) {
+    font-size: 4vw;
+    white-space: nowrap;
+    letter-spacing: 0.5rem;
+    top: 40%;
+  }
 `;
