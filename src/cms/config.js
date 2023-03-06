@@ -3,6 +3,8 @@ export default {
   backend: {
     name: "github",
     repo: "akhilmulpurii/my-portfolio",
+    base_url: "https://akhil.pro",
+    auth_endpoint: "api/auth",
     branch: "main",
   },
   media_folder: "public/images",
