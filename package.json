@@ -14,12 +14,15 @@
     "@next/font": "13.1.6",
     "axios": "^1.2.6",
     "babel-plugin-styled-components": "^1.12.0",
+    "css-loader": "^6.7.3",
     "delaunay-fast": "^1.0.1",
     "eslint": "8.33.0",
     "eslint-config-next": "13.1.6",
     "firebase": "^8.4.2",
     "formik": "^2.2.9",
     "framer-motion": "^8.5.4",
+    "netlify-cms-app": "^2.15.72",
+    "netlify-cms-widget-colorpicker": "^1.0.3",
     "next": "13.1.6",
     "node-snackbar": "^0.1.16",
     "react": "18.2.0",
@@ -27,11 +30,15 @@
     "react-scroll": "^1.8.2",
     "react-tsparticles": "^2.8.0",
     "sass": "^1.32.8",
+    "sass-loader": "^13.2.0",
     "styled-components": "^5.3.6",
     "tsparticles": "^2.8.0",
     "yup": "^0.32.9"
   },
   "devDependencies": {
-    "babel-plugin-styled-components": "^1.12.0"
+    "@babel/core": "^7.21.0",
+    "@babel/preset-react": "^7.18.6",
+    "babel-plugin-styled-components": "^1.12.0",
+    "frontmatter-markdown-loader": "^3.7.0"
   }
 }

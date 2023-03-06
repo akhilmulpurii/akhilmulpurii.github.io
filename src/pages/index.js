@@ -2,8 +2,8 @@ import * as React from "react";
 import Header from "../components/Header";
 import HeroSection from "../components/HeroSection";
 import Footer from "../components/Footer";
-import data from "../helpers/landingStatic.json";
 import MinimalCardSection from "@/components/MinimalCardSection";
+import { attributes } from "../../content/home.md";
 
 const IndexPage = ({ staticContent = [] }) => {
   return (
@@ -28,7 +28,7 @@ const IndexPage = ({ staticContent = [] }) => {
 export async function getStaticProps() {
   return {
     props: {
-      staticContent: data,
+      staticContent: attributes.content,
     },
   };
 }
