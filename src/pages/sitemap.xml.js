@@ -18,11 +18,11 @@ function generateSiteMap(date) {
        <lastmod>${date}</lastmod>
      </url>
      <url>
-       <loc>https://www.akhil.pro/#about</loc>
+       <loc>https://www.akhil.pro/blogs</loc>
        <lastmod>${date}</lastmod>
      </url>
      <url>
-       <loc>https://www.akhil.pro/#contact</loc>
+       <loc>https://www.akhil.pro/contact</loc>
        <lastmod>${date}</lastmod>
      </url>
      <url>
