@@ -37,7 +37,7 @@ const Header = () => {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.8 }}
         />
-        <List color={mode === "dark" ? "#fff" : "#141414"}>
+        <List color={mode === "dark" ? "#fff" : "#030d03"}>
           <ListItem
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

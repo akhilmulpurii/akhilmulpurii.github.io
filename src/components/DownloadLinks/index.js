@@ -84,7 +84,7 @@ const Wrapper = styled.div`
 `;
 
 const Text = styled(motion.div)`
-  color: #141414;
+  color: #030d03;
   font-size: 32px;
   font-weight: 600;
 `;
@@ -104,7 +104,7 @@ const ButtonContainer = styled.div`
 const WebButton = styled.a`
   text-decoration: none;
   color: white;
-  background-color: #141414;
+  background-color: #030d03;
   font-weight: 600;
   width: 200px;
   display: flex;

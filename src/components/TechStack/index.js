@@ -61,7 +61,7 @@ const Wrapper = styled.div`
 `;
 
 const Chip = styled(motion.div)`
-  background-color: #141414;
+  background-color: #030d03;
   padding: 10px 20px;
   margin: 0 10px;
   border-radius: 5px;
@@ -72,7 +72,7 @@ const Chip = styled(motion.div)`
 `;
 
 const Text = styled(motion.span)`
-  color: #141414;
+  color: #030d03;
   font-size: 24px;
   font-weight: 300;
   padding-right: 20px;
@@ -81,7 +81,7 @@ const Text = styled(motion.span)`
     content: "";
     height: 100%;
     width: 1px;
-    background-color: #141414;
+    background-color: #030d03;
     display: flex;
     position: absolute;
     right: 6px;
