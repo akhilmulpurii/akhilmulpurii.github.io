@@ -1,6 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import { motion } from "framer-motion";
+import useWindowSize from "../../hooks/useWindowSize";
 
 export default function MinimalCardSection({
   backgroundColor = "#12e9ce",
@@ -12,6 +13,8 @@ export default function MinimalCardSection({
 }) {
   const firstCardDelay = delayAmount + (!isTwisted ? 1 : 0.5);
   const secondCardDelay = delayAmount + (isTwisted ? 1 : 0.5);
+  const { width } = useWindowSize();
+  const padding = width > 600 ? "8rem" : "3rem";
 
   return (
     <Container
@@ -23,7 +26,7 @@ export default function MinimalCardSection({
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: firstCardDelay }}
-        padding={"8rem"}
+        padding={padding}
         backgroundColor={backgroundColor}
       >
         <motion.h1
