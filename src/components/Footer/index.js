@@ -59,7 +59,9 @@ export default function Footer() {
         </FooterItem>
       </InnerFooter>
 
-      <FooterBottom>Akhil Mulpuri {new Date().getFullYear()}.</FooterBottom>
+      <FooterBottom>
+        Made with ❤️ by Akhil Mulpuri, {new Date().getFullYear()}.
+      </FooterBottom>
     </FooterSection>
   );
 }
