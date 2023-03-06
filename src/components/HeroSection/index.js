@@ -11,8 +11,18 @@ const HeroSection = () => {
       transition={{ duration: 1, delay: 0.5 }}
     >
       <MainTitle>
-        Akhil
-        <ClipText>UI-UX Developer</ClipText>
+        AKHIL
+        <ClipText
+          initial={{ width: 0, opacity: 0.8 }}
+          animate={{ width: "100%", opacity: 1 }}
+          transition={{
+            duration: 1,
+            delay: 1,
+            ease: [0.455, 0.03, 0.515, 0.955],
+          }}
+        >
+          UI-UX DEVELOPER
+        </ClipText>
       </MainTitle>
     </Section>
   );
@@ -28,6 +38,7 @@ const Section = styled(motion.section)`
   justify-content: center;
   align-items: center;
   position: relative;
+  flex-direction: column;
 `;
 
 const MainTitle = styled.h1`
@@ -57,7 +68,7 @@ const MainTitle = styled.h1`
   }
 `;
 
-const ClipText = styled.div`
+const ClipText = styled(motion.div)`
   color: #00bfc1;
   text-shadow: none;
   position: absolute;
