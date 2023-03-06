@@ -72,7 +72,7 @@ const ClipText = styled(motion.div)`
   color: #00bfc1;
   text-shadow: none;
   position: absolute;
-  font-size: 2vw;
+  font-size: 1.8vw;
   font-weight: 300;
   letter-spacing: 1rem;
   background-color: #030d03;
@@ -82,7 +82,7 @@ const ClipText = styled(motion.div)`
   right: 0;
   width: 100%;
   text-align: center;
-  padding: 5px 0;
+  padding: 0;
   tranform: translateY(-40%);
   /* Extra small devices (phones, 600px and down) */
   @media only screen and (max-width: 600px) {
