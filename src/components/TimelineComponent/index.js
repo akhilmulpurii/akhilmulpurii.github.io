@@ -54,9 +54,8 @@ function TimelineItem({
 
 const TimelineContainer = styled(motion.div)`
   position: relative;
-  padding: 2em 0;
-  margin-top: 2em;
-  margin-bottom: 2em;
+  padding: 0;
+  margin: 0;
   width: 100%;
   margin: 0 auto;
   background: #1a1a1a;
@@ -78,9 +77,6 @@ const TimelineContainer = styled(motion.div)`
   }
 
   @media only screen and (min-width: 1170px) {
-    margin-top: 3em;
-    margin-bottom: 3em;
-
     &:before {
       left: 50%;
       margin-left: -2px;
