@@ -15,6 +15,7 @@ export default class MyDocument extends Document {
             name="viewport"
             content="initial-scale=1.0, width=device-width"
           />
+          <title>Akhil Mulpuri | UI-UX Developer</title>
           <link
             rel="shortcut icon"
             sizes="16x16 32x32"
