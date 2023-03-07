@@ -2,6 +2,7 @@ import React from "react";
 import styled, { css } from "styled-components";
 import { motion } from "framer-motion";
 import useWindowSize from "../../hooks/useWindowSize";
+import Image from "next/image";
 
 export default function MinimalCardSection({
   backgroundColor = "#12e9ce",
@@ -50,7 +51,7 @@ export default function MinimalCardSection({
         transition={{ duration: 1, delay: secondCardDelay }}
         order={isTwisted ? 1 : -1}
       >
-        <img src={imageUrl} alt={"design"} />
+        <Image fill src={imageUrl} alt={"design"} />
       </Card>
     </Container>
   );
@@ -79,6 +80,7 @@ const Card = styled(motion.div)`
 
   width: 50vw;
   height: 70vh;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -114,8 +116,6 @@ const Card = styled(motion.div)`
   }
 
   & img {
-    width: 100%;
-    height: 100%;
     object-fit: cover;
     @media only screen and (max-width: 600px) {
       object-position: ${({ order }) => (order !== 1 ? "left" : "right")};
