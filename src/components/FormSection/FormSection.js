@@ -171,6 +171,7 @@ const Container = styled.div`
   padding: 60px;
   @media (max-width: 768px) {
     padding: 24px;
+    grid-template-columns: 1fr;
   }
 `;
 
