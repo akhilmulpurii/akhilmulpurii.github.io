@@ -2,6 +2,7 @@ import React from "react";
 import App from "next/app";
 import "../main.scss";
 import LoaderProvider from "../providers/LoaderProvider";
+import SnackbarProvider from "@/providers/SnackbarProvider";
 
 class MyApp extends App {
   constructor(props) {
@@ -11,9 +12,11 @@ class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props;
     return (
-      <LoaderProvider>
-        <Component {...pageProps} />
-      </LoaderProvider>
+      <SnackbarProvider>
+        <LoaderProvider>
+          <Component {...pageProps} />
+        </LoaderProvider>
+      </SnackbarProvider>
     );
   }
 }

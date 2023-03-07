@@ -12,7 +12,7 @@ export default function BadgePin() {
         </defs>
 
         <circle cx="150" cy="150" r="150" className="circleBg" fill="#000" />
-        <g class="circleText ">
+        <g className="circleText ">
           <use xlinkHref="#circlePath" fill="none" />
           <text
             fontFamily="Roboto Serif"
@@ -35,11 +35,11 @@ export default function BadgePin() {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+        <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
         <g
           id="SVGRepo_tracerCarrier"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         ></g>
         <g id="SVGRepo_iconCarrier">
           <path
@@ -74,7 +74,7 @@ const Badge = styled.div`
   }
 
   & .circleBg {
-    fill: #f7b733;
+    fill: #e5008d;
   }
 
   & .circleText {

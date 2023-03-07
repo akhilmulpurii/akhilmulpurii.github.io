@@ -101,9 +101,9 @@ const ProjectsListHero = () => {
               r="174"
               fill="none"
               stroke="#fff"
-              stroke-width="2"
-              stroke-miterlimit="10"
-              stroke-dasharray="12.921,11.9271"
+              strokeWidth="2"
+              strokeMiterlimit="10"
+              strokeDasharray="12.921,11.9271"
             />
           </svg>
         </div>
