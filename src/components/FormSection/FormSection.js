@@ -6,6 +6,7 @@ import Firebase from "@/service/firebase";
 import { ContactUsSchema } from "@/helpers/validationSchema";
 import { LoaderContext } from "@/providers/LoaderProvider";
 import { useSnackbar } from "@/hooks/useSnackbar";
+import { motion } from "framer-motion";
 
 const inputs = [
   {
@@ -131,10 +132,22 @@ FormSection.Input = ({
   name,
 }) => {
   const Component = type === "textarea" ? TextArea : Input;
+  const maxDelay = 2;
+  const labelDelay = index * 0.5 + 0.5;
+  const inputDelay = index * 0.5 + 0.8;
   return (
     <InputContainer>
-      <Label>{label}</Label>
+      <Label
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: labelDelay > maxDelay ? maxDelay : labelDelay }}
+      >
+        {label}
+      </Label>
       <Component
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: inputDelay > maxDelay ? maxDelay : inputDelay }}
         type={type}
         placeholder={placeholder}
         value={value}
@@ -169,13 +182,13 @@ const InputContainer = styled.div`
   position: relative;
 `;
 
-const Label = styled.label`
+const Label = styled(motion.label)`
   font-weight: 400;
   margin-bottom: 6px;
   letter-spacing: 2px;
 `;
 
-const Input = styled.input`
+const Input = styled(motion.input)`
   background-color: transparent;
   box-shadow: none;
   outline: none;
@@ -204,7 +217,7 @@ const ErrorMessage = styled.p`
   font-size: 12px;
 `;
 
-const TextArea = styled.textarea`
+const TextArea = styled(motion.textarea)`
   background-color: transparent;
   box-shadow: none;
   outline: none;

@@ -1,12 +1,23 @@
 import styled from "styled-components";
 import BadgePin from "../BadgePin";
+import { motion } from "framer-motion";
 
 export default function ContactHero() {
   return (
     <Container>
       <TextContainer>
-        <Heading>Let's work together!</Heading>
-        <Caption>
+        <Heading
+          initial={{ opacity: 0, y: 100 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          Let's work together!
+        </Heading>
+        <Caption
+          initial={{ opacity: 0, x: -100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+        >
           Let me help you become even greater at what you do.
           <br />
           Fill out the form below and I'll get back to you as soon as possible.
@@ -38,12 +49,12 @@ const TextContainer = styled.div`
   }
 `;
 
-const Heading = styled.h1`
+const Heading = styled(motion.h1)`
   font-size: 10vw;
   font-weight: 500;
 `;
 
-const Caption = styled.p`
+const Caption = styled(motion.p)`
   margin-top: 30px;
   font-size: 24px;
   font-weight: 200;

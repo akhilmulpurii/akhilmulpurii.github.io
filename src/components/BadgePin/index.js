@@ -1,8 +1,17 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
 export default function BadgePin() {
   return (
-    <Badge>
+    <Badge
+      initial={{ opacity: 0, scale: 0.8 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 1 }}
+      whileHover={{
+        scale: 1.2,
+        transition: { duration: 0.3 },
+      }}
+    >
       <svg viewBox="0 0 320 320" width="200" height="200">
         <defs>
           <path
@@ -62,7 +71,7 @@ export default function BadgePin() {
   );
 }
 
-const Badge = styled.div`
+const Badge = styled(motion.div)`
   display: inline-block;
   background: transparent;
   border-radius: 50%;
