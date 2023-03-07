@@ -185,9 +185,12 @@ const Input = styled.input`
   padding: 16px 0;
   letter-spacing: 1px;
   color: #fff;
-  /* placeholder color */
+  transition: all 0.2s ease-in-out;
   &::placeholder {
     color: #aaa;
+  }
+  &:focus {
+    border-bottom: 1px solid #e5008d;
   }
 `;
 
@@ -213,9 +216,12 @@ const TextArea = styled.textarea`
   border-bottom: 1px solid #aaa;
   padding: 16px 0;
   font-family: "Poppins", sans-serif;
-  /* placeholder color */
+  transition: all 0.2s ease-in-out;
   &::placeholder {
     color: #aaa;
+  }
+  &:focus {
+    border-bottom: 1px solid #e5008d;
   }
 `;
 

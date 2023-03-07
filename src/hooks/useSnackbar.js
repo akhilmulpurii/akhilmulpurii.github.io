@@ -11,6 +11,9 @@ export const useSnackbar = () => {
   return useCallback(
     (snack) => {
       dispatch({ type: "ADD_SNACKBAR", payload: { current: snack } });
+      setTimeout(() => {
+        dispatch({ type: "REMOVE_SNACKBAR", payload: { key: snack?.key } });
+      }, 4000);
     },
     [dispatch]
   );
