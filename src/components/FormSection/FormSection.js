@@ -136,10 +136,15 @@ FormSection.Input = ({
   const labelDelay = index * 0.5 + 0.5;
   const inputDelay = index * 0.5 + 0.8;
   return (
-    <InputContainer>
+    <InputContainer
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: labelDelay > maxDelay ? maxDelay : labelDelay }}
+      position={index}
+    >
       <Label
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
+        initial={{ y: 20 }}
+        animate={{ y: 0 }}
         transition={{ delay: labelDelay > maxDelay ? maxDelay : labelDelay }}
       >
         {label}
@@ -175,11 +180,25 @@ const StyledForm = styled(Form)`
   width: 100%;
 `;
 
-const InputContainer = styled.div`
+const InputContainer = styled(motion.div)`
   display: flex;
   flex-direction: column;
   margin-bottom: 40px;
   position: relative;
+  padding-left: 72px;
+
+  &:before {
+    content: "0${({ position }) => position + 1}";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    font-size: 18px;
+    font-weight: 300;
+    color: #aaa;
+    border: 1px solid #aaa;
+    padding: 0px 16px;
+    border-radius: 20px;
+  }
 `;
 
 const Label = styled(motion.label)`
