@@ -1,12 +1,11 @@
 import styled from "styled-components";
-import Snackbar from "node-snackbar";
 import { useContext } from "react";
 import { Form, Formik } from "formik";
-import Firebase from "@/service/firebase";
 import { ContactUsSchema } from "@/helpers/validationSchema";
 import { LoaderContext } from "@/providers/LoaderProvider";
 import { useSnackbar } from "@/hooks/useSnackbar";
 import { motion } from "framer-motion";
+import axios from "axios";
 
 const inputs = [
   {
@@ -48,7 +47,7 @@ export default function FormSection() {
   async function handleSubmit(values) {
     setLoader(true);
     try {
-      await Firebase.addDataToCollection(values);
+      await axios.post("/api/contact", values);
       showSnackbar({
         text: "Message has been recieved successfully. I will follow up soon!",
         variant: "success",
