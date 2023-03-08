@@ -1,7 +1,7 @@
 ---
 title: "React Native vs Flutter: What's the Difference?"
 description: "React Native and Flutter are two popular mobile app development frameworks. Both are designed to help developers build native mobile apps for iOS and Android platforms, but they differ in many ways. In this post, we'll explore the differences between React Native and Flutter and determine the best use cases for each framework."
-mainImage: /images/blogs/rnfvs.jpg
+mainImage: /images/blogs/rnfvs.jpeg
 date: 24, August, 2021
 author: "Akhil Mulpuri"
 avatarUrl: "/images/favicon.png"

@@ -29,7 +29,16 @@ export default function BlogHero({ blog }) {
 
 const BlogHeroContainer = styled.div`
   padding: 32px;
+  margin: 0 auto;
   margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 800px;
+  @media (max-width: 768px) {
+    margin-top: 0px;
+  }
 `;
 
 const TagsContainer = styled.div`
@@ -40,6 +49,9 @@ const TagsContainer = styled.div`
   width: 100%;
   justify-content: center;
   align-items: center;
+  @media (max-width: 768px) {
+    margin-bottom: 24px;
+  }
 `;
 
 const Tag = styled.span`
@@ -61,7 +73,6 @@ const BlogHeroText = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-left: 20px;
   width: 100%;
 `;
 
@@ -72,8 +83,11 @@ const BlogHeroTitle = styled.h1`
   margin: 0;
   text-align: center;
   margin-bottom: 48px;
-  max-width: 800px;
   letter-spacing: 1px;
+  @media (max-width: 768px) {
+    margin-bottom: 24px;
+    font-size: 6vw;
+  }
 `;
 
 const BlogHeroDescription = styled.p`
@@ -83,7 +97,12 @@ const BlogHeroDescription = styled.p`
   margin: 0 auto;
   text-align: center;
   line-height: 1.5;
-  max-width: 800px;
+
+  letter-spacing: 0.08rem;
+
+  @media (max-width: 768px) {
+    font-size: 0.8rem;
+  }
 `;
 
 const AuthorContainer = styled.div`
