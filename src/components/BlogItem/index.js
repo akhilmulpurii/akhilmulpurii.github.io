@@ -36,6 +36,9 @@ const BlogItem = styled(Link)`
   text-decoration: none;
   justify-content: space-between;
   margin: 14px 0;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const BlogContent = styled.div`
@@ -43,7 +46,7 @@ const BlogContent = styled.div`
   margin-top: 10px;
   justify-content: space-between;
 
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     flex-direction: column;
   }
 `;
@@ -53,6 +56,9 @@ const BlogTextSection = styled.div`
   flex-direction: column;
   flex: 1;
   max-width: 70vw;
+  @media (max-width: 768px) {
+    max-width: 100%;
+  }
 `;
 
 const BlogTitle = styled.h2`
@@ -77,6 +83,10 @@ const BlogImage = styled(Image)`
   border-radius: 10px;
   object-fit: cover;
   margin-left: 32px;
+  @media (max-width: 768px) {
+    margin-left: 0;
+    margin-top: 14px;
+  }
 `;
 
 const Column = styled.div`

@@ -9,7 +9,7 @@ const Header = () => {
   const router = useRouter();
   React.useEffect(() => {
     function handleBackgroundChange() {
-      const newMode = window.scrollY < 240 ? "dark" : "light";
+      const newMode = window.scrollY < 50 ? "dark" : "light";
       setMode(newMode);
     }
     window.addEventListener("scroll", handleBackgroundChange);

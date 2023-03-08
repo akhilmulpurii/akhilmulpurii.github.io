@@ -60,7 +60,7 @@ export default function MinimalCardSection({
 const Container = styled(motion.div)`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 768px) {
     grid-template-columns: 1fr;
   }
 `;
@@ -86,7 +86,7 @@ const Card = styled(motion.div)`
   align-items: center;
   flex-direction: column;
   padding: ${({ padding }) => padding || 0};
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 768px) {
     width: 100vw;
     min-height: 50vh;
   }
@@ -98,7 +98,7 @@ const Card = styled(motion.div)`
     line-height: 1.4em;
     letter-spacing: 0.02em;
     word-wrap: break-word;
-    @media only screen and (max-width: 600px) {
+    @media only screen and (max-width: 768px) {
       font-size: 28px;
     }
   }
@@ -110,14 +110,14 @@ const Card = styled(motion.div)`
     font-size: 18px;
     line-height: 1.4em;
     letter-spacing: 0.01em;
-    @media only screen and (max-width: 600px) {
+    @media only screen and (max-width: 768px) {
       font-size: 16px;
     }
   }
 
   & img {
     object-fit: cover;
-    @media only screen and (max-width: 600px) {
+    @media only screen and (max-width: 768px) {
       object-position: ${({ order }) => (order !== 1 ? "left" : "right")};
     }
   }

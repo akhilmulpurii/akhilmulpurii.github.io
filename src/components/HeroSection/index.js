@@ -55,7 +55,7 @@ const MainTitle = styled.h1`
   padding: 0;
   margin: 0;
   /* Extra small devices (phones, 600px and down) */
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 768px) {
     font-size: 24vw;
     text-shadow: 5px 5px 0 #676d67;
     -webkit-text-shadow: 5px 5px 0 #676d67;
@@ -85,7 +85,7 @@ const ClipText = styled(motion.div)`
   padding: 0;
   tranform: translateY(-40%);
   /* Extra small devices (phones, 600px and down) */
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 768px) {
     font-size: 4vw;
     white-space: nowrap;
     letter-spacing: 0.5rem;
