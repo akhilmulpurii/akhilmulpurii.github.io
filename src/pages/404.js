@@ -3,7 +3,7 @@ import * as React from "react";
 
 // styles
 const pageStyles = {
-  color: "#232129",
+  color: "#fff",
   padding: "96px",
   fontFamily: "-apple-system, Roboto, sans-serif, serif",
 };
@@ -45,7 +45,10 @@ const NotFoundPage = () => {
           </>
         ) : null}
         <br />
-        <Link href="/">Go home</Link>.
+        <Link href="/" style={{ textDecoration: "none", color: "#e2f166" }}>
+          Go home
+        </Link>
+        .
       </p>
     </main>
   );
