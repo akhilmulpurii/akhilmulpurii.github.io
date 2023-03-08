@@ -1,11 +1,9 @@
 import fs from "fs";
 import matter from "gray-matter";
-import Link from "next/link";
 import Head from "next/head";
 import styled from "styled-components";
 import { useState } from "react";
 import Header from "@/components/Header";
-import Image from "next/image";
 import BlogItem from "@/components/BlogItem";
 import Footer from "@/components/Footer";
 
@@ -13,6 +11,7 @@ const topics = ["Frontend", "Backend", "Design UI/UX", "DevOps", "Gaming"];
 
 export default function Home({ blogs }) {
   const [selectedTopics, setSelectedTopics] = useState([]);
+  const [searchText, setSearchText] = useState("");
 
   const handleSelectTopic = (topic) => {
     if (selectedTopics.includes(topic)) {
@@ -22,6 +21,28 @@ export default function Home({ blogs }) {
     }
   };
 
+  // Function for filter - filter based on searchText
+  // and also based on selected topics
+  const filterBlogs = (blog) => {
+    if (
+      searchText &&
+      !blog.title.includes(searchText) &&
+      !blog.description.includes(searchText)
+    ) {
+      return false;
+    }
+
+    if (selectedTopics.length > 0) {
+      // If selectedTopics is not empty
+      // then filter based on selected topics
+      return selectedTopics.some((topic) => blog.tags.includes(topic));
+    }
+
+    return true;
+  };
+
+  const filteredBlogs = blogs.filter(filterBlogs);
+
   return (
     <Page>
       <Head>
@@ -30,7 +51,11 @@ export default function Home({ blogs }) {
       <Header />
       <BlogContainer>
         <UpperNavigation>
-          <Searchbar placeholder="Search..." />
+          <Searchbar
+            placeholder="Search..."
+            value={searchText}
+            onChange={(e) => setSearchText(e.target.value)}
+          />
           <TopicsContainer>
             <span>My topics :</span>
             {topics.map((topic) => (
@@ -47,13 +72,19 @@ export default function Home({ blogs }) {
         <ArticleText>Articles</ArticleText>
         <hr />
 
-        {blogs.map((blog, index) => (
-          <BlogItem
-            blog={blog}
-            key={blog.slug}
-            isLast={index === blogs.length - 1}
-          />
-        ))}
+        {filteredBlogs.length ? (
+          filteredBlogs.map((blog, index) => (
+            <BlogItem
+              blog={blog}
+              key={blog.slug}
+              isLast={index === blogs.length - 1}
+            />
+          ))
+        ) : (
+          <EmptyBlogSection>
+            <h1>No blogs found</h1>
+          </EmptyBlogSection>
+        )}
       </BlogContainer>
       <Footer />
     </Page>
@@ -111,8 +142,9 @@ const Searchbar = styled.input`
     outline: none;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     width: 100%;
+    margin: 5px;
   }
 `;
 
@@ -124,6 +156,10 @@ const TopicsContainer = styled.div`
     color: #a3b2c1;
     font-size: 1rem;
     margin-right: 10px;
+  }
+
+  @media (max-width: 1024px) {
+    display: none;
   }
 `;
 
@@ -149,6 +185,10 @@ const TopicChip = styled.div`
     `
     background-color: #e5008d;
   `}
+
+  @media (max-width: 768px) {
+    margin: 5px;
+  }
 `;
 
 const ArticleText = styled.h1`
@@ -169,4 +209,19 @@ const BlogContainer = styled.section`
 
 const Page = styled.div`
   min-height: 100vh;
+`;
+
+const EmptyBlogSection = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #a3b2c1;
+  min-height: 50vh;
+  & h1 {
+    margin: 0;
+    font-weight: 400;
+  }
 `;
