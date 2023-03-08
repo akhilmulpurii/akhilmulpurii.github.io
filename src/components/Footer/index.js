@@ -101,11 +101,25 @@ const FooterItem = styled.div`
   & h1 {
     color: #fff;
   }
+
+  & li {
+    margin: 10px 0;
+    height: 25px;
+  }
+
+  & ul {
+    list-style: none;
+  }
+
   @media screen and (max-width: 1275px) {
     width: 50%;
   }
   @media screen and (max-width: 660px) {
     width: 100%;
+    & .designation {
+      text-align: center;
+      margin-top: 10px;
+    }
   }
 `;
 
