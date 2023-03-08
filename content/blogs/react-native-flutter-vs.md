@@ -5,12 +5,10 @@ mainImage: /images/blogs/rnfvs.jpg
 date: 24, August, 2021
 author: "Akhil Mulpuri"
 avatarUrl: "/images/favicon.png"
+tags:
+  - Frontend
 role: "UI/UX Developer"
 ---
-
-React Native and Flutter are two popular mobile app development frameworks. Both are designed to help developers build native mobile apps for iOS and Android platforms, but they differ in many ways. In this post, we'll explore the differences between React Native and Flutter and determine the best use cases for each framework.
-
-# React Native vs Flutter: What's the Difference?
 
 React Native is a framework developed by Facebook in 2015. It uses JavaScript and React to build native mobile apps. React Native allows developers to build apps for both iOS and Android platforms using a single codebase. React Native's architecture is based on the concept of "learn once, write anywhere."
 
