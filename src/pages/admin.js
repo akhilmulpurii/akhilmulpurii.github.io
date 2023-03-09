@@ -4,6 +4,7 @@ import collectionStyles from "!css-loader!sass-loader!../main.scss";
 import config from "@/cms/config";
 import { ColorControl, ColorPreview } from "netlify-cms-widget-colorpicker";
 import MinimalCardSectionPreview from "@/components/MinimalCardSection/MinimalCardSectionPreview";
+import BlogPostPreview from "@/components/BlogPost/BlogPostPreview";
 
 const Admin = () => {
   useEffect(() => {
@@ -14,6 +15,7 @@ const Admin = () => {
       CMS.registerWidget("color", ColorControl, ColorPreview);
 
       CMS.registerPreviewTemplate("home", MinimalCardSectionPreview);
+      CMS.registerPreviewTemplate("blog", BlogPostPreview);
     })();
   }, []);
   return <div />;

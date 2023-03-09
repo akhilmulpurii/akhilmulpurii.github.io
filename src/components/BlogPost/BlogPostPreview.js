@@ -1,9 +1,8 @@
 import React, { useEffect } from "react";
-import map from "lodash/map";
-import MinimalCardSection from "./index";
+import BlogPost from "./index";
 import { StyleSheetManager } from "styled-components";
 
-const MinimalCardSectionPreview = ({ entry }) => {
+const BlogPostPreview = ({ entry }) => {
   const data = entry.toJS().data;
 
   const [iframeHeadElem, setIframeHeadElem] = React.useState(null);
@@ -20,15 +19,24 @@ const MinimalCardSectionPreview = ({ entry }) => {
     return null;
   }
 
+  let frontmatter = {
+    title: data.title,
+    date: data.date,
+    description: data.description,
+    mainImage: data.mainImage,
+    author: data.author,
+    avatarUrl: data.avatarUrl,
+    role: data.role,
+    tags: data.tags,
+  };
+  const markdown = data.body;
+  console.log(123, data);
+
   return (
     <StyleSheetManager target={iframeHeadElem}>
-      <div>
-        {map(data?.content, (val, key) => {
-          return <MinimalCardSection key={key} {...val} />;
-        })}
-      </div>
+      <BlogPost frontmatter={frontmatter} markdown={markdown} />
     </StyleSheetManager>
   );
 };
 
-export default MinimalCardSectionPreview;
+export default BlogPostPreview;

@@ -1,26 +1,51 @@
 import Image from "next/image";
 import styled from "styled-components";
 import Author from "../Author";
+import { motion } from "framer-motion";
+import ExoticImage from "../ExoticImage";
 
 export default function BlogHero({ blog }) {
   return (
     <BlogHeroContainer>
-      <TagsContainer>
+      <TagsContainer
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.15 }}
+      >
         {blog?.tags?.map((tag) => (
           <Tag key={tag}>{tag}</Tag>
         ))}
       </TagsContainer>
       <BlogHeroText>
-        <BlogHeroTitle>{blog.title}</BlogHeroTitle>
-        <BlogHeroDescription>{blog.description}</BlogHeroDescription>
+        <BlogHeroTitle
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.15, delay: 0.1 }}
+        >
+          {blog.title}
+        </BlogHeroTitle>
+        <BlogHeroDescription
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.15, delay: 0.2 }}
+        >
+          {blog.description}
+        </BlogHeroDescription>
       </BlogHeroText>
-      <AuthorContainer>
+      <AuthorContainer
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.15, delay: 0.3 }}
+      >
         <Author blog={blog} />
       </AuthorContainer>
       <BlogHeroImage
         src={blog.mainImage}
         width={300}
         height={225}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.2, delay: 0.4 }}
         alt={`${blog.title} Main Image`}
       />
     </BlogHeroContainer>
@@ -41,7 +66,7 @@ const BlogHeroContainer = styled.div`
   }
 `;
 
-const TagsContainer = styled.div`
+const TagsContainer = styled(motion.div)`
   display: flex;
   flex-direction: row;
   margin-bottom: 32px;
@@ -59,9 +84,10 @@ const Tag = styled.span`
   font-weight: 600;
   color: #fff;
   letter-spacing: 0.08rem;
+  margin: 0 8px;
 `;
 
-const BlogHeroImage = styled(Image)`
+const BlogHeroImage = styled(ExoticImage)`
   width: 100%;
   height: auto;
   border-radius: 10px;
@@ -76,7 +102,7 @@ const BlogHeroText = styled.div`
   width: 100%;
 `;
 
-const BlogHeroTitle = styled.h1`
+const BlogHeroTitle = styled(motion.h1)`
   font-size: 4vw;
   font-weight: 400;
   color: #fff;
@@ -90,7 +116,7 @@ const BlogHeroTitle = styled.h1`
   }
 `;
 
-const BlogHeroDescription = styled.p`
+const BlogHeroDescription = styled(motion.p)`
   font-size: 1.2rem;
   font-weight: 400;
   color: #fff;
@@ -105,7 +131,7 @@ const BlogHeroDescription = styled.p`
   }
 `;
 
-const AuthorContainer = styled.div`
+const AuthorContainer = styled(motion.div)`
   display: flex;
   flex-direction: row;
   justify-content: center;

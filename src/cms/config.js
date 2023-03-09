@@ -43,6 +43,39 @@ export default {
       //# The fields for each document, usually in front matter
       fields: [
         { label: "Title", name: "title", widget: "string" },
+        { label: "Description", name: "description", widget: "text" },
+        {
+          label: "Banner Image",
+          name: "mainImage",
+          widget: "image",
+          media_folder: "blogs",
+        },
+        {
+          label: "Author Name",
+          name: "author",
+          widget: "string",
+          default: "Akhil Mulpuri",
+        },
+        {
+          label: "Author Avatar",
+          name: "avatarUrl",
+          widget: "image",
+          default: "/images/avatar.jpeg",
+        },
+        {
+          label: "Author Role",
+          name: "role",
+          widget: "string",
+          default: "UI/UX Developer",
+        },
+        {
+          label: "Tags",
+          name: "tags",
+          widget: "select",
+          options: ["Frontend", "Backend", "Design UI/UX", "DevOps", "Gaming"],
+          multiple: true,
+        },
+        { label: "Body", name: "body", widget: "markdown" },
         {
           label: "Publish Date",
           name: "date",
@@ -51,7 +84,6 @@ export default {
           time_format: "HH:mm",
           format: "LLL",
         },
-        { label: "Body", name: "body", widget: "markdown" },
       ],
     },
   ],
