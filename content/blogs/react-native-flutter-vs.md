@@ -4,7 +4,7 @@ description: "React Native and Flutter are two popular mobile app development fr
 mainImage: /images/blogs/rnfvs.jpeg
 date: 24, August, 2021
 author: "Akhil Mulpuri"
-avatarUrl: "/images/favicon.png"
+avatarUrl: "/images/avatar.jpeg"
 tags:
   - Frontend
 role: "UI/UX Developer"
