@@ -1,29 +1,39 @@
 import * as React from "react";
 import { motion } from "framer-motion";
 import styled from "styled-components";
+import { ButtonLink, Spacer } from "@/styled-components";
+
+const techStacks = [
+  { name: "React", color: "#00bfc1" },
+  { name: "Redux", color: "#643692" },
+  { name: "React Native", color: "#00bfc1" },
+  { name: "Flutter", color: "#fc8104" },
+  { name: "NodeJS", color: "#91c63c" },
+  { name: "Express", color: "#ebd519" },
+  { name: "Next.js", color: "#65d0ca" },
+  { name: "Framer Motion", color: "#c929a1" },
+  { name: "Tailwind CSS", color: "#11b0b6" },
+  { name: "Git", color: "#e44c31" },
+];
 
 // markup
 const HeroSection = () => {
   return (
     <Section
-      initial={{ opacity: 0, scale: 1.2 }}
+      initial={{ opacity: 0, scale: 1.1 }}
       animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 1, delay: 0.5 }}
+      transition={{ duration: 0.5 }}
     >
       <MainTitle>
-        AKHIL
-        <ClipText
-          initial={{ width: 0, opacity: 0.8 }}
-          animate={{ width: "100%", opacity: 1 }}
-          transition={{
-            duration: 1,
-            delay: 1,
-            ease: [0.455, 0.03, 0.515, 0.955],
-          }}
-        >
-          UI-UX DEVELOPER
+        Hi, I'm Sai Akhil Mulpuri,
+        <ClipText>
+          I develop using <span />
         </ClipText>
       </MainTitle>
+      <Spacer width={0} height={32} />
+      <ButtonLink href="/contact">
+        Let's talk <span>→</span>
+      </ButtonLink>
     </Section>
   );
 };
@@ -31,72 +41,53 @@ const HeroSection = () => {
 export default HeroSection;
 
 const Section = styled(motion.section)`
-  /* font-size: 10vw;
-  font-weight: 800; */
   height: 50vh;
   display: flex;
   justify-content: center;
-  align-items: center;
   position: relative;
   flex-direction: column;
+  padding: 0 9rem;
+  @media only screen and (max-width: 768px) {
+    padding: 0 3rem;
+  }
 `;
 
 const MainTitle = styled.h1`
-  text-transform: uppercase;
-  font-weight: 900;
-  font-size: 18vw;
+  font-weight: 700;
+  font-size: 4rem;
   color: #ffffff;
-  text-shadow: 16px 16px 0 #676d67;
-  -webkit-text-shadow: 16px 16px 0 #676d67;
-  -moz-text-shadow: 16px 16px 0 #676d67;
-  letter-spacing: 0.1em;
+  letter-spacing: 0em;
   position: relative;
   user-select: none;
   padding: 0;
   margin: 0;
+  color: #fff;
+
   /* Extra small devices (phones, 600px and down) */
   @media only screen and (max-width: 768px) {
-    font-size: 24vw;
-    text-shadow: 5px 5px 0 #676d67;
-    -webkit-text-shadow: 5px 5px 0 #676d67;
-    -moz-text-shadow: 5px 5px 0 #676d67;
-  }
-
-  /* Small devices (portrait tablets and large phones, 600px and up) */
-  @media only screen and (min-width: 600px) {
-    font-size: 24vw;
+    font-size: 2rem;
   }
 `;
 
 const ClipText = styled(motion.div)`
-  color: #00bfc1;
-  text-shadow: none;
-  position: absolute;
-  font-size: 1.8vw;
-  font-weight: 300;
-  letter-spacing: 1rem;
-  background-color: #030d03;
-  user-select: none;
-  top: 45%;
-  left: 0;
-  right: 0;
-  width: 100%;
-  text-align: center;
-  padding: 0;
-  tranform: translateY(-40%);
-  /* Extra small devices (phones, 600px and down) */
-  @media only screen and (max-width: 768px) {
-    font-size: 4vw;
-    white-space: nowrap;
-    letter-spacing: 0.5rem;
-    top: 40%;
-  }
+  color: #e4e8ec;
+  & span {
+    text-indent: 8px;
 
-  /* Small devices (portrait tablets and large phones, 600px and up) */
-  @media only screen and (min-width: 600px) {
-    font-size: 4vw;
-    white-space: nowrap;
-    letter-spacing: 0.5rem;
-    top: 40%;
+    @keyframes topToBottom {
+      ${techStacks.map((tech, index) => {
+        return `
+        ${(100 / techStacks.length) * index}% {
+          content: "${tech.name}.";
+          color: ${tech.color};
+        }
+        `;
+      })}
+    }
+    &:before {
+      content: "React.";
+      color: #00bfc1;
+      animation: topToBottom 15s infinite 0s;
+    }
   }
 `;

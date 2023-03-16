@@ -6,6 +6,7 @@ import { LoaderContext } from "@/providers/LoaderProvider";
 import { useSnackbar } from "@/hooks/useSnackbar";
 import { motion } from "framer-motion";
 import axios from "axios";
+import { Button } from "@/styled-components";
 
 const inputs = [
   {
@@ -254,33 +255,5 @@ const TextArea = styled(motion.textarea)`
   }
   &:focus {
     border-bottom: 1px solid #e5008d;
-  }
-`;
-
-const Button = styled.button`
-  width: fit-content;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 20px;
-  border: 2px solid #e5008d;
-  border-radius: 20px;
-  background-color: transparent;
-  color: #fff;
-  font-weight: 600;
-  cursor: pointer;
-  outline: none;
-  transition: all 0.2s ease-in-out;
-  &:hover {
-    background-color: #e5008d;
-    color: #fff;
-  }
-  &:active {
-    transform: scale(0.95);
-  }
-  & span {
-    margin-left: 10px;
-    margin-bottom: 2px;
-    font-weight: 900;
   }
 `;
