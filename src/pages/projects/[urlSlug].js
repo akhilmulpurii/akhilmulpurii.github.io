@@ -30,7 +30,7 @@ const IndexPage = ({ project = {} }) => {
   );
 };
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
   const { urlSlug = null } = context.params;
 
   const project = projects.find((project) => project.urlSlug === urlSlug) || {};
