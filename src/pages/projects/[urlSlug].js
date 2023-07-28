@@ -31,7 +31,7 @@ const IndexPage = ({ project = {} }) => {
 };
 
 export async function getServerSideProps(context) {
-  const { urlSlug } = context.params;
+  const { urlSlug: null } = context.params;
 
   const project = projects.find((project) => project.urlSlug === urlSlug) || {};
   if (project) {
