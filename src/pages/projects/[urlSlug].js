@@ -43,7 +43,7 @@ export const getStaticPaths = async () => {
   }
 }
 
-export async function getServerSideProps({ params }) {
+export function getStaticProps({ params }) {
 
   let project = projects.find(p => p.urlSlug === params.urlSlug);
     return {
