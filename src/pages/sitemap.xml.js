@@ -49,7 +49,7 @@ function SiteMap() {
 }
 
 // This function will be called at build time
-export async function getServerSideProps({ res }) {
+export async function getStaticProps({ res }) {
   // todays date
   const date = formatDate(new Date());
 
