@@ -30,19 +30,28 @@ const IndexPage = ({ project = {} }) => {
   );
 };
 
-export async function getServerSideProps(context) {
-  const { urlSlug = null } = context.params;
+export const getStaticPaths = async () => {
+  return {
+    paths: projects.map(p => (
+      {
+        params: {
+          urlSlug: p.urlSlug
+        },
+      }, // See the "paths" section below
+    )),
+    fallback: true, // false or "blocking"
+  }
+}
 
-  const project = projects.find((project) => project.urlSlug === urlSlug) || {};
-  if (project) {
+export async function getServerSideProps({ params }) {
+
+  let project = projects.find(p => p.urlSlug === params.urlSlug);
     return {
       props: {
         project,
       },
     };
-  } else {
-    return { notFound: true };
-  }
+  
 }
 
 export default IndexPage;
