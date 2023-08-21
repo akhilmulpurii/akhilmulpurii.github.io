@@ -31,14 +31,25 @@ const HeroSection = () => {
         </ClipText>
       </MainTitle>
       <Spacer width={0} height={32} />
-      <ButtonLink href="/contact">
-        Let's talk <span>→</span>
-      </ButtonLink>
+      <Flex>
+        <ButtonLink href="/projects">
+          View Portfolio <span>→</span>
+        </ButtonLink>
+        <Spacer height={0} width={16} />
+        <ButtonLink href="/contact">
+          Let's talk <span>→</span>
+        </ButtonLink>
+      </Flex>
     </Section>
   );
 };
 
 export default HeroSection;
+
+const Flex = styled.div`
+display: flex;
+flex-direction: row;
+`;
 
 const Section = styled(motion.section)`
   height: 50vh;
