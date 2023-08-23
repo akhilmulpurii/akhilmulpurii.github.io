@@ -1,36 +1,12 @@
 {
   "projects": [
     {
-      "title": "JustAct",
-      "image": "/images/justact.png",
-      "banner_image": "/images/justact.png",
-      "urlSlug": "justact",
-      "background": "linear-gradient(-40deg, #c9ffbf 0%,#ffafbd 100% )",
-      "large": true,
-      "technologies": ["React", "Webpack", "NodeJS"],
-      "platform": "Web",
-      "description": "JustAct is an Online Dispute Resolution that offers Negotiation as a technology-assisted mediation that uses a Game Theory-based algorithm to throw up a settlement number and will use AI to improve over time.",
-      "sections": [
-        {
-          "image": "/images/justact-2.png",
-          "heading": "What is JustAct?",
-          "caption": "JustAct is an Online Dispute Resolution that offers Negotiation as a technology-assisted mediation that uses a Game Theory-based algorithm to throw up a settlement number and will use AI to improve over time."
-        },
-        {
-          "image": "/images/justact-3.png",
-          "heading": "JustAct will issue a signed Settlement Agreement for Negotiation and Mediation which are enforceable.",
-          "caption": "JustAct offers you ready, relaxed resolution that embodies the spirit of ADR in its purest form by using independent and credible resolution techniques / professionals who are trained to resolve disputes amicably. It also offers all ADR services – Negotiation, Mediation / Conciliation and Arbitration in one place."
-        }
-      ],
-      "web_url": "https://justact.co.in/",
-      "appstore_url": null,
-      "playstore_url": null
-    },
-    {
       "title": "NoiseFit",
       "image": "/images/noisefit.png",
+      "short_description": "A companion app for Noise smart wearable devices",
       "banner_image": "/images/noise_banner.png",
       "urlSlug": "noisefit",
+      "banner_color": "#4e4276",
       "background": "linear-gradient(40deg, #43c6ac 0%,#191654 100% )",
       "large": false,
       "technologies": ["React Native", "Firebase", "Redux", "Shopify"],
@@ -55,7 +31,9 @@
     {
       "title": "HeyHey",
       "image": "/images/heyhey.png",
-      "banner_image": "/images/heyhey.png",
+      "short_description": "Customized video shout-outs from your favorite celebrities",
+      "banner_image": "/images/heyheyweb.png",
+      "banner_color": "#f15c5a",
       "urlSlug": "heyhey",
       "background": "linear-gradient(90deg, #dd5e89 0%,#f7bb97 100% )",
       "large": false,
@@ -86,7 +64,9 @@
     {
       "title": "Pharmaclock",
       "image": "/images/pharmaclock.png",
+      "short_description": "Pill Reminder & Medication Tracker",
       "banner_image": "/images/pharmaclock.png",
+      "banner_color": "#ff82ae",
       "urlSlug": "pharmaclock",
       "background": "linear-gradient(40deg, #E71561 0%,#f56e9f 100% )",
       "large": false,
@@ -104,7 +84,9 @@
     {
       "title": "HealthApp",
       "image": "/images/healthapp.png",
+      "short_description": "Track your health and fitness, made for wheelchair users",
       "banner_image": "/images/healthapp2.png",
+      "banner_color": "#13e4b0",
       "urlSlug": "healthapp",
       "background": "linear-gradient(40deg, #E71561 0%,#f56e9f 100% )",
       "large": false,
@@ -122,7 +104,9 @@
     {
       "title": "My Visitly",
       "image": "/images/visitly.png",
+      "short_description": "Contactless Sign-In/Off & Visitor Management System",
       "banner_image": "/images/visitly.png",
+      "banner_color": "#6cd5ed",
       "urlSlug": "my-visitly",
       "background": "linear-gradient(90deg, #89f7fe 0%,#66a6ff 100% )",
       "large": false,
@@ -143,6 +127,9 @@
     {
       "title": "Punch App",
       "image": "/images/punch.png",
+      "hide_home": true,
+      "banner_color": "#fff",
+      "short_description": "B2B Ecommerce App",
       "banner_image": "/images/punch.png",
       "urlSlug": "punchapp",
       "background": "linear-gradient(90deg, #ec008c 0%,#fc6767 100% )",
@@ -161,9 +148,39 @@
       "playstore_url": "https://play.google.com/store/apps/details?id=com.punchapp"
     },
     {
+      "title": "JustAct",
+      "image": "/images/justact.png",
+      "short_description": "An online dispute resolution platform",
+      "banner_image": "/images/justact-2.png",
+      "urlSlug": "justact",
+      "banner_color": "#b9d2c5",
+      "background": "linear-gradient(-40deg, #c9ffbf 0%,#ffafbd 100% )",
+      "large": true,
+      "technologies": ["React", "Webpack", "NodeJS"],
+      "platform": "Web",
+      "description": "JustAct is an Online Dispute Resolution that offers Negotiation as a technology-assisted mediation that uses a Game Theory-based algorithm to throw up a settlement number and will use AI to improve over time.",
+      "sections": [
+        {
+          "image": "/images/justact-2.png",
+          "heading": "What is JustAct?",
+          "caption": "JustAct is an Online Dispute Resolution that offers Negotiation as a technology-assisted mediation that uses a Game Theory-based algorithm to throw up a settlement number and will use AI to improve over time."
+        },
+        {
+          "image": "/images/justact-3.png",
+          "heading": "JustAct will issue a signed Settlement Agreement for Negotiation and Mediation which are enforceable.",
+          "caption": "JustAct offers you ready, relaxed resolution that embodies the spirit of ADR in its purest form by using independent and credible resolution techniques / professionals who are trained to resolve disputes amicably. It also offers all ADR services – Negotiation, Mediation / Conciliation and Arbitration in one place."
+        }
+      ],
+      "web_url": "https://justact.co.in/",
+      "appstore_url": null,
+      "playstore_url": null
+    },
+    {
       "title": "Winekey",
       "image": "/images/winekey.png",
-      "banner_image": "/images/winekey.png",
+      "banner_color": "#201619",
+      "short_description": "Virtual Events & Wine tastings experiences",
+      "banner_image": "/images/winkeybanner.png",
       "urlSlug": "winekey",
       "background": "linear-gradient(-90deg, #e5008d 30%,#ff070b 100% )",
       "large": false,
@@ -187,7 +204,9 @@
     {
       "title": "RangDe",
       "image": "/images/rangde.png",
+      "short_description": "B2B Paints & Waterproofing App",
       "banner_image": "/images/rangde.png",
+      "banner_color": "#f6b733",
       "urlSlug": "rangde",
       "background": "linear-gradient(90deg, #e65c00 0%,#f9d423 100% )",
       "large": false,

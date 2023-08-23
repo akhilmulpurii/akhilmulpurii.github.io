@@ -66,13 +66,14 @@ const Chip = styled(motion.div)`
   margin: 0 10px;
   border-radius: 5px;
   display: flex;
+  color: #fff;
   @media only screen and (max-width: 940px) {
     margin: 4px 0;
   }
 `;
 
 const Text = styled(motion.span)`
-  color: #030d03;
+  color: #fff;
   font-size: 24px;
   font-weight: 300;
   padding-right: 20px;
@@ -81,7 +82,7 @@ const Text = styled(motion.span)`
     content: "";
     height: 100%;
     width: 1px;
-    background-color: #030d03;
+    background-color: #fff;
     display: flex;
     position: absolute;
     right: 6px;

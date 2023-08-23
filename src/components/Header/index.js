@@ -5,19 +5,7 @@ import { useRouter } from "next/navigation";
 
 // markup
 const Header = () => {
-  const [mode, setMode] = React.useState("dark");
   const router = useRouter();
-  React.useEffect(() => {
-    function handleBackgroundChange() {
-      const newMode = window.scrollY < 50 ? "dark" : "light";
-      setMode(newMode);
-    }
-    window.addEventListener("scroll", handleBackgroundChange);
-    return () => {
-      window.removeEventListener("scroll", handleBackgroundChange);
-    };
-  }, []);
-
   const scrollTo = (id) => {
     document.querySelector(id).scrollIntoView({
       behavior: "smooth",
@@ -25,29 +13,20 @@ const Header = () => {
   };
 
   return (
-    <NavBar backgroundColor={mode === "dark" ? "transparent" : "#fff"}>
+    <NavBar backgroundColor={"#fff"}>
       <WidthFixer>
-        <Logo
-          alt="logo"
+        <LogoFlex
           onClick={() => router.push("/")}
-          src={"/images/favicon.png"}
           initial={{ opacity: 0, scale: 1.4 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.2 }}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.8 }}
-        />
-        <List color={mode === "dark" ? "#fff" : "#030d03"}>
-          <ListItem
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            onClick={() => router.push("/projects")}
-          >
-            Portfolio
-          </ListItem>
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.9 }}
+        >
+          <Logo alt="logo" src={"/images/favicon.png"} />
+          <b>Akhil Mulpuri</b>
+        </LogoFlex>
+        <List color={"#030d03"}>
           <ListItem
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -56,7 +35,7 @@ const Header = () => {
             whileTap={{ scale: 0.9 }}
             onClick={() => router.push("/blogs")}
           >
-            Blogs
+            Blog
           </ListItem>
           <ListItem
             initial={{ opacity: 0 }}
@@ -76,9 +55,24 @@ const Header = () => {
 
 export default Header;
 
+const LogoFlex = styled(motion.div)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  & b {
+    font-size: 24px;
+    user-select: none;
+    @media (max-width: 890px) {
+      display: none;
+    }
+  }
+`;
+
 const NavBar = styled.nav`
-  background-color: ${({ backgroundColor }) =>
-    backgroundColor ? backgroundColor : "transparent"};
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: saturate(180%) blur(20px);
   padding: 15px 0;
   position: sticky;
   top: 0;
@@ -86,7 +80,7 @@ const NavBar = styled.nav`
   z-index: 9999999;
 `;
 
-const Logo = styled(motion.img)`
+const Logo = styled.img`
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -99,6 +93,7 @@ const Logo = styled(motion.img)`
   font-size: 24px;
   font-weight: 600;
   cursor: pointer;
+  margin-right: 10px;
 `;
 
 const WidthFixer = styled.div`

@@ -23,6 +23,10 @@ export default class MyDocument extends Document {
             type="image/png"
           ></link>
           <meta name="robots" content="max-image-preview:large" />
+          <script
+            src="https://kit.fontawesome.com/abc30f29bb.js"
+            crossorigin="anonymous"
+          ></script>
         </Head>
         <body>
           <Main />

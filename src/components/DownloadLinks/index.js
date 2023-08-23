@@ -85,7 +85,7 @@ const Wrapper = styled.div`
 
 const Text = styled(motion.div)`
   color: #030d03;
-  font-size: 32px;
+  font-size: 18px;
   font-weight: 600;
 `;
 
@@ -104,28 +104,28 @@ const ButtonContainer = styled.div`
 const WebButton = styled.a`
   text-decoration: none;
   color: white;
-  background-color: #353d35;
+  background-color: #000;
   font-weight: 600;
-  width: 200px;
+  width: 150px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
   border-radius: 4px;
-  height: 57px;
+  height: 43.5px;
+  padding: 0 20px;
   cursor: pointer;
   & .small {
     font-size: 12px;
-    padding-left: 40px;
     display: inline-block;
   }
   & .large {
     display: block;
-    padding-left: 40px;
+    font-size: 14px;
   }
 `;
 
 const StoreBadge = styled.img`
-  width: 200px;
+  width: 150px;
   cursor: pointer;
 `;

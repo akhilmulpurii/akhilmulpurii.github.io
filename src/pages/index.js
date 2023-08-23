@@ -4,22 +4,12 @@ import HeroSection from "../components/HeroSection";
 import Footer from "../components/Footer";
 import MinimalCardSection from "@/components/MinimalCardSection";
 import { attributes } from "../../content/home.md";
+import GridHeroSection from "@/components/GridHeroSection/GridHeroSection";
 
 const IndexPage = ({ staticContent = [] }) => {
   return (
     <main>
-      <Header />
-      <HeroSection />
-      {staticContent.map(
-        ({ heading, info, backgroundColor, imageUrl }, index) => (
-          <MinimalCardSection
-            key={index}
-            isTwisted={index % 2 === 0}
-            delayAmount={index * 0.2}
-            {...{ heading, info, backgroundColor, imageUrl }}
-          />
-        )
-      )}
+      <GridHeroSection />
       <Footer />
     </main>
   );

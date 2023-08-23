@@ -65,7 +65,7 @@ const Container = styled(motion.section)`
   ${({ isEven }) =>
     !isEven &&
     css`
-      background-color: #232323;
+      background-color: #fafafa;
     `}
 `;
 

@@ -84,14 +84,12 @@ const Section = styled(motion.section)`
     0% {
       width: 0px;
       height: 0px;
-      background: #e9d856;
       border: 0px solid #ddd;
       opacity: 0;
     }
     50% {
       width: 10px;
       height: 10px;
-      background: #e9d856;
       opacity: 1;
       bottom: 45px;
     }
@@ -109,7 +107,6 @@ const Section = styled(motion.section)`
     100% {
       width: 7px;
       height: 7px;
-      background: #e9d856;
       border: 0px solid #222;
       bottom: 13px;
     }
@@ -135,7 +132,7 @@ const Block = styled.div`
 `;
 
 const Box = styled.div`
-  width: 250px;
+  width: fit-content;
   height: 250px;
   position: relative;
   display: flex;
@@ -146,7 +143,7 @@ const Box = styled.div`
 const Container = styled.div`
   width: 100%;
   height: 40vh;
-  background: #232323;
+  background: #fdfdfd;
 
   display: flex;
   justify-content: center;
@@ -165,9 +162,9 @@ const Title = styled.div`
 `;
 
 const Heading = styled.div`
-  font-family: "Poppins";
-  color: #fff;
-  font-size: 32px;
+  font-weight: 500;
+  color: #000;
+  font-size: 64px;
   -webkit-animation: mainFadeIn 2s forwards;
   -o-animation: mainFadeIn 2s forwards;
   animation: mainFadeIn 2s forwards;
@@ -184,7 +181,7 @@ const Heading = styled.div`
     -moz-border-radius: 50%;
     border-radius: 50%;
 
-    background: #ffb510;
+    background: #e21b6c;
     -webkit-animation: load 0.6s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
     animation: popIn 0.8s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
     animation-delay: 2s;
@@ -201,8 +198,9 @@ const Role = styled.div`
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: center;
   height: 30px;
-  margin-top: -10px;
+  margin-top: 10px;
 `;
 
 const RoleBlock = styled.div`
@@ -221,7 +219,7 @@ const Platform = styled.p`
   opacity: 0;
   font-weight: 400;
   font-family: "Lato";
-  color: #ffffff;
+  color: #000;
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 5px;
