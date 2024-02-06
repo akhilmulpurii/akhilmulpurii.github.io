@@ -1,5 +1,6 @@
 import { Component } from "react";
 import styled, { css } from "styled-components";
+import { motion } from "framer-motion";
 
 const keywords = [
   {
@@ -60,7 +61,16 @@ function SplashMessage() {
   return (
     <Container>
       {keywords.map((k, _) => (
-        <Line key={_} direction={k.direction} delay={(_ + 1) * 250}>
+        <Line
+          animate={{
+            opacity: 1,
+          }}
+          initial={{ opacity: 0 }}
+          transition={{ delay: (_ + 1) * 0.1 }}
+          key={_}
+          direction={k.direction}
+          delay={(_ + 1) * 250}
+        >
           {k.keywords.map((keyword) => (
             <KeyWord
               key={keyword}
@@ -92,7 +102,7 @@ export default function withSplashScreen(WrappedComponent) {
           this.setState({
             loading: false,
           });
-        }, 1000);
+        }, 1700);
       } catch (err) {
         console.log(err);
         this.setState({
@@ -122,7 +132,7 @@ const Container = styled.div`
   white-space: nowrap;
 `;
 
-const Line = styled.div`
+const Line = styled(motion.div)`
   width: 100%;
   display: inline-block;
   ${({ direction, delay }) =>
