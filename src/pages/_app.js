@@ -3,6 +3,7 @@ import App from "next/app";
 import "../main.scss";
 import LoaderProvider from "../providers/LoaderProvider";
 import SnackbarProvider from "@/providers/SnackbarProvider";
+import withSplashScreen from "@/components/SplashScreen";
 
 class MyApp extends App {
   constructor(props) {
@@ -21,4 +22,4 @@ class MyApp extends App {
   }
 }
 
-export default MyApp;
+export default withSplashScreen(MyApp);
