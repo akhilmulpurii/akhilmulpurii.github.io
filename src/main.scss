@@ -10,9 +10,11 @@
 
 body {
   font-family: "Raleway", sans-serif;
-  background-color: #fff;
-  color: black;
+  background-color: #000;
+  color: #fff;
 }
+
+// #region Old Code
 
 .loading-container {
   height: 100vh;
@@ -325,3 +327,5 @@ $magenta: #d000c5;
   margin: 0;
   padding: 0;
 }
+
+// #endregion
