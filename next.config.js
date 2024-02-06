@@ -4,7 +4,7 @@ const nextConfig = {
     appDir: false,
   },
   compiler: {
-    styledComponents: { ssr: true },
+    styledComponents: true,
   },
   webpack: (cfg) => {
     cfg.module.rules.push({
@@ -15,6 +15,5 @@ const nextConfig = {
     return cfg;
   },
 };
-
 
 module.exports = nextConfig;
