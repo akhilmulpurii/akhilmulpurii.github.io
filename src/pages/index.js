@@ -1,18 +1,9 @@
 import * as React from "react";
-import Header from "../components/Header";
-import HeroSection from "../components/HeroSection";
-import Footer from "../components/Footer";
-import MinimalCardSection from "@/components/MinimalCardSection";
 import { attributes } from "../../content/home.md";
-import GridHeroSection from "@/components/GridHeroSection/GridHeroSection";
+import Sidebar from "@/widgets/Sidebar";
 
 const IndexPage = ({ staticContent = [] }) => {
-  return (
-    <main>
-      <GridHeroSection />
-      <Footer />
-    </main>
-  );
+  return <Sidebar></Sidebar>;
 };
 
 export async function getStaticProps() {
