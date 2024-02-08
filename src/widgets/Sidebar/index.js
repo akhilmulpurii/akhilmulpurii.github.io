@@ -24,20 +24,20 @@ export default function Sidebar({ children }) {
 }
 
 const SidebarMenu = styled.div`
-  background-color: red;
   position: fixed;
   top: 0;
-  left: 60px;
+  left: 61px;
   bottom: 0px;
   padding: 16px;
   transition: width cubic-bezier(0.215, 0.61, 0.355, 1) 1s;
   white-space: nowrap;
-  z-index: 1000;
-  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  background: rgba(19, 19, 19, 0.59);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-right: 1px solid black;
+  border-right: 1px solid #202020;
+
   ${({ open }) =>
     open
       ? css`
@@ -65,13 +65,13 @@ const Main = styled.main`
 `;
 
 const SidebarContainer = styled.div`
-  background-color: black;
   display: flex;
   height: 100vh;
   border: none;
   border-right: 1px solid #202020;
   justify-content: space-between;
   flex-direction: column;
+  align-items: center;
   padding: 24px 10px;
   position: fixed;
   z-index: 1000;
@@ -89,8 +89,8 @@ Sidebar.NavIcon = ({ open, handleClick }) => (
 const NavLink = styled(Link)``;
 
 const NavIcon = styled.div`
-  width: 40px;
-  height: 21px;
+  width: 24px;
+  height: 20px;
   overflow: hidden;
   position: relative;
   -webkit-transform: rotate(0deg);
@@ -102,7 +102,6 @@ const NavIcon = styled.div`
   -o-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
   cursor: pointer;
-  margin-left: auto;
   & span {
     display: block;
     position: absolute;
@@ -128,11 +127,11 @@ const NavIcon = styled.div`
 
   & span:nth-child(2),
   & span:nth-child(3) {
-    top: 10px;
+    top: 8px;
   }
 
   & span:nth-child(4) {
-    top: 20px;
+    top: 16px;
   }
 
   &.open span:nth-child(1) {
