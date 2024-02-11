@@ -1,9 +1,14 @@
 import * as React from "react";
 import { attributes } from "../../content/home.md";
 import Sidebar from "@/widgets/Sidebar";
+import PortfolioHero from "@/widgets/PortfolioHero";
 
 const IndexPage = ({ staticContent = [] }) => {
-  return <Sidebar></Sidebar>;
+  return (
+    <Sidebar>
+      <PortfolioHero />
+    </Sidebar>
+  );
 };
 
 export async function getStaticProps() {

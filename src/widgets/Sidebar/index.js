@@ -65,6 +65,7 @@ const Main = styled.main`
 `;
 
 const SidebarContainer = styled.div`
+  background-color: #131313;
   display: flex;
   height: 100vh;
   border: none;
