@@ -14,7 +14,12 @@ export default function Sidebar({ children }) {
       <SidebarContainer>
         <Sidebar.NavIcon {...{ open, handleClick }} />
         <NavLink href="/">
-          <Image src={"/images/icons/logo.svg"} width={40} height={124} />
+          <Image
+            src={"/images/icons/logo.svg"}
+            alt="logo"
+            width={40}
+            height={124}
+          />
         </NavLink>
         {!matches ? <Sidebar.Arrow /> : <div style={{ width: 24 }} />}
       </SidebarContainer>

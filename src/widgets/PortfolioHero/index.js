@@ -28,7 +28,7 @@ export default function PortfolioHero() {
         </NameContainer>
       </Grid>
       <ImageContainer>
-        <BGImage src={"/images/focused.jpeg"} />
+        <BGImage alt="akhil" src={"/images/focused.jpeg"} />
         <ImageOverlay />
       </ImageContainer>
     </Section>
@@ -51,10 +51,16 @@ const ImageOverlay = styled.div`
 `;
 
 const ImageContainer = styled.div`
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 40vw;
+  @media only screen and (max-width: 992px) {
+    margin-top: 24px;
+    width: calc(100vw + 20px);
+  }
+  @media only screen and (min-width: 992px) {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 40vw;
+  }
 `;
 
 const BGImage = styled.img`
@@ -64,48 +70,87 @@ const BGImage = styled.img`
 `;
 
 const Bio = styled.p`
-  column-count: 2;
-  column-gap: 24px;
   color: #bebebe;
   line-height: 1.8;
-  width: 40vw;
   margin-top: 30px;
+
+  @media only screen and (max-width: 992px) {
+    width: 80vw;
+    font-size: 12px;
+    text-align: center;
+  }
+  @media only screen and (min-width: 992px) {
+    column-count: 2;
+    column-gap: 24px;
+    width: 40vw;
+  }
 `;
 
 const Grid = styled.div`
-  display: grid;
-  grid-template-columns: 4fr 1fr;
   z-index: 1;
+  @media only screen and (max-width: 992px) {
+    display: flex;
+  }
+  @media only screen and (min-width: 992px) {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+  }
 `;
 
 const Section = styled.section`
-  padding: 32px;
   display: flex;
   flex-direction: column;
   z-index: 1;
-  height: 100vh;
   justify-content: center;
   align-items: center;
   position: relative;
+  @media only screen and (max-width: 992px) {
+    height: auto;
+    padding: 16px;
+  }
+  @media only screen and (min-width: 992px) {
+    height: 100vh;
+    padding: 32px;
+  }
 `;
 
 const NameContainer = styled.div`
   position: relative;
   justify-self: center;
   align-self: center;
-  display: grid;
+  @media only screen and (max-width: 992px) {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 const Name = styled.h2`
   font-family: "Reenie Beanie", cursive;
   color: #ffc300;
-  font-size: 32px;
-  transform: rotate(-10deg) translate(-30px, -60px);
-  position: absolute;
+  @media only screen and (max-width: 992px) {
+    font-size: 18px;
+    text-align: left;
+    align-self: flex-start;
+    transform: rotate(-10deg);
+  }
+  @media only screen and (min-width: 992px) {
+    position: absolute;
+    font-size: 32px;
+    transform: rotate(-10deg) translate(-30px, -60px);
+  }
 `;
 
 const Heading = styled.h1`
   font-family: "Protest Strike", sans-serif;
-  font-size: 4rem;
-  width: 60vw;
+  @media only screen and (max-width: 992px) {
+    font-size: 2rem;
+    text-align: center;
+  }
+  @media only screen and (min-width: 992px) {
+    font-size: 4rem;
+    width: 60vw;
+  }
 `;
