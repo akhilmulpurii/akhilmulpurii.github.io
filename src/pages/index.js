@@ -7,6 +7,7 @@ const IndexPage = ({ staticContent = [] }) => {
   return (
     <Sidebar>
       <PortfolioHero />
+      <div style={{ height: "900vh" }} />
     </Sidebar>
   );
 };

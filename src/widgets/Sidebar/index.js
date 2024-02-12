@@ -2,10 +2,13 @@ import React, { useEffect, useState } from "react";
 import styled, { css } from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
+import { useMediaQuery } from "usehooks-ts";
 
 export default function Sidebar({ children }) {
   const [open, setOpen] = useState(false);
   const handleClick = () => setOpen((o) => !o);
+  const matches = useMediaQuery("(max-width: 992px)");
+
   return (
     <Main>
       <SidebarContainer>
@@ -13,7 +16,7 @@ export default function Sidebar({ children }) {
         <NavLink href="/">
           <Image src={"/images/icons/logo.svg"} width={40} height={124} />
         </NavLink>
-        <Sidebar.Arrow />
+        {!matches ? <Sidebar.Arrow /> : <div style={{ width: 24 }} />}
       </SidebarContainer>
       <PageLayout>
         <SidebarMenu open={open}></SidebarMenu>
@@ -62,20 +65,39 @@ const Main = styled.main`
   display: flex;
   width: 100%;
   height: 100%;
+  position: relative;
 `;
 
 const SidebarContainer = styled.div`
   background-color: #131313;
   display: flex;
-  height: 100vh;
   border: none;
-  border-right: 1px solid #202020;
   justify-content: space-between;
-  flex-direction: column;
   align-items: center;
-  padding: 24px 10px;
   position: fixed;
   z-index: 1000;
+  /* Extra small devices (phones, 600px and down) */
+  @media only screen and (max-width: 992px) {
+    flex-direction: row;
+    height: 60px;
+    width: 100vw;
+    overflow: hidden;
+    border-right: 0;
+    padding: 10px 24px;
+    border-bottom: 1px solid #202020;
+    top: 0;
+  }
+
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: 992px) {
+    flex-direction: column;
+    width: 60px;
+    height: 100vh;
+    overflow: hidden;
+    border-bottom: 0;
+    border-right: 1px solid #202020;
+    padding: 24px 10px;
+  }
 `;
 
 Sidebar.NavIcon = ({ open, handleClick }) => (
