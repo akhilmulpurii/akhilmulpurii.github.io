@@ -57,8 +57,13 @@ const PageLayout = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
-  margin-left: 60px;
   width: 100%;
+  @media only screen and (max-width: 992px) {
+    margin-top: 60px;
+  }
+  @media only screen and (min-width: 992px) {
+    margin-left: 60px;
+  }
 `;
 
 const Main = styled.main`
