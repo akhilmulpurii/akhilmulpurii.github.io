@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
 import { useMediaQuery } from "usehooks-ts";
-
+import { motion } from "framer-motion";
 export default function Sidebar({ children }) {
   const [open, setOpen] = useState(false);
   const handleClick = () => setOpen((o) => !o);
@@ -14,12 +14,23 @@ export default function Sidebar({ children }) {
       <SidebarContainer>
         <Sidebar.NavIcon {...{ open, handleClick }} />
         <NavLink href="/">
-          <Image
-            src={"/images/icons/logo.svg"}
-            alt="logo"
-            width={40}
-            height={124}
-          />
+          <AnimatedImage
+            animate={{ scale: 1, opacity: 1 }}
+            initial={{ scale: 0.8, opacity: 0.5 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Image
+              src={
+                matches
+                  ? "/images/icons/logo-hor.svg"
+                  : "/images/icons/logo.svg"
+              }
+              alt="logo"
+              width={matches ? 124 : 40}
+              height={matches ? 40 : 124}
+            />
+          </AnimatedImage>
         </NavLink>
         {!matches ? <Sidebar.Arrow /> : <div style={{ width: 24 }} />}
       </SidebarContainer>
@@ -30,6 +41,8 @@ export default function Sidebar({ children }) {
     </Main>
   );
 }
+
+const AnimatedImage = styled(motion.div)``;
 
 const SidebarMenu = styled.div`
   position: fixed;
