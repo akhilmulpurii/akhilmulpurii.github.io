@@ -1,20 +1,50 @@
 import React from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion";
+import { useMediaQuery } from "usehooks-ts";
 
 export default function PortfolioHero() {
+  const matches = useMediaQuery("(max-width: 992px)");
+
+  const animateConfig = {
+    animate: {
+      x: matches ? 0 : -60,
+      y: matches ? 0 : -60,
+      opacity: 1,
+      rotate: -10,
+    },
+    initial: {
+      x: matches ? 0 : -60,
+      y: matches ? 0 : 0,
+      opacity: 0,
+      rotate: -10,
+    },
+  };
+
   return (
     <Section>
       <Grid>
         <NameContainer>
-          <Name>
+          <Name
+            {...animateConfig}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+          >
             Hey, I'm
             <br />
             Sai Akhil Mulpuri
           </Name>
-          <Heading>
+          <Heading
+            animate={{ y: 0, opacity: 1 }}
+            initial={{ y: 60, opacity: 0 }}
+            transition={{ duration: 0.5, ease: "easeInOut", delay: 0.25 }}
+          >
             Expert in Designing Tomorrow's Digital Experiences Today
           </Heading>
-          <Bio>
+          <Bio
+            animate={{ y: 0, opacity: 1 }}
+            initial={{ y: 60, opacity: 0 }}
+            transition={{ duration: 0.7, ease: "anticipate", delay: 0.5 }}
+          >
             As a seasoned front-end developer, I bring extensive expertise in
             technologies like ReactJs, React Native, Flutter, and VueJs. My
             passion lies in crafting user-friendly websites and web apps. I
@@ -27,7 +57,11 @@ export default function PortfolioHero() {
           </Bio>
         </NameContainer>
       </Grid>
-      <ImageContainer>
+      <ImageContainer
+        animate={{ y: 0, opacity: 1, scale: 1 }}
+        initial={{ y: 60, opacity: 0, scale: 0.9 }}
+        transition={{ duration: 0.7, ease: "backIn", delay: 0.7 }}
+      >
         <BGImage alt="akhil" src={"/images/focused.jpeg"} />
         <ImageOverlay />
       </ImageContainer>
@@ -50,7 +84,7 @@ const ImageOverlay = styled.div`
   ); /* Chrome 10-25, Safari 5.1-6 */
 `;
 
-const ImageContainer = styled.div`
+const ImageContainer = styled(motion.div)`
   @media only screen and (max-width: 992px) {
     margin-top: 24px;
     width: calc(100vw + 20px);
@@ -69,7 +103,7 @@ const BGImage = styled.img`
   height: 100%;
 `;
 
-const Bio = styled.p`
+const Bio = styled(motion.p)`
   color: #bebebe;
   line-height: 1.8;
   margin-top: 30px;
@@ -127,7 +161,7 @@ const NameContainer = styled.div`
   }
 `;
 
-const Name = styled.h2`
+const Name = styled(motion.h2)`
   font-family: "Reenie Beanie", cursive;
   color: #ffc300;
   @media only screen and (max-width: 992px) {
@@ -143,7 +177,7 @@ const Name = styled.h2`
   }
 `;
 
-const Heading = styled.h1`
+const Heading = styled(motion.h1)`
   font-family: "Protest Strike", sans-serif;
   @media only screen and (max-width: 992px) {
     font-size: 2rem;
