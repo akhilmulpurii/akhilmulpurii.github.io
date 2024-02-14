@@ -4,6 +4,7 @@ import "../main.scss";
 import LoaderProvider from "../providers/LoaderProvider";
 import SnackbarProvider from "@/providers/SnackbarProvider";
 import withSplashScreen from "@/components/SplashScreen";
+import Head from "next/head";
 
 class MyApp extends App {
   constructor(props) {
@@ -15,6 +16,9 @@ class MyApp extends App {
     return (
       <SnackbarProvider>
         <LoaderProvider>
+          <Head>
+            <title>Akhil Mulpuri | Full Stack Web Developer</title>
+          </Head>
           <Component {...pageProps} />
         </LoaderProvider>
       </SnackbarProvider>

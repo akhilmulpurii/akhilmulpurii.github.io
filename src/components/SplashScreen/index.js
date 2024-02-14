@@ -1,6 +1,7 @@
 import { Component } from "react";
 import styled, { css } from "styled-components";
 import { motion } from "framer-motion";
+import Head from "next/head";
 
 const keywords = [
   {
@@ -60,6 +61,9 @@ function SplashMessage() {
 
   return (
     <Container>
+      <Head>
+        <title>Akhil Mulpuri | Full Stack Web Developer</title>
+      </Head>
       {keywords.map((k, _) => (
         <Line
           animate={{

@@ -32,7 +32,6 @@ export default class MyDocument extends Document {
             name="viewport"
             content="initial-scale=1.0, width=device-width"
           />
-          <title>Akhil Mulpuri | UI-UX Developer</title>
           <link
             rel="shortcut icon"
             sizes="16x16 32x32"
@@ -42,7 +41,7 @@ export default class MyDocument extends Document {
           <meta name="robots" content="max-image-preview:large" />
           <script
             src="https://kit.fontawesome.com/abc30f29bb.js"
-            crossorigin="anonymous"
+            crossOrigin="anonymous"
           ></script>
         </Head>
         <body>
