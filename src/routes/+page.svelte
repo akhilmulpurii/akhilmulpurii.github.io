@@ -5,5 +5,5 @@
 <div>
 	<HeroSection />
 	<div style="height: 60vh;" class="bg-red-400 porfolioSection" />
-	<div style="height: 400vh;" id="" class="bg-blue-400" />
+	<div style="height: 40vh;" id="" class="bg-blue-400" />
 </div>

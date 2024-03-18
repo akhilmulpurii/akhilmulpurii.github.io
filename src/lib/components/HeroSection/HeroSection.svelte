@@ -6,18 +6,27 @@
 	onMount(() => {
 		gsap.registerPlugin(ScrollTrigger);
 
-		gsap.to('.title', {
-			scale: 0.5,
-			y: '100vh',
-			scrollTrigger: {
-				trigger: '.heroSection',
-				start: 'top top',
-				endTrigger: '.porfolioSection',
-				end: 'bottom top',
-				markers: true,
-				scrub: true
+		gsap.fromTo(
+			'.title',
+			{
+				opacity: '100%',
+				scale: 1,
+				y: 0
+			},
+			{
+				scale: 0.75,
+				y: '120vh',
+				opacity: '50%',
+				scrollTrigger: {
+					trigger: '.heroSection',
+					start: 'top top',
+					endTrigger: '.porfolioSection',
+					end: 'bottom top',
+					markers: true,
+					scrub: true
+				}
 			}
-		});
+		);
 	});
 </script>
 
