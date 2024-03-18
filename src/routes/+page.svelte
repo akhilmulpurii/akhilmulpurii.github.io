@@ -1,2 +1,9 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+	import HeroSection from '$lib/components/HeroSection/HeroSection.svelte';
+</script>
+
+<div>
+	<HeroSection />
+	<div style="height: 60vh;" class="bg-red-400 porfolioSection" />
+	<div style="height: 400vh;" id="" class="bg-blue-400" />
+</div>
