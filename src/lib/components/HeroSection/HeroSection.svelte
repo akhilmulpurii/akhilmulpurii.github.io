@@ -7,8 +7,8 @@
 		gsap.registerPlugin(ScrollTrigger);
 
 		gsap.to('.title', {
-			// transform: 'perspective(5px) translateZ(-5px)',
-			scale: 0.8,
+			scale: 0.5,
+			y: '100vh',
 			scrollTrigger: {
 				trigger: '.heroSection',
 				start: 'top top',
@@ -21,7 +21,10 @@
 	});
 </script>
 
-<section id="heroSection" class="flex items-center heroSection justify-center h-screen">
+<section
+	id="heroSection"
+	class="flex items-center heroSection justify-center h-screen overflow-hidden"
+>
 	<h1 class="title text-8xl font-bold text-center opacity-100">
 		I'm Sai Akhil Mulpuri<br />Full Stack Developer
 	</h1>
