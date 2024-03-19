@@ -4,6 +4,7 @@
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import lines from '$lib/assets/lines.svg';
 	import noise from '$lib/assets/noise.png';
+	import GradientBackground from '../GradientBackground/GradientBackground.svelte';
 
 	onMount(() => {
 		gsap.registerPlugin(ScrollTrigger);
@@ -14,52 +15,54 @@
 			endTrigger: '.porfolioSection',
 			end: 'bottom top',
 			markers: true,
-			scrub: true
+			scrub: 1
 		};
-
-		gsap.fromTo('.lines', { opacity: '20%' }, { opacity: '0%', scrollTrigger });
 
 		gsap.to('#leftLine', { scrollTrigger, x: -500 });
 		gsap.to('#rightLine', { scrollTrigger, x: 500 });
 
-		gsap.fromTo(
-			'.title',
-			{
-				opacity: '100%',
-				scale: 1,
-				y: 0
-			},
-			{
-				scale: 0.75,
-				y: '120vh',
-				opacity: '50%',
-				scrollTrigger
-			}
-		);
+		gsap.to('.title', {
+			scale: 0.75,
+			y: '120vh',
+			scrollTrigger
+		});
 	});
 </script>
 
-<section
-	id="heroSection"
-	class="flex relative items-center heroSection justify-center h-screen overflow-hidden"
+<GradientBackground
+	gradientBackgroundEnd="#0d0c09"
+	gradientBackgroundStart="#101b43"
+	firstColor="35, 7, 77"
+	secondColor="115, 3, 192"
+	thirdColor="28, 181, 224"
+	fourthColor="0, 90, 167"
+	pointerColor="78, 84, 200"
+	fifthColor="102, 166, 255"
+	className="absolute z-10 inset-0 flex items-center justify-center pointer-events-none"
 >
+	<h1
+		class="title font-bold text-center opacity-100 z-20 text-8xl bg-clip-text text-transparent drop-shadow-2xl bg-gradient-to-b from-white/80 to-white/40"
+	>
+		I'm Sai Akhil Mulpuri<br />Full Stack Developer
+	</h1>
+
 	<div class="absolute w-screen h-screen">
-		<img class="inset-0 w-full h-full absolute z-10 pointer-events-none" src={noise} alt="noise" />
+		<img
+			class="inset-0 opacity-70 w-full h-full absolute z-10 pointer-events-none"
+			src={noise}
+			alt="noise"
+		/>
 		<img
 			id="leftLine"
-			class="lines opacity-20 absolute left-0 top-0 bottom-0 object-contain h-full"
+			class="opacity-10 absolute left-0 top-0 bottom-0 object-contain h-full"
 			src={lines}
 			alt="lines"
 		/>
 		<img
 			id="rightLine"
-			class="lines opacity-20 absolute right-0 rotate-180 top-0 bottom-0 object-contain h-full"
+			class="opacity-10 absolute right-0 rotate-180 top-0 bottom-0 object-contain h-full"
 			src={lines}
 			alt="lines"
 		/>
 	</div>
-
-	<h1 class="title text-8xl font-bold text-center opacity-100">
-		I'm Sai Akhil Mulpuri<br />Full Stack Developer
-	</h1>
-</section>
+</GradientBackground>
