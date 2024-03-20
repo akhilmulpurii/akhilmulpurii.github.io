@@ -16,13 +16,6 @@
 	export let containerClassName = '';
 	export let className = '';
 
-	let interactiveRef: HTMLDivElement | null;
-
-	let curX = 0;
-	let curY = 0;
-	let tgX = 0;
-	let tgY = 0;
-
 	let isSafari = false;
 
 	onMount(() => {
@@ -40,27 +33,6 @@
 		// Detect Safari
 		isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 	});
-
-	function handleMouseMove(event: MouseEvent) {
-		if (interactiveRef) {
-			const rect = interactiveRef.getBoundingClientRect();
-			tgX = event.clientX - rect.left;
-			tgY = event.clientY - rect.top;
-		}
-	}
-
-	$: {
-		function move() {
-			if (!interactiveRef) {
-				return;
-			}
-			curX = curX + (tgX - curX) / 20;
-			curY = curY + (tgY - curY) / 20;
-			interactiveRef.style.transform = `translate(${Math.round(curX)}px, ${Math.round(curY)}px)`;
-		}
-
-		move();
-	}
 </script>
 
 <div
@@ -84,12 +56,8 @@
 		</defs>
 	</svg>
 	<div class={cn('', className)}><slot /></div>
-	<div class="absolute top-0 z-10 w-screen h-screen">
-		<img
-			class="inset-0 opacity-70 w-full h-full absolute z-20 pointer-events-none"
-			src={noise}
-			alt="noise"
-		/>
+	<div class="absolute top-0 w-screen h-screen">
+		<img class="inset-0 opacity-70 w-full h-full absolute z-0" src={noise} alt="noise" />
 		<img
 			id="leftLine"
 			class="opacity-10 absolute left-0 top-0 bottom-0 object-contain h-full"
@@ -152,17 +120,6 @@
 				`[transform-origin:calc(50%-800px)_calc(50%+800px)]`,
 				`animate-fifth`,
 				`opacity-100`
-			)}
-		></div>
-
-		<div
-			role="presentation"
-			on:mousemove={handleMouseMove}
-			bind:this={interactiveRef}
-			class={cn(
-				`absolute [background:radial-gradient(circle_at_center,_rgba(var(--pointer-color),_0.8)_0,_rgba(var(--pointer-color),_0)_50%)_no-repeat]`,
-				`[mix-blend-mode:var(--blending-value)] w-full h-full -top-1/2 -left-1/2`,
-				`opacity-70`
 			)}
 		></div>
 	</div>
