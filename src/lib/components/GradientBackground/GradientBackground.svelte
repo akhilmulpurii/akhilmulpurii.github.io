@@ -1,15 +1,16 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { cn } from '$lib/utils';
-
-	export let gradientBackgroundStart = 'rgb(108, 0, 162)';
-	export let gradientBackgroundEnd = 'rgb(0, 17, 82)';
-	export let firstColor = '18, 113, 255';
-	export let secondColor = '221, 74, 255';
-	export let thirdColor = '100, 220, 255';
-	export let fourthColor = '200, 50, 50';
-	export let fifthColor = '180, 180, 50';
-	export let pointerColor = '140, 100, 255';
+	import lines from '$lib/assets/lines.svg';
+	import noise from '$lib/assets/noise.png';
+	export let gradientBackgroundEnd = '#0d0c09';
+	export let gradientBackgroundStart = '#101b43';
+	export let firstColor = '35, 7, 77';
+	export let secondColor = '115, 3, 192';
+	export let thirdColor = '28, 181, 224';
+	export let fourthColor = '0, 90, 167';
+	export let pointerColor = '78, 84, 200';
+	export let fifthColor = '102, 166, 255';
 	export let size = '80%';
 	export let blendingValue = 'hard-light';
 	export let containerClassName = '';
@@ -83,6 +84,25 @@
 		</defs>
 	</svg>
 	<div class={cn('', className)}><slot /></div>
+	<div class="absolute top-0 z-10 w-screen h-screen">
+		<img
+			class="inset-0 opacity-70 w-full h-full absolute z-20 pointer-events-none"
+			src={noise}
+			alt="noise"
+		/>
+		<img
+			id="leftLine"
+			class="opacity-10 absolute left-0 top-0 bottom-0 object-contain h-full"
+			src={lines}
+			alt="lines"
+		/>
+		<img
+			id="rightLine"
+			class="opacity-10 absolute right-0 rotate-180 top-0 bottom-0 object-contain h-full"
+			src={lines}
+			alt="lines"
+		/>
+	</div>
 	<div
 		class={cn(
 			'gradients-container z-0 h-full w-full blur-lg absolute top-0 left-0 right-0 bottom-0',
