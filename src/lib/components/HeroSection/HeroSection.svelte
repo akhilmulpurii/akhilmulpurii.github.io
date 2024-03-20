@@ -10,20 +10,21 @@
 		gsap.registerPlugin(ScrollTrigger);
 
 		const scrollTrigger = {
+			pin: '.title',
 			trigger: '.heroSection',
 			start: 'top top',
 			endTrigger: '.porfolioSection',
-			end: 'bottom top',
+			end: 'top top',
 			markers: true,
-			scrub: 1
+			scrub: true
 		};
 
 		gsap.to('#leftLine', { scrollTrigger, x: -500 });
 		gsap.to('#rightLine', { scrollTrigger, x: 500 });
 
 		gsap.to('.title', {
-			scale: 0.75,
-			y: '120vh',
+			scale: 0.5,
+			// y: '120vh',
 			scrollTrigger
 		});
 	});
@@ -41,7 +42,7 @@
 	className="absolute z-10 inset-0 flex items-center justify-center pointer-events-none"
 >
 	<h1
-		class="title font-bold text-center opacity-100 z-20 text-8xl bg-clip-text text-transparent drop-shadow-2xl bg-gradient-to-b from-white/80 to-white/40"
+		class="title font-bold text-center opacity-100 z-20 text-8xl bg-clip-text text-transparent drop-shadow-2xl bg-gradient-to-b from-white/100 to-white/40"
 	>
 		I'm Sai Akhil Mulpuri<br />Full Stack Developer
 	</h1>
