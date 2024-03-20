@@ -10,21 +10,17 @@
 		gsap.registerPlugin(ScrollTrigger);
 
 		const scrollTrigger = {
-			pin: '.title',
+			pin: '.heroOuter',
 			trigger: '.heroSection',
 			start: 'top top',
 			endTrigger: '.porfolioSection',
 			end: 'top top',
-			markers: true,
+			markers: false,
 			scrub: true
 		};
 
-		gsap.to('#leftLine', { scrollTrigger, x: -500 });
-		gsap.to('#rightLine', { scrollTrigger, x: 500 });
-
-		gsap.to('.title', {
+		gsap.to('.heroInner', {
 			scale: 0.5,
-			// y: '120vh',
 			scrollTrigger
 		});
 	});
@@ -39,17 +35,20 @@
 	fourthColor="0, 90, 167"
 	pointerColor="78, 84, 200"
 	fifthColor="102, 166, 255"
-	className="absolute z-10 inset-0 flex items-center justify-center pointer-events-none"
+	className="pointer-events-none relative z-10 flex items-center justify-center"
 >
-	<h1
-		class="title font-bold text-center opacity-100 z-20 text-8xl bg-clip-text text-transparent drop-shadow-2xl bg-gradient-to-b from-white/100 to-white/40"
-	>
-		I'm Sai Akhil Mulpuri<br />Full Stack Developer
-	</h1>
-
-	<div class="absolute w-screen h-screen">
+	<div class="relative h-screen heroOuter w-full z-20 flex justify-center items-center">
+		<div class="heroInner flex justify-center items-center">
+			<h1
+				class="title font-bold text-center opacity-100 text-8xl bg-clip-text text-transparent drop-shadow-2xl bg-gradient-to-b from-white/100 to-white/50"
+			>
+				I'm Sai Akhil Mulpuri<br />Full Stack Developer
+			</h1>
+		</div>
+	</div>
+	<div class="absolute top-0 z-10 w-screen h-screen">
 		<img
-			class="inset-0 opacity-70 w-full h-full absolute z-10 pointer-events-none"
+			class="inset-0 opacity-70 w-full h-full absolute z-20 pointer-events-none"
 			src={noise}
 			alt="noise"
 		/>

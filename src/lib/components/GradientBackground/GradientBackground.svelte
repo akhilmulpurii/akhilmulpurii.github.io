@@ -64,7 +64,7 @@
 
 <div
 	class={cn(
-		'h-screen w-screen relative overflow-hidden top-0 left-0 bg-[linear-gradient(40deg,var(--gradient-background-start),var(--gradient-background-end))]',
+		'heroSection relative h-screen w-screen z-0 overflow-hidden bg-[linear-gradient(40deg,var(--gradient-background-start),var(--gradient-background-end))]',
 		containerClassName
 	)}
 >
@@ -85,7 +85,7 @@
 	<div class={cn('', className)}><slot /></div>
 	<div
 		class={cn(
-			'gradients-container h-full w-full blur-lg',
+			'gradients-container z-0 h-full w-full blur-lg absolute top-0 left-0 right-0 bottom-0',
 			isSafari ? 'blur-2xl' : '[filter:url(#blurMe)_blur(40px)]'
 		)}
 	>
