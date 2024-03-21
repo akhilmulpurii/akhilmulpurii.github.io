@@ -3,6 +3,9 @@ export default {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 	theme: {
 		extend: {
+			colors: {
+				background: 'hsl(240, 10%, 5%)'
+			},
 			animation: {
 				first: 'moveVertical 30s ease infinite',
 				second: 'moveInCircle 20s reverse infinite',

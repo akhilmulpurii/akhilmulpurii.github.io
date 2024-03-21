@@ -1,8 +1,9 @@
 <script lang="ts">
 	import HeroSection from '$lib/components/HeroSection/HeroSection.svelte';
+	import HorizontalPortfolioSection from '$lib/components/HorizontalPortfolioSection/HorizontalPortfolioSection.svelte';
 </script>
 
 <div>
 	<HeroSection />
-	<div style="height: 100vh; background: hsl(240, 10%, 5%)" class="porfolioSection relative" />
+	<HorizontalPortfolioSection />
 </div>
