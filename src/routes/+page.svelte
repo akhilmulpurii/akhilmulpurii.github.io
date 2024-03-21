@@ -6,4 +6,5 @@
 <div>
 	<HeroSection />
 	<HorizontalPortfolioSection />
+	<div class="h-screen bg-white relative" />
 </div>
