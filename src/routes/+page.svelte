@@ -4,6 +4,5 @@
 
 <div>
 	<HeroSection />
-	<div style="height: 60vh;" class="bg-red-400 porfolioSection relative" />
-	<div style="height: 40vh;" id="" class="bg-blue-400 relative" />
+	<div style="height: 100vh; background: hsl(240, 10%, 5%)" class="porfolioSection relative" />
 </div>

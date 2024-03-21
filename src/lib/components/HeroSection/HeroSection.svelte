@@ -31,7 +31,7 @@
 	});
 </script>
 
-<GradientBackground className=" relative z-10 flex flex-col items-center justify-center">
+<GradientBackground className="relative z-10 flex flex-col items-center justify-center">
 	<div class="absolute flex top-10 w-screen justify-between px-10">
 		<a class="z-40" href="/">
 			<img
