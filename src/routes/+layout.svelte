@@ -7,7 +7,7 @@
 	import { gsap } from 'gsap';
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
-	let showSplash = true;
+	let showSplash = false;
 
 	// Listen for the custom event to hide the splash screen
 
@@ -16,15 +16,15 @@
 			showSplash = false;
 		});
 
-		gsap.registerPlugin(ScrollTrigger);
+		// gsap.registerPlugin(ScrollTrigger);
 
-		const lenis = new Lenis();
+		// const lenis = new Lenis();
 
-		lenis.on('scroll', ScrollTrigger.update);
-		gsap.ticker.add((time) => {
-			lenis.raf(time * 2000);
-		});
-		gsap.ticker.lagSmoothing(0);
+		// lenis.on('scroll', ScrollTrigger.update);
+		// gsap.ticker.add((time) => {
+		// 	lenis.raf(time * 2000);
+		// });
+		// gsap.ticker.lagSmoothing(0);
 	});
 </script>
 
