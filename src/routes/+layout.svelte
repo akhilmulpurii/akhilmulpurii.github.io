@@ -4,7 +4,7 @@
 	import SplashScreen from '$lib/components/SplashScreen/SplashScreen.svelte';
 	import Noise from '$lib/assets/noise.png';
 
-	let showSplash = false;
+	let showSplash = true;
 
 	// Listen for the custom event to hide the splash screen
 	onMount(() => {

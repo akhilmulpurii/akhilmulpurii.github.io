@@ -19,7 +19,7 @@
 	<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0">
 		<img
 			src={Galaxy}
-			class="w-full h-full grayscale opacity-5"
+			class="w-full h-full grayscale opacity-5 animate-spin"
 			style="animation: spin 5s linear infinite;"
 			alt="galaxy"
 		/>
