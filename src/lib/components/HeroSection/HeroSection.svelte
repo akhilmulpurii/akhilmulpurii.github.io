@@ -6,14 +6,6 @@
 	export let timeline: gsap.core.Timeline;
 
 	onMount(() => {
-		const scrollTrigger = {
-			trigger: '#heroSection',
-			start: 'top top',
-			endTrigger: '#subheroSection',
-			end: 'bottom 100%',
-			scrub: true
-		};
-
 		timeline
 			.fromTo(
 				'#hero-title',
