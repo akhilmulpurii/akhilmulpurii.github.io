@@ -13,7 +13,7 @@
 		const commonScrollProps = {
 			start: 'top 0',
 			end: '+=500',
-			markers: true,
+			markers: false,
 			scrub: true
 		};
 
