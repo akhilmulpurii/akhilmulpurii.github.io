@@ -34,7 +34,9 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@studio-freight/lenis": "^1.0.42",
 		"gsap": "^3.12.5",
+		"moment-timezone": "^0.5.45",
 		"tailwind-merge": "^2.2.2"
 	}
 }

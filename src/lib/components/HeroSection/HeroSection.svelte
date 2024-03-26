@@ -8,24 +8,22 @@
 	onMount(() => {
 		gsap.registerPlugin(ScrollTrigger);
 
-		const timeline = gsap.timeline();
+		const timeline = gsap.timeline({ id: 'heroSectionAnimation' });
 
 		const commonScrollProps = {
-			start: 'top top',
-			trigger: '.heroSection',
-			endTrigger: '.heroSection',
-			end: 'bottom top',
+			start: 'top 0',
+			end: '+=500',
 			markers: true,
 			scrub: true
 		};
 
 		timeline
-			.to('.heroNav', {
-				y: -120,
+			.to('#heroNav', {
+				y: -100,
 				scrollTrigger: { ...commonScrollProps }
 			})
 			.fromTo(
-				'.title',
+				'#hero-title',
 				{
 					opacity: 1,
 					scale: 1
@@ -38,14 +36,14 @@
 						...commonScrollProps
 					}
 				},
-				0 // Position relative to the timeline
+				0
 			);
 	});
 </script>
 
-<section class="heroSection h-svh w-svw overflow-hidden">
-	<div class="heroInnerDiv flex flex-col h-full w-full items-center justify-between">
-		<div class="heroNav flex w-full justify-between p-10">
+<section id="heroSection" class="relative h-svh w-svw overflow-hidden">
+	<div id="heroInnerDiv" class="flex flex-col h-full w-full items-center justify-between">
+		<div id="#heroNav" class="flex w-full justify-between sm:p-10 p-5">
 			<a href="/" class="flex z-[2] justify-center items-center">
 				<img
 					src={Logo}
@@ -54,7 +52,7 @@
 				/>
 			</a>
 			<div class="flex z-[2] items-center uppercase text-xs/[0.75rem] font-mono">
-				<span>EDMOND, OK {getCentralTime()} CST</span>
+				<span class="hidden sm:block">EDMOND, OK {getCentralTime()} CST</span>
 				<div
 					class="flex relative justify-center before:absolute before:left-2 items-center before:content-[''] before:w-2 before:h-2 before:rounded-full before:bg-green-400 before:animate-ping before:flex border border-1 rounded-2xl ml-4 p-2"
 				>
@@ -66,7 +64,8 @@
 		<div class="flex flex-col justify-center items-center">
 			<h1
 				style="font-size:33vw;line-height:33vw;"
-				class="title select-none playfair z-[2] font-bold text-center opacity-100 bg-clip-text text-transparent drop-shadow-2xl bg-gradient-to-b from-white/100 to-white/50"
+				id="hero-title"
+				class="select-none playfair z-[2] font-bold text-center opacity-100 bg-clip-text text-transparent drop-shadow-2xl bg-gradient-to-b from-white/100 to-white/50"
 			>
 				AKHIL
 			</h1>
