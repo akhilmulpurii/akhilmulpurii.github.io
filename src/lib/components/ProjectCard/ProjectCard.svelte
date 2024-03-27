@@ -5,7 +5,7 @@
 	export let technologies: string[];
 </script>
 
-<div class="relative">
+<div class="relative landingProjectCardParent transition-all duration-700">
 	<div class="landingProjectCardContainer w-full aspect-square overflow-hidden relative bg-white">
 		<img
 			src={card_image}
@@ -31,3 +31,12 @@
 	<!-- svelte-ignore a11y-missing-content -->
 	<a href="/projects/{urlSlug}" class="absolute top-0 left-0 right-0 bottom-0 z-10"></a>
 </div>
+
+<style>
+	.landingProjectCardParent:hover .landingProjectCardContainer {
+		transform: scale(95%);
+	}
+	.landingProjectCardContainer {
+		transition: 500ms transform cubic-bezier(0.075, 0.82, 0.165, 1);
+	}
+</style>
