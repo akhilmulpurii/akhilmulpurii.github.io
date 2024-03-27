@@ -63,7 +63,7 @@
 			<div id="hero-title" class="flex flex-col justify-center items-center">
 				<h1
 					style="font-size:33vw;line-height:33vw;"
-					class="select-none playfair z-[2] font-bold text-center opacity-100 bg-clip-text text-transparent drop-shadow-2xl bg-gradient-to-b from-white/100 to-white/50"
+					class="select-none playfair z-[2] font-bold text-center opacity-100 bg-clip-text text-transparent drop-shadow-2xl bg-gradient-to-b from-black/100 to-black/80"
 				>
 					AKHIL
 				</h1>
