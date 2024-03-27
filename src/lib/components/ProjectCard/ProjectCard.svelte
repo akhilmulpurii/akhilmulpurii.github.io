@@ -5,12 +5,14 @@
 	export let technologies: string[];
 </script>
 
-<div class="relative landingProjectCardParent transition-all duration-700">
-	<div class="landingProjectCardContainer w-full aspect-square overflow-hidden relative bg-white">
+<div class="relative group transition-all duration-700">
+	<div
+		class="landingProjectCardContainer w-full aspect-square transition-transform overflow-hidden relative bg-white group-hover:scale-95"
+	>
 		<img
 			src={card_image}
 			alt="{title} card image"
-			class="landingProjectCard w-full object-center z-0 h-full absolute top-0 left-1/2 object-cover -translate-x-1/2 scale-125"
+			class="landingProjectCard w-full object-center z-0 h-full absolute top-0 left-1/2 object-cover -translate-x-1/2 scale-125 group-hover:scale-110 transition-transform"
 		/>
 	</div>
 	<div class="mt-6">
@@ -31,12 +33,3 @@
 	<!-- svelte-ignore a11y-missing-content -->
 	<a href="/projects/{urlSlug}" class="absolute top-0 left-0 right-0 bottom-0 z-10"></a>
 </div>
-
-<style>
-	.landingProjectCardParent:hover .landingProjectCardContainer {
-		transform: scale(95%);
-	}
-	.landingProjectCardContainer {
-		transition: 500ms transform cubic-bezier(0.075, 0.82, 0.165, 1);
-	}
-</style>
