@@ -43,58 +43,6 @@ const projects = [
 		playstore_url: 'https://play.google.com/store/apps/details?id=com.noisefit'
 	},
 	{
-		title: 'Frank Darling',
-		logo: frankDarlingLogo,
-		card_image: frankDarling,
-		card_color: '#1c1794',
-		year: '2023'
-	},
-
-	{
-		title: 'SkyMD',
-		logo: skymdLogo,
-		card_image: skymd,
-		card_color: '#6fbcdf',
-		year: '2021'
-	},
-
-	{
-		title: 'JustAct',
-		card_image: justAct,
-		logo: justActLogo,
-		card_color: '#00838c',
-		year: '2020',
-		image: '/images/justact.png',
-		short_description: 'An online dispute resolution platform',
-		banner_image: '/images/justact-2.png',
-		urlSlug: 'justact',
-		banner_color: '#b9d2c5',
-		background: 'linear-gradient(-40deg, #c9ffbf 0%,#ffafbd 100% )',
-		large: true,
-		technologies: ['React', 'Webpack', 'NodeJS'],
-		platform: 'Web',
-		description:
-			'JustAct is an Online Dispute Resolution that offers Negotiation as a technology-assisted mediation that uses a Game Theory-based algorithm to throw up a settlement number and will use AI to improve over time.',
-		sections: [
-			{
-				image: '/images/justact-2.png',
-				heading: 'What is JustAct?',
-				caption:
-					'JustAct is an Online Dispute Resolution that offers Negotiation as a technology-assisted mediation that uses a Game Theory-based algorithm to throw up a settlement number and will use AI to improve over time.'
-			},
-			{
-				image: '/images/justact-3.png',
-				heading:
-					'JustAct will issue a signed Settlement Agreement for Negotiation and Mediation which are enforceable.',
-				caption:
-					'JustAct offers you ready, relaxed resolution that embodies the spirit of ADR in its purest form by using independent and credible resolution techniques / professionals who are trained to resolve disputes amicably. It also offers all ADR services – Negotiation, Mediation / Conciliation and Arbitration in one place.'
-			}
-		],
-		web_url: 'https://justact.co.in/',
-		appstore_url: null,
-		playstore_url: null
-	},
-	{
 		title: 'HeyHey',
 		card_image: heyhey,
 		logo: heyheyLogo,
@@ -135,11 +83,70 @@ const projects = [
 		web_url: 'https://heyheyglobal.com/'
 	},
 	{
+		title: 'Frank Darling',
+		logo: frankDarlingLogo,
+		card_image: frankDarling,
+		card_color: '#1c1794',
+		year: '2023',
+		technologies: ['Next.js', 'Shopify', 'Nuxt.js', 'AWS'],
+		urlSlug: 'frankdarling'
+	},
+
+	{
+		title: 'SkyMD',
+		logo: skymdLogo,
+		card_image: skymd,
+		card_color: '#6fbcdf',
+		technologies: ['React Native', 'Next.js', 'AWS'],
+		year: '2021',
+		urlSlug: 'skymd'
+	},
+
+	{
+		title: 'JustAct',
+		card_image: justAct,
+		logo: justActLogo,
+		card_color: '#00838c',
+		year: '2020',
+		image: '/images/justact.png',
+		short_description: 'An online dispute resolution platform',
+		banner_image: '/images/justact-2.png',
+		urlSlug: 'justact',
+		banner_color: '#b9d2c5',
+		background: 'linear-gradient(-40deg, #c9ffbf 0%,#ffafbd 100% )',
+		large: true,
+		technologies: ['React', 'Webpack', 'NodeJS'],
+		platform: 'Web',
+		description:
+			'JustAct is an Online Dispute Resolution that offers Negotiation as a technology-assisted mediation that uses a Game Theory-based algorithm to throw up a settlement number and will use AI to improve over time.',
+		sections: [
+			{
+				image: '/images/justact-2.png',
+				heading: 'What is JustAct?',
+				caption:
+					'JustAct is an Online Dispute Resolution that offers Negotiation as a technology-assisted mediation that uses a Game Theory-based algorithm to throw up a settlement number and will use AI to improve over time.'
+			},
+			{
+				image: '/images/justact-3.png',
+				heading:
+					'JustAct will issue a signed Settlement Agreement for Negotiation and Mediation which are enforceable.',
+				caption:
+					'JustAct offers you ready, relaxed resolution that embodies the spirit of ADR in its purest form by using independent and credible resolution techniques / professionals who are trained to resolve disputes amicably. It also offers all ADR services – Negotiation, Mediation / Conciliation and Arbitration in one place.'
+			}
+		],
+		web_url: 'https://justact.co.in/',
+		appstore_url: null,
+		playstore_url: null
+	},
+
+	{
 		title: 'HXOUSE',
 		logo: hxouseLogo,
 		card_image: hxouse,
 		card_color: '#05060a',
-		year: '2020'
+		technologies: ['React Native', 'Firebase'],
+		year: '2020',
+		urlSlug: 'hxouse'
 	},
 	{
 		title: 'Winekey',

@@ -57,8 +57,8 @@
 						x: 0,
 						scrollTrigger: {
 							trigger: container,
-							start: 'top 70%',
-							end: 'bottom 70%',
+							start: 'top 50%',
+							end: 'bottom 50%',
 							scrub: true,
 							pin: false
 						}
@@ -77,8 +77,8 @@
 						y: 0,
 						scrollTrigger: {
 							trigger: container,
-							start: 'top 60%',
-							end: 'bottom 60%',
+							start: 'top 40%',
+							end: 'bottom 40%',
 							scrub: true,
 							pin: false
 						}
@@ -114,7 +114,11 @@
 				src={Portrait}
 				alt="portrait"
 			/>
-			<img class="{filter} about-tile-img aspect-square object-cover" src={Temple} alt="temple" />
+			<img
+				class="{filter} about-tile-img aspect-square object-top object-cover"
+				src={Temple}
+				alt="temple"
+			/>
 			<span />
 		</div>
 		<img
