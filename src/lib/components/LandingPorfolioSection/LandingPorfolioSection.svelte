@@ -18,13 +18,12 @@
 				},
 				{
 					y: 0,
-					delay: 0.2,
 					opacity: 1,
-					duration: 1,
 					scrollTrigger: {
 						scrub: true,
-						start: 'top 0%',
-						end: 'center 100%'
+						trigger: '#landingPortfolioSection',
+						start: '-=650',
+						end: '+=400'
 					}
 				}
 			)
@@ -41,8 +40,9 @@
 					duration: 1,
 					scrollTrigger: {
 						scrub: true,
-						start: 'top 0%',
-						end: 'center 100%'
+						trigger: '#landingPortfolioSection',
+						start: '-=650',
+						end: '+=400'
 					}
 				}
 			);
@@ -70,13 +70,13 @@
 	const [p1, p2] = _.chunk(_.take(projects, 4), 2);
 </script>
 
-<section class="title--works min-h-screen">
+<section id="landingPortfolioSection" class="title--works min-h-screen">
 	<div class="px-[50px] py-[32px]">
 		<div class="flex flex-row">
 			<div class="flex flex-col">
 				<h2
 					id="landingPortfolioTitle"
-					class="text-[12rem] uppercase overflow-hidden leading-[10rem] bg-clip-text text-transparent drop-shadow-2xl bg-gradient-to-b from-black/100 to-black/80"
+					class="text-[12rem] z-10 uppercase overflow-hidden leading-[10rem] bg-clip-text text-transparent drop-shadow-2xl bg-gradient-to-b from-black/100 to-black/80"
 					data-animation="split"
 				>
 					PORTFOLIO
