@@ -7,6 +7,15 @@
 
 	onMount(() => {
 		timeline
+			.from('#hero-title', {
+				opacity: 0.5,
+				duration: 0.5,
+				y: 50
+			})
+			.from('#heroNav', {
+				opacity: 0.5,
+				duration: 0.5
+			})
 			.fromTo(
 				'#hero-title',
 				{

@@ -1,9 +1,15 @@
 <script lang="ts">
 	import Galaxy from '$lib/assets/galaxy.png';
 	import { onMount } from 'svelte';
-	import { blur } from 'svelte/transition';
+	import { gsap } from 'gsap';
 
 	onMount(() => {
+		const tl = gsap.timeline();
+
+		setTimeout(() => {
+			tl.to('.splashscreen', { duration: 0.5, filter: 'blur(10px)', opacity: 0 });
+		}, 1000);
+
 		setTimeout(() => {
 			// Dispatch a custom event to notify the parent component
 			dispatchEvent(new CustomEvent('hide-splash'));
@@ -11,15 +17,11 @@
 	});
 </script>
 
-<section
-	class="relative h-svh w-svw flex flex-col justify-center items-center"
-	style="transition: cubic-bezier(0.68, -0.55, 0.265, 1.55);"
-	transition:blur={{ duration: 500 }}
->
+<section class="splashscreen relative h-svh w-svw flex flex-col justify-center items-center">
 	<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0">
 		<img
 			src={Galaxy}
-			class="w-full h-full grayscale opacity-5 animate-spin"
+			class="w-full h-full grayscale opacity-10 animate-spin"
 			style="animation: spin 5s linear infinite;"
 			alt="galaxy"
 		/>
@@ -28,12 +30,12 @@
 		THE FOLLOWING <b>WEBSITE</b> HAS BEEN APPROVED FOR<br /><b>ALL AUDIENCES</b><br />BY THE
 		INTERNATIONAL COPY PASTE REPEAT GUILD
 	</h1>
-	<table class="z-10 border border-1 mt-10">
+	<table class="z-10 border border-1 border-black mt-10">
 		<tbody>
 			<tr>
-				<td class="border border-1">
+				<td class="border border-1 border-black">
 					<div class="flex flex-col justify-center items-center">
-						<div class="bg-white text-black font-extrabold py-3 px-10">RATED</div>
+						<div class="bg-black text-white font-extrabold py-3 px-10">RATED</div>
 						<p class="text-6xl font-extrabold py-3">P</p>
 					</div>
 				</td>
