@@ -62,7 +62,7 @@
 				<div class="flex z-[2] items-center uppercase text-xs/[0.75rem] font-mono">
 					<span class="hidden sm:block">EDMOND, OK {getCentralTime()} CST</span>
 					<div
-						class="flex relative justify-center before:absolute before:left-2 items-center before:content-[''] before:w-2 before:h-2 before:rounded-full before:bg-green-400 before:animate-ping before:flex border border-1 rounded-2xl ml-4 p-2"
+						class="flex relative justify-center before:absolute before:left-2 items-center before:content-[''] before:w-2 before:h-2 before:rounded-full before:bg-green-400 before:animate-ping before:flex border border-1 border-black/50 rounded-2xl ml-4 p-2"
 					>
 						<div class="w-2 h-2 mr-2 rounded-full bg-green-600 z-10"></div>
 						OPEN TO WORK
