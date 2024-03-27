@@ -12,5 +12,4 @@
 <div>
 	<HeroSection {timeline} />
 	<SubHeroSection {timeline} />
-	<div style="height:100vh;" />
 </div>

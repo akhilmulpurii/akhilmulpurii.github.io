@@ -7,7 +7,7 @@
 		const scrollTrigger = {
 			trigger: '#subheroSection',
 			start: 'top top',
-			end: '+=200', // End trigger 100vh (viewport height) from the top of the trigger
+			end: 'bottom 0%', // End trigger 100vh (viewport height) from the top of the trigger
 			markers: false,
 			scrub: true
 		};

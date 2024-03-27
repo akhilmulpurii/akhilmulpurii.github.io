@@ -20,9 +20,10 @@
 						trigger: '#heroSection',
 						start: 'top top',
 						endTrigger: '#subheroSection',
-						end: 'bottom 100%',
+						end: 'bottom 0%',
 						scrub: true,
-						pin: true
+						pin: true,
+						markers: false
 					}
 				},
 				0
