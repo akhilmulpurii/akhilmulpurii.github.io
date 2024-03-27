@@ -12,8 +12,8 @@
 </script>
 
 <div>
-	<HeroSection {timeline} />
-	<SubHeroSection {timeline} />
+	<!-- <HeroSection {timeline} />
+	<SubHeroSection {timeline} /> -->
 	<AboutMeSection {timeline} />
 	<LandingPorfolioSection {timeline} />
 </div>

@@ -4,10 +4,49 @@
 	import ProjectCard from '../ProjectCard/ProjectCard.svelte';
 	import { onMount } from 'svelte';
 	import { gsap } from 'gsap';
+	import SplitType from 'split-type';
 
 	export let timeline: gsap.core.Timeline;
 
 	onMount(() => {
+		timeline
+			.fromTo(
+				'#landingPortfolioTitle',
+				{
+					y: 50,
+					opacity: 0
+				},
+				{
+					y: 0,
+					delay: 0.2,
+					opacity: 1,
+					duration: 1,
+					scrollTrigger: {
+						scrub: true,
+						start: 'top 0%',
+						end: 'center 100%'
+					}
+				}
+			)
+			.fromTo(
+				'#landingPortfolioCaption',
+				{
+					y: 80,
+					opacity: 0
+				},
+				{
+					y: 0,
+					delay: 0.2,
+					opacity: 1,
+					duration: 1,
+					scrollTrigger: {
+						scrub: true,
+						start: 'top 0%',
+						end: 'center 100%'
+					}
+				}
+			);
+
 		gsap.utils.toArray('.landingProjectCardContainer').forEach((container: any) => {
 			const image = container.querySelector('img');
 
@@ -36,12 +75,13 @@
 		<div class="flex flex-row">
 			<div class="flex flex-col">
 				<h2
+					id="landingPortfolioTitle"
 					class="text-[12rem] uppercase overflow-hidden leading-[10rem] bg-clip-text text-transparent drop-shadow-2xl bg-gradient-to-b from-black/100 to-black/80"
 					data-animation="split"
 				>
 					PORTFOLIO
 				</h2>
-				<p class="h4 lh-130 text-2xl max-w-2xl">
+				<p id="landingPortfolioCaption" class="h4 lh-130 text-2xl max-w-2xl">
 					Discover a glimpse into my portfolio, a culmination of recent endeavors where design meets
 					purpose in website development.
 				</p>
