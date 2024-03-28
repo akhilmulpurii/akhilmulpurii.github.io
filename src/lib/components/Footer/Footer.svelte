@@ -18,7 +18,7 @@
 					y: 0,
 					scrollTrigger: {
 						trigger: '.footer-section',
-						start: '-=550',
+						start: '-=750',
 						end: 'center 50%',
 						scrub: true
 					}
