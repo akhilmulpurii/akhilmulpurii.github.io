@@ -3,6 +3,7 @@
 	import Footer from '$lib/components/Footer/Footer.svelte';
 	import HeroSection from '$lib/components/HeroSection/HeroSection.svelte';
 	import LandingPorfolioSection from '$lib/components/LandingPorfolioSection/LandingPorfolioSection.svelte';
+	import NavBar from '$lib/components/NavBar/NavBar.svelte';
 	import SubHeroSection from '$lib/components/SubHeroSection/SubHeroSection.svelte';
 	import { gsap } from 'gsap';
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
@@ -13,6 +14,7 @@
 </script>
 
 <div>
+	<NavBar {timeline} />
 	<HeroSection {timeline} />
 	<SubHeroSection {timeline} />
 	<AboutMeSection {timeline} />
