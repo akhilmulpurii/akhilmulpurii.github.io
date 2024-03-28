@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Khand:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body,
+html {
+	background-color: #fff;
+	color: #000;
+	font-family: 'Playfair', serif;
+	font-optical-sizing: auto;
+	font-style: normal;
+}
+
+.raleway {
+	font-family: 'Raleway', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-optical-sizing: auto;
+	font-style: normal;
+}
+
+.khand {
+	font-family: 'Khand', sans-serif;
+	font-optical-sizing: auto;
+	font-style: normal;
+}
+
+:root,
+:host {
+	--rem: 16;
+}
+
+::selection {
+	color: #fff;
+	background: rgb(15, 15, 15);
+}
