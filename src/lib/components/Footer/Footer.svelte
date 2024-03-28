@@ -2,48 +2,144 @@
 	export let timeline: gsap.core.Timeline;
 	import Logo from '$lib/assets/logo.svg';
 	import moment from 'moment-timezone';
+	import { onMount } from 'svelte';
+
+	onMount(() => {
+		timeline
+			.fromTo(
+				'#footer-title',
+				{
+					opacity: 0,
+					scale: 0.9
+				},
+				{
+					opacity: 1,
+					scale: 1,
+					y: 0,
+					scrollTrigger: {
+						trigger: '.footer-section',
+						start: '-=550',
+						end: 'center 50%',
+						scrub: true
+					}
+				}
+			)
+			.fromTo(
+				'#footer-caption-1',
+				{ opacity: 0, x: -50 },
+				{
+					opacity: 1,
+					x: 0,
+					scrollTrigger: {
+						trigger: '.footer-section',
+						start: '-=550',
+						end: 'center 50%',
+						scrub: true
+					}
+				}
+			)
+			.fromTo(
+				'#footer-caption-2',
+				{ opacity: 0, x: 50 },
+				{
+					opacity: 1,
+					x: 0,
+					scrollTrigger: {
+						trigger: '.footer-section',
+						start: '-=550',
+						end: 'center 50%',
+						scrub: true
+					}
+				}
+			)
+			.fromTo(
+				'.footer-logo',
+				{ opacity: 0, x: -50 },
+				{
+					opacity: 1,
+					x: 0,
+					scrollTrigger: {
+						trigger: '.footer-section',
+						start: '-=450',
+						end: 'bottom 100%',
+						scrub: true
+					}
+				}
+			)
+			.fromTo(
+				'.footer-link',
+				{ opacity: 0, scale: 0.9 },
+				{
+					opacity: 1,
+					scale: 1,
+					scrollTrigger: {
+						trigger: '.footer-section',
+						start: '-=450',
+						end: 'bottom 100%',
+						scrub: true
+					}
+				}
+			)
+			.fromTo(
+				'.footer-social-icon',
+				{ opacity: 0, x: 50 },
+				{
+					opacity: 1,
+					x: 0,
+					scrollTrigger: {
+						trigger: '.footer-section',
+						start: '-=450',
+						end: 'bottom 100%',
+						scrub: true
+					}
+				}
+			);
+	});
 </script>
 
-<div class="w-full mt-24 flex flex-col items-center justify-center bg-white">
+<section class="footer-section w-full mt-24 flex flex-col items-center justify-center bg-white">
 	<div class="w-full px-[50px] text-black flex flex-col">
 		<div class="w-full text-7xl">
-			<h1 class="khand font-light text-center text-gray-600">
+			<h1
+				id="footer-title"
+				class="khand font-light text-center bg-clip-text text-transparent drop-shadow-2xl bg-gradient-to-b from-gray-900 to-gray-800/90"
+			>
 				<span class="text-8xl">“</span>कर्मण्ये वाधिकारस्ते मा फलेषु कदाचन |<br />मा कर्मफलहेतु
 				र्भूर्मा ते सङ्गो ऽस्त्वकर्मणि ||<span class="text-8xl">”</span>
 			</h1>
 		</div>
 		<div class="flex flex-col mt-8 justify-center md:w-2/4 mx-auto w-full">
-			<p class="w-full text-gray-700 text-justify">
+			<p id="footer-caption-1" class="w-full text-gray-700 text-justify">
 				<i>Translation:</i> “You have control over your actions alone, never over their fruits. Live
 				not for the fruits of action, nor attach yourself to inaction.”
 			</p>
 			<br />
-			<p class="ml-auto text-justify text-gray-700">
+			<p id="footer-caption-2" class="ml-auto text-justify text-gray-700">
 				- Bhagavad Gita (Chapter 2, Verse 47) spoken by Lord Krishna to Arjuna.
 			</p>
 		</div>
 		<div class="flex flex-col">
 			<div class="flex mt-24 mb-12 flex-row justify-between">
 				<div class="">
-					<img src={Logo} class="h-7 w-auto" alt="logo" />
+					<img src={Logo} class="h-7 w-auto footer-logo" alt="logo" />
 				</div>
 				<div class="flex items-center space-x-4 justify-center">
 					<a
 						href="/projects"
-						class="hidden md:block cursor-pointer text-gray-500 hover:text-black uppercase"
+						class="hidden md:block footer-link cursor-pointer text-gray-500 hover:text-black uppercase"
 					>
 						Projects
 					</a>
 					<a
 						href="/blog"
-						class="hidden md:block cursor-pointer text-gray-500 hover:text-black uppercase"
+						class="hidden md:block footer-link cursor-pointer text-gray-500 hover:text-black uppercase"
 					>
 						Blog
 					</a>
 
 					<a
 						href="/contact"
-						class="hidden md:block cursor-pointer text-gray-500 hover:text-black uppercase"
+						class="hidden md:block footer-link cursor-pointer text-gray-500 hover:text-black uppercase"
 					>
 						Contact
 					</a>
@@ -51,7 +147,7 @@
 				<div class="flex flex-row space-x-8 items-center justify-between">
 					<a href="https://github.com/akhilmulpurii">
 						<svg
-							class="fill-gray-700"
+							class="footer-social-icon fill-gray-700"
 							width="24"
 							xmlns="http://www.w3.org/2000/svg"
 							viewBox="0 0 496 512"
@@ -63,7 +159,7 @@
 					</a>
 					<a href="https://www.linkedin.com/in/sai-akhil-mulpuri/">
 						<svg
-							class="fill-gray-700"
+							class="footer-social-icon fill-gray-700"
 							width="24"
 							xmlns="http://www.w3.org/2000/svg"
 							viewBox="0 0 448 512"
@@ -74,7 +170,7 @@
 					</a>
 					<a href="https://twitter.com/FartVader02">
 						<svg
-							class="fill-gray-700"
+							class="footer-social-icon fill-gray-700"
 							width="24"
 							xmlns="http://www.w3.org/2000/svg"
 							viewBox="0 0 448 512"
@@ -93,4 +189,4 @@
 			Manifested with 💛 {moment().format('YYYY')} Sai Akhil Mulpuri
 		</p>
 	</div>
-</div>
+</section>

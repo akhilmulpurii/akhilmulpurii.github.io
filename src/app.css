@@ -30,3 +30,8 @@ html {
 :host {
 	--rem: 16;
 }
+
+::selection {
+	color: #fff;
+	background: rgb(15, 15, 15);
+}

@@ -23,8 +23,8 @@
 			<div class="pt-[0.4vw]">
 				{#each technologies as tech}
 					<div
-						style="box-shadow: inset 0 0 0 2px #B188FF;"
-						class="mt-4 text-lg h-10 leading-10 px-4 rounded-2xl raleway inline-block mr-3"
+						style="box-shadow: inset 0 0 0 2px rgba(60,60,60,0.7);"
+						class="mt-4 text-lg h-10 leading-10 px-4 rounded-full raleway inline-block mr-3"
 					>
 						<span class="z-2 relative">{tech}</span>
 					</div>
