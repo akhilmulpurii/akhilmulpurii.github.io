@@ -3,8 +3,6 @@
 	import _ from 'lodash';
 	import ProjectCard from '../ProjectCard/ProjectCard.svelte';
 	import { onMount } from 'svelte';
-	import { gsap } from 'gsap';
-	import SplitType from 'split-type';
 
 	export let timeline: gsap.core.Timeline;
 
@@ -46,25 +44,6 @@
 					}
 				}
 			);
-
-		gsap.utils.toArray('.landingProjectCardContainer').forEach((container: any) => {
-			const image = container.querySelector('img');
-
-			timeline
-				.from(image, {
-					yPercent: -5,
-					ease: 'none'
-				})
-				.to(image, {
-					yPercent: 5,
-					ease: 'none',
-					scrollTrigger: {
-						trigger: container,
-						scrub: true,
-						pin: false
-					}
-				});
-		});
 	});
 
 	const [p1, p2] = _.chunk(_.take(projects, 4), 2);
