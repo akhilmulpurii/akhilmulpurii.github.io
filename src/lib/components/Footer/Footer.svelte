@@ -123,27 +123,7 @@
 				<div class="">
 					<img src={Logo} class="h-7 w-auto footer-logo" alt="logo" />
 				</div>
-				<div class="flex items-center space-x-4 justify-center">
-					<a
-						href="/projects"
-						class="hidden md:block footer-link cursor-pointer text-gray-500 hover:text-black uppercase"
-					>
-						Projects
-					</a>
-					<a
-						href="/blog"
-						class="hidden md:block footer-link cursor-pointer text-gray-500 hover:text-black uppercase"
-					>
-						Blog
-					</a>
 
-					<a
-						href="/contact"
-						class="hidden md:block footer-link cursor-pointer text-gray-500 hover:text-black uppercase"
-					>
-						Contact
-					</a>
-				</div>
 				<div class="flex flex-row space-x-8 items-center justify-between">
 					<a href="https://github.com/akhilmulpurii">
 						<svg
@@ -185,7 +165,9 @@
 	</div>
 	<div class="flex flex-col w-full">
 		<hr class="border-gray-200" />
-		<p class=" font-extralight text-center my-4 text-gray-500 flex items-center justify-center">
+		<p
+			class=" font-extralight text-center my-3 mx-[50px] text-gray-500 flex items-center justify-start"
+		>
 			Manifested with 💛 {moment().format('YYYY')} Sai Akhil Mulpuri
 		</p>
 	</div>
