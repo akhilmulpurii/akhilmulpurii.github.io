@@ -52,11 +52,11 @@
 
 			timeline
 				.from(image, {
-					yPercent: -15,
+					yPercent: -5,
 					ease: 'none'
 				})
 				.to(image, {
-					yPercent: 15,
+					yPercent: 5,
 					ease: 'none',
 					scrollTrigger: {
 						trigger: container,
