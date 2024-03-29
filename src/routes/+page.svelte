@@ -7,10 +7,17 @@
 	import SubHeroSection from '$lib/components/SubHeroSection/SubHeroSection.svelte';
 	import { gsap } from 'gsap';
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+	import { onMount } from 'svelte';
 
 	gsap.registerPlugin(ScrollTrigger);
 
 	let timeline: gsap.core.Timeline = gsap.timeline({ id: 'landingPageAnimation' });
+
+	onMount(() => {
+		return () => {
+			timeline.kill();
+		};
+	});
 </script>
 
 <div>
