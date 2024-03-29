@@ -59,7 +59,7 @@
 	});
 </script>
 
-<section id="projectListHeroSection" class="h-svh w-svw overflow-hidden">
+<section id="projectListHeroSection" class="h-[70vh] w-svw overflow-hidden">
 	<div class="innerProjectListDiv w-full h-full flex flex-col justify-between items-center">
 		<Header />
 		<div class="text-right content-div">

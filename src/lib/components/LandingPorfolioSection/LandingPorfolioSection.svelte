@@ -73,6 +73,8 @@
 					title={project.title}
 					urlSlug={project.urlSlug}
 					card_image={project.card_image}
+					year={project.year}
+					platform={project.platform}
 				/>
 			{/each}
 		</div>
@@ -83,6 +85,8 @@
 					title={project.title}
 					urlSlug={project.urlSlug}
 					card_image={project.card_image}
+					year={project.year}
+					platform={project.platform}
 				/>
 			{/each}
 		</div>

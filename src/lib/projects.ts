@@ -89,7 +89,8 @@ const projects = [
 		card_color: '#1c1794',
 		year: '2023',
 		technologies: ['Next.js', 'Shopify', 'Nuxt.js', 'AWS'],
-		urlSlug: 'frankdarling'
+		urlSlug: 'frankdarling',
+		platform: 'Website'
 	},
 
 	{
@@ -99,7 +100,8 @@ const projects = [
 		card_color: '#6fbcdf',
 		technologies: ['React Native', 'Next.js', 'AWS'],
 		year: '2021',
-		urlSlug: 'skymd'
+		urlSlug: 'skymd',
+		platform: 'Web, iOS, Android'
 	},
 
 	{
@@ -146,7 +148,8 @@ const projects = [
 		card_color: '#05060a',
 		technologies: ['React Native', 'Firebase'],
 		year: '2020',
-		urlSlug: 'hxouse'
+		urlSlug: 'hxouse',
+		platform: 'iOS, Android'
 	},
 	{
 		title: 'Winekey',
@@ -158,6 +161,7 @@ const projects = [
 		background: 'linear-gradient(-90deg, #e5008d 30%,#ff070b 100% )',
 		large: false,
 		technologies: ['React', 'NextJS', 'AWS'],
+		year: '2021',
 		platform: 'Web',
 		description:
 			'Winekey makes it easy to plan your next client event, team bonding activity or group event. Browse experiences or talk to an event planner below',
@@ -178,56 +182,13 @@ const projects = [
 		web_url: 'https://winekey.co/'
 	},
 	{
-		title: 'Pharmaclock',
-		image: '/images/pharmaclock.png',
-		short_description: 'Pill Reminder & Medication Tracker',
-		banner_image: '/images/pharmaclock.png',
-		banner_color: '#ff82ae',
-		urlSlug: 'pharmaclock',
-		background: 'linear-gradient(40deg, #E71561 0%,#f56e9f 100% )',
-		large: false,
-		technologies: ['React Native', 'Firebase', 'ExpressJS', 'PostgreSQL'],
-		platform: 'iOS, Android, Backend',
-		description:
-			'Pharmaclock is a cross-platform mobile application used to track medication intake and remind users to take their medication on time. The app also allows users to track their doctors appointments and common symptoms.',
-		sections: [
-			{
-				image: '/images/pharmaclock.png',
-				heading: 'Fast. Responsive. Cross Platform.',
-				caption:
-					'Pharmaclock is a cross-platform mobile application used to track medication intake and remind users to take their medication on time. The app also allows users to track their doctors appointments and common symptoms.'
-			}
-		]
-	},
-	{
-		title: 'HealthApp',
-		image: '/images/healthapp.png',
-		short_description: 'Track your health and fitness, made for wheelchair users',
-		banner_image: '/images/healthapp2.png',
-		banner_color: '#13e4b0',
-		urlSlug: 'healthapp',
-		background: 'linear-gradient(40deg, #E71561 0%,#f56e9f 100% )',
-		large: false,
-		technologies: ['Flutter', 'Firebase'],
-		platform: 'iOS, Android',
-		description:
-			'Healthapp is a cross-platform mobile application that allows wheelchair users to track their health and fitness. The app allows users to track their daily activities, sleep, and weight.',
-		sections: [
-			{
-				image: '/images/healthapp2.png',
-				heading: 'Fast. Responsive. Cross Platform.',
-				caption:
-					'Healthapp is a cross-platform mobile application that allows wheelchair users to track their health and fitness. The app allows users to track their daily activities, sleep, and weight.'
-			}
-		]
-	},
-	{
 		title: 'My Visitly',
 		image: '/images/visitly.png',
 		short_description: 'Contactless Sign-In/Off & Visitor Management System',
 		banner_image: '/images/visitly.png',
 		banner_color: '#6cd5ed',
 		urlSlug: 'my-visitly',
+		year: '2020',
 		background: 'linear-gradient(90deg, #89f7fe 0%,#66a6ff 100% )',
 		large: false,
 		technologies: ['React Native', 'Firebase', 'Redux'],
@@ -251,6 +212,7 @@ const projects = [
 		image: '/images/punch.png',
 		hide_home: true,
 		banner_color: '#fff',
+		year: '2020',
 		short_description: 'B2B Ecommerce App',
 		banner_image: '/images/punch.png',
 		urlSlug: 'punchapp',
@@ -283,6 +245,7 @@ const projects = [
 		large: false,
 		technologies: ['React Native', 'Firebase', 'AWS'],
 		platform: 'iOS, Android',
+		year: '2019',
 		description:
 			"RangDe APP is a Contractor's Personal Assistant to shop, learn & earn. Shop Paints, Waterproofing, Polishing material at best prices at your most convenience.",
 		sections: [
