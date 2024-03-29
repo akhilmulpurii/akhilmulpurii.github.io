@@ -25,8 +25,6 @@ const config = {
 				'/projects/justact',
 				'/projects/hxouse',
 				'/projects/winekey',
-				'/projects/pharmaclock',
-				'/projects/healthapp',
 				'/projects/my-visitly',
 				'/projects/punchapp',
 				'/projects/rangde'
