@@ -55,35 +55,6 @@
 						}
 					}
 				);
-		timeline
-			.fromTo(
-				'.footer-logo',
-				{ opacity: 0, x: -50 },
-				{
-					opacity: 1,
-					x: 0,
-					scrollTrigger: {
-						trigger: '.footer-section',
-						start: '-=450',
-						end: 'bottom 100%',
-						scrub: true
-					}
-				}
-			)
-			.fromTo(
-				'.footer-social-icon',
-				{ opacity: 0, x: 50 },
-				{
-					opacity: 1,
-					x: 0,
-					scrollTrigger: {
-						trigger: '.footer-section',
-						start: '-=450',
-						end: 'bottom 100%',
-						scrub: true
-					}
-				}
-			);
 	});
 </script>
 
