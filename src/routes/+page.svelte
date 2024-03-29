@@ -19,5 +19,5 @@
 	<SubHeroSection {timeline} />
 	<AboutMeSection {timeline} />
 	<LandingPorfolioSection {timeline} />
-	<Footer {timeline} />
+	<Footer {timeline} showQuote={true} />
 </div>
