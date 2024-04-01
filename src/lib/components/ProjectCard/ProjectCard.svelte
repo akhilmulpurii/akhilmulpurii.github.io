@@ -7,9 +7,13 @@
 	export let year: string;
 </script>
 
-<a href="/projects/{urlSlug}" class="project-card">
+<a href="/projects/{urlSlug}" class="project-card group">
 	<div class=" bg-white aspect-square overflow-hidden">
-		<img src={card_image} class="w-full h-full object-cover" alt="projectImage" />
+		<img
+			src={card_image}
+			class="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform ease-in-out duration-500"
+			alt="projectImage"
+		/>
 	</div>
 	<div class="flex flex-col mt-2">
 		<div>
