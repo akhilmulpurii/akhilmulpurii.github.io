@@ -7,7 +7,7 @@
 	export let year: string;
 </script>
 
-<a href="/projects/{urlSlug}">
+<a href="/projects/{urlSlug}" class="project-card">
 	<div class=" bg-white aspect-square overflow-hidden">
 		<img src={card_image} class="w-full h-full object-cover" alt="projectImage" />
 	</div>

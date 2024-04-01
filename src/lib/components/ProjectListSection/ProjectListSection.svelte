@@ -1,35 +1,44 @@
 <script lang="ts">
 	import projects from '$lib/projects';
+	import { onMount } from 'svelte';
+	import ProjectCard from '../ProjectCard/ProjectCard.svelte';
+	import gsap from 'gsap';
+	export let timeline: gsap.core.Timeline;
+
+	onMount(() => {
+		gsap.utils.toArray('.project-card').forEach((projectCard: any, index) => {
+			const start = `top ${5 * (index || 0.8) * 10}`;
+			const end = `top ${-5 * (index * 10)}`;
+			timeline.fromTo(
+				projectCard,
+				{ opacity: 0, x: 100, scale: 0.9 },
+				{
+					opacity: 1,
+					x: 0,
+					scale: 1,
+					scrollTrigger: {
+						trigger: '.projectListGrid',
+						start,
+						end,
+						scrub: true
+					}
+				}
+			);
+		});
+	});
 </script>
 
 <section class="min-h-svh w-svw relative">
-	<div class="w-full h-full grid grid-cols-3 gap-16 p-16">
+	<div class="w-full h-full grid grid-cols-3 gap-16 p-16 projectListGrid">
 		{#each projects as project}
-			<a href="/projects/{project.urlSlug}">
-				<div class=" bg-white aspect-square overflow-hidden">
-					<img src={project.card_image} class="w-full h-full object-cover" alt="projectImage" />
-				</div>
-				<div class="flex flex-col mt-2">
-					<div>
-						<p class="uppercase">Platform: {project.platform}</p>
-					</div>
-					<div class="flex items-end">
-						<p class="text-4xl uppercase">
-							{project.title}
-						</p>
-						<p class="text-lg ml-2">/{project.year}</p>
-					</div>
-					<div>
-						{#each project.technologies as tech}
-							<div
-								class="relative mr-2 mt-2 select-none items-center whitespace-nowrap rounded-lg bg-gray-900/10 py-1.5 px-3 font-sans text-xs font-bold uppercase text-gray-900 inline-block"
-							>
-								<span class="z-2 relative">{tech}</span>
-							</div>
-						{/each}
-					</div>
-				</div>
-			</a>
+			<ProjectCard
+				title={project.title}
+				year={project.year}
+				card_image={project.card_image}
+				urlSlug={project.urlSlug}
+				platform={project.platform}
+				technologies={project.technologies}
+			/>
 		{/each}
 	</div>
 </section>

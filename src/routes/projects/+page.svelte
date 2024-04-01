@@ -21,6 +21,6 @@
 <div>
 	<NavBar {timeline} />
 	<ProjectsListHeroSection {timeline} />
-	<ProjectListSection />
+	<ProjectListSection {timeline} />
 	<Footer {timeline} />
 </div>
