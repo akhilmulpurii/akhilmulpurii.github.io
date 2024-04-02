@@ -11,7 +11,7 @@ import justActLogo from '$lib/assets/projects/justactLogo.png';
 import skymd from '$lib/assets/projects/skymd.png';
 import skymdLogo from '$lib/assets/projects/skymdLogo.png';
 
-interface ProjectSection {
+export interface ProjectSection {
 	image: string;
 	heading: string;
 	caption: string;
