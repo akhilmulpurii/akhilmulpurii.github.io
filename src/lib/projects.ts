@@ -11,14 +11,36 @@ import justActLogo from '$lib/assets/projects/justactLogo.png';
 import skymd from '$lib/assets/projects/skymd.png';
 import skymdLogo from '$lib/assets/projects/skymdLogo.png';
 
-const projects = [
+interface ProjectSection {
+	image: string;
+	heading: string;
+	caption: string;
+}
+
+export interface Project {
+	title: string;
+	logo: string;
+	card_image: string;
+	organizaton: string;
+	short_description: string;
+	urlSlug: string;
+	technologies: string[];
+	year: string;
+	platform: string;
+	description: string;
+	sections: ProjectSection[];
+	appstore_url?: string;
+	playstore_url?: string;
+	web_url?: string;
+}
+
+const projects: Project[] = [
 	{
+		organizaton: 'F22 Labs',
 		title: 'NoiseFit',
 		logo: noisefitLogo,
 		card_image: noisefit,
-		textColor: '#fff',
-		card_color: '#628eb6',
-		short_description: 'A companion app for Noise smart wearable devices',
+		short_description: 'A Companion App for Noise Smart Wearable Devices',
 		urlSlug: 'noisefit',
 		technologies: ['React Native', 'Firebase', 'Redux', 'Shopify'],
 		year: '2020',
@@ -43,17 +65,13 @@ const projects = [
 		playstore_url: 'https://play.google.com/store/apps/details?id=com.noisefit'
 	},
 	{
+		organizaton: 'F22 Labs',
 		title: 'HeyHey',
 		card_image: heyhey,
 		logo: heyheyLogo,
-		card_color: '#f15c5a',
 		year: '2022',
 		short_description: 'Customized video shout-outs from your favorite celebrities',
-		banner_image: '/images/heyheyweb.png',
-		banner_color: '#f15c5a',
 		urlSlug: 'heyhey',
-		background: 'linear-gradient(90deg, #dd5e89 0%,#f7bb97 100% )',
-		large: false,
 		technologies: ['React', 'React Native', 'AWS'],
 		platform: 'Web, iOS, Android',
 		description:
@@ -83,40 +101,45 @@ const projects = [
 		web_url: 'https://heyheyglobal.com/'
 	},
 	{
+		organizaton: 'F22 Labs',
 		title: 'Frank Darling',
 		logo: frankDarlingLogo,
 		card_image: frankDarling,
-		card_color: '#1c1794',
 		year: '2023',
 		technologies: ['Next.js', 'Shopify', 'Nuxt.js', 'AWS'],
 		urlSlug: 'frankdarling',
-		platform: 'Website'
+		platform: 'Website',
+		web_url: 'https://www.frankdarling.com/',
+		sections: [],
+		short_description: '',
+		description: ''
 	},
 
 	{
+		organizaton: 'F22 Labs',
+
 		title: 'SkyMD',
 		logo: skymdLogo,
 		card_image: skymd,
-		card_color: '#6fbcdf',
 		technologies: ['React Native', 'Next.js', 'AWS'],
 		year: '2021',
 		urlSlug: 'skymd',
-		platform: 'Web, iOS, Android'
+		platform: 'Web, iOS, Android',
+		web_url: 'https://www.skymd.com/',
+		sections: [],
+		short_description: '',
+		description: ''
 	},
 
 	{
+		organizaton: 'F22 Labs',
+
 		title: 'JustAct',
 		card_image: justAct,
 		logo: justActLogo,
-		card_color: '#00838c',
 		year: '2020',
-		image: '/images/justact.png',
 		short_description: 'An online dispute resolution platform',
-		banner_image: '/images/justact-2.png',
 		urlSlug: 'justact',
-		banner_color: '#b9d2c5',
-		background: 'linear-gradient(-40deg, #c9ffbf 0%,#ffafbd 100% )',
-		large: true,
 		technologies: ['React', 'Webpack', 'NodeJS'],
 		platform: 'Web',
 		description:
@@ -136,30 +159,31 @@ const projects = [
 					'JustAct offers you ready, relaxed resolution that embodies the spirit of ADR in its purest form by using independent and credible resolution techniques / professionals who are trained to resolve disputes amicably. It also offers all ADR services – Negotiation, Mediation / Conciliation and Arbitration in one place.'
 			}
 		],
-		web_url: 'https://justact.co.in/',
-		appstore_url: null,
-		playstore_url: null
+		web_url: 'https://justact.co.in/'
 	},
 
 	{
+		organizaton: 'F22 Labs',
+
 		title: 'HXOUSE',
 		logo: hxouseLogo,
 		card_image: hxouse,
-		card_color: '#05060a',
 		technologies: ['React Native', 'Firebase'],
 		year: '2020',
 		urlSlug: 'hxouse',
-		platform: 'iOS, Android'
+		platform: 'iOS, Android',
+		sections: [],
+		short_description: '',
+		description: ''
 	},
 	{
+		organizaton: 'F22 Labs',
+
 		title: 'Winekey',
-		image: '/images/winekey.png',
-		banner_color: '#201619',
+		logo: '',
+		card_image: '',
 		short_description: 'Virtual Events & Wine tastings experiences',
-		banner_image: '/images/winkeybanner.png',
 		urlSlug: 'winekey',
-		background: 'linear-gradient(-90deg, #e5008d 30%,#ff070b 100% )',
-		large: false,
 		technologies: ['React', 'NextJS', 'AWS'],
 		year: '2021',
 		platform: 'Web',
@@ -182,15 +206,14 @@ const projects = [
 		web_url: 'https://winekey.co/'
 	},
 	{
+		organizaton: 'F22 Labs',
+
 		title: 'My Visitly',
-		image: '/images/visitly.png',
+		logo: '',
+		card_image: '',
 		short_description: 'Contactless Sign-In/Off & Visitor Management System',
-		banner_image: '/images/visitly.png',
-		banner_color: '#6cd5ed',
 		urlSlug: 'my-visitly',
 		year: '2020',
-		background: 'linear-gradient(90deg, #89f7fe 0%,#66a6ff 100% )',
-		large: false,
 		technologies: ['React Native', 'Firebase', 'Redux'],
 		platform: 'iOS, Android',
 		description:
@@ -208,16 +231,14 @@ const projects = [
 	},
 
 	{
+		organizaton: 'F22 Labs',
+
 		title: 'Punch App',
-		image: '/images/punch.png',
-		hide_home: true,
-		banner_color: '#fff',
 		year: '2020',
+		logo: '',
+		card_image: '',
 		short_description: 'B2B Ecommerce App',
-		banner_image: '/images/punch.png',
 		urlSlug: 'punchapp',
-		background: 'linear-gradient(90deg, #ec008c 0%,#fc6767 100% )',
-		large: false,
 		technologies: ['React Native', 'Firebase', 'Intercomm'],
 		platform: 'iOS, Android',
 		description:
@@ -235,14 +256,13 @@ const projects = [
 	},
 
 	{
+		organizaton: 'F22 Labs',
+
 		title: 'RangDe',
-		image: '/images/rangde.png',
+		logo: '/images/rangde.png',
+		card_image: '',
 		short_description: 'B2B Paints & Waterproofing App',
-		banner_image: '/images/rangde.png',
-		banner_color: '#f6b733',
 		urlSlug: 'rangde',
-		background: 'linear-gradient(90deg, #e65c00 0%,#f9d423 100% )',
-		large: false,
 		technologies: ['React Native', 'Firebase', 'AWS'],
 		platform: 'iOS, Android',
 		year: '2019',
