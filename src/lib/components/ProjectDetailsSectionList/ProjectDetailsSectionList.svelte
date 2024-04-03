@@ -1,13 +1,15 @@
 <script lang="ts">
 	import type { ProjectSection } from '$lib/projects';
+
 	export let section: ProjectSection;
 	export let reverse: boolean = false;
+
 	const { heading, caption, image } = section;
 </script>
 
-<section class="flex w-full min-h-[80vh]">
+<section class="projectDetailsSectionList flex w-full min-h-[80vh]">
 	<div
-		class=" items-center justify-center space-x-16 my-0 flex w-full px-8 py-8 md:py-12 md:px-16 mt-12 flex-col md:flex-row {reverse
+		class="projectDetailsSectionContainer items-center justify-center space-x-16 my-0 flex w-full px-8 py-8 md:py-12 md:px-16 mt-12 flex-col md:flex-row {reverse
 			? 'md:flex-row-reverse'
 			: ''}"
 	>
