@@ -51,8 +51,8 @@
 						trigger: '.innerProjectListDiv',
 						start: 'top 0',
 						end: 'bottom 40%',
-						scrub: true,
-						pin: true
+						scrub: true
+						// pin: true
 					}
 				}
 			);
