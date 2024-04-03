@@ -7,16 +7,16 @@
 
 <section class="flex w-full min-h-[80vh]">
 	<div
-		class="max-w-[1440px] mx-auto my-0 flex w-full px-8 py-6 flex-col md:flex-row md:p-0 xl:py-5 {reverse
+		class=" items-center justify-center space-x-16 my-0 flex w-full px-8 py-8 md:py-12 md:px-16 mt-12 flex-col md:flex-row {reverse
 			? 'md:flex-row-reverse'
 			: ''}"
 	>
-		<div class="flex flex-col flex-[4] justify-center">
+		<div class="flex flex-col justify-center {reverse ? 'pl-8 md:pl-12' : 'pr-8 md:pr-12'}">
 			<h2 class="text-4xl">{heading}</h2>
 			<h5 class="text-xl mt-4">{caption}</h5>
 		</div>
-		<div class="flex-[3] flex justify-center items-center">
-			<img class="w-full object-contain rounded-md" src={image} alt="{heading} image" />
+		<div class="flex justify-center items-center">
+			<img class="w-full aspect-square object-cover rounded-md" src={image} alt="{heading} image" />
 		</div>
 	</div>
 </section>

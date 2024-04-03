@@ -1,4 +1,6 @@
 import noisefit from '$lib/assets/projects/noisefit.png';
+import noisefitSection1 from '$lib/assets/projects/noisefit_section.png';
+import noisefitSection2 from '$lib/assets/projects/noise_section_2.png';
 import noisefitLogo from '$lib/assets/projects/noisefit_logo.png';
 import heyhey from '$lib/assets/projects/heyhey.png';
 import heyheyLogo from '$lib/assets/projects/heyhey_logo.svg';
@@ -49,13 +51,13 @@ const projects: Project[] = [
 			'NoiseFit is a cross-platform mobile application that acts as a companion app for Noise smart wearable devices that track user activity such as sleep, steps, heart rate, etc.',
 		sections: [
 			{
-				image: '/images/noise-fit.png',
+				image: noisefitSection1,
 				heading: 'Fast. Responsive. Cross Platform.',
 				caption:
 					'NoiseFit is a cross-platform mobile application that acts as a companion app for Noise smart wearable devices that track user activity such as sleep, steps, heart rate, etc.'
 			},
 			{
-				image: '/images/noise_banner.png',
+				image: noisefitSection2,
 				heading: 'App has a inbuilt store for quick purchases',
 				caption:
 					"The app has a shop section backed by the Shopify API's to allow users to purchase the products at their leisure. The shop is built completely with Shopify Storefront APIs & Pure React Native Code. ( No Webviews Included )"
