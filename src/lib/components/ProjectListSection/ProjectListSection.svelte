@@ -8,7 +8,7 @@
 	onMount(() => {
 		gsap.utils.toArray('.project-card').forEach((projectCard: any, index) => {
 			const start = `top ${5 * (index || 0.8) * 10}`;
-			const end = `top ${-5 * (index * 10)}`;
+			const end = `top ${-15 * (index * 10)}`;
 			timeline.fromTo(
 				projectCard,
 				{ opacity: 0, x: 100, scale: 0.9 },
