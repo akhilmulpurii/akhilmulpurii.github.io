@@ -7,6 +7,7 @@
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import { onMount } from 'svelte';
 	import { type Project } from '$lib/projects.js';
+	import TechStack from '$lib/components/TechStack/TechStack.svelte';
 
 	type PageData = {
 		project: Project;
@@ -29,6 +30,7 @@
 <div>
 	<NavBar {timeline} />
 	<ProjectDetailHeroSection {timeline} {project} />
+	<TechStack technologies={project.technologies} {timeline} />
 	{#each project.sections as section, i}
 		<ProjectDetailsSectionList {section} reverse={i % 2 == 0} />
 	{/each}
