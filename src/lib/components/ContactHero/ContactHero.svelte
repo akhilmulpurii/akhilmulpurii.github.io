@@ -6,28 +6,58 @@
 
 	onMount(() => {
 		timeline
+			.from('.heading', {
+				opacity: 0,
+				y: 200
+			})
+			.from('.subheading', {
+				opacity: 0,
+				y: 200
+			})
+			.from('#heroNav', {
+				opacity: 0.5,
+				duration: 0.5
+			})
+			.to('#heroNav', {
+				y: -100,
+				scrollTrigger: {
+					trigger: '#heroSection',
+					start: 'top 5',
+					scrub: true
+				}
+			})
 			.fromTo(
 				'.heading',
 				{
-					opacity: 0,
-					y: 200
+					x: 0,
+					opacity: 1
 				},
 				{
-					opacity: 1,
-					y: 0,
-					ease: 'expo.inOut'
+					x: -200,
+					opacity: 0,
+					scrollTrigger: {
+						trigger: '#heroSection',
+						start: 'top 0',
+						end: 'center 400',
+						scrub: true
+					}
 				}
 			)
 			.fromTo(
 				'.subheading',
 				{
-					opacity: 0,
-					y: 200
+					x: 0,
+					opacity: 1
 				},
 				{
-					opacity: 1,
-					y: 0,
-					ease: 'expo.inOut'
+					x: -200,
+					opacity: 0,
+					scrollTrigger: {
+						trigger: '#heroSection',
+						start: 'top 0',
+						end: 'center 100',
+						scrub: true
+					}
 				}
 			);
 	});

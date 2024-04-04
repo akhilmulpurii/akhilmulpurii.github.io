@@ -35,7 +35,7 @@
 				y: -100,
 				scrollTrigger: {
 					trigger: '#heroSection',
-					start: 'top 100',
+					start: 'top 5',
 					scrub: true
 				}
 			});

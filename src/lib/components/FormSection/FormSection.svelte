@@ -13,15 +13,9 @@
 		const formInputs: HTMLDivElement[] = gsap.utils.toArray('.form-input');
 
 		formInputs.forEach((input) =>
-			timeline.fromTo(
-				input,
-				{
-					opacity: 0
-				},
-				{
-					opacity: 1
-				}
-			)
+			timeline.from(input, {
+				opacity: 0
+			})
 		);
 	});
 
