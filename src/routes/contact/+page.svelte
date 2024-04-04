@@ -18,7 +18,7 @@
 </script>
 
 <main>
-	<ContactHero />
-	<FormSection />
+	<ContactHero {timeline} />
+	<FormSection {timeline} />
 	<Footer {timeline} showQuote={false} />
 </main>

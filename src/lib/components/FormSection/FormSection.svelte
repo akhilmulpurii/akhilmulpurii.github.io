@@ -4,8 +4,28 @@
 	import FormSectionInput from '../FormSectionInput/FormSectionInput.svelte';
 	import { createForm } from 'felte';
 	import * as yup from 'yup';
+	import { onMount } from 'svelte';
+	import { gsap } from 'gsap';
 
-	export const schema = yup.object({
+	export let timeline: gsap.core.Timeline;
+
+	onMount(() => {
+		const formInputs: HTMLDivElement[] = gsap.utils.toArray('.form-input');
+
+		formInputs.forEach((input) =>
+			timeline.fromTo(
+				input,
+				{
+					opacity: 0
+				},
+				{
+					opacity: 1
+				}
+			)
+		);
+	});
+
+	const schema = yup.object({
 		name: yup.string().trim().required('Full name is required'),
 		email: yup.string().trim().email('Please enter valid email').required('Email is required'),
 		message: yup

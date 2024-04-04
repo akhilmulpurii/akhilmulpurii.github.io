@@ -1,6 +1,8 @@
 <script></script>
 
-<div class="inline-block bg-transparent rounded-full relative m-0 p-0 hover:scale-125 duration-300">
+<div
+	class="badge-pin inline-block bg-transparent rounded-full relative m-0 p-0 hover:scale-125 duration-300"
+>
 	<svg viewBox="0 0 320 320" width="200" height="200" class="overflow-visible">
 		<defs>
 			<path
@@ -45,3 +47,23 @@
 		</g>
 	</svg>
 </div>
+
+<style>
+	.badge-pin {
+		animation: arrive 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
+	}
+	@keyframes arrive {
+		0% {
+			transform: scale(0);
+			opacity: 0;
+		}
+
+		70% {
+			transform: scale(1.2);
+			opacity: 1;
+		}
+		100% {
+			transform: scale(1);
+		}
+	}
+</style>

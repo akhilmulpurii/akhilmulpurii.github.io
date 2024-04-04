@@ -8,7 +8,7 @@
 	export let touched: any;
 </script>
 
-<div class="flex flex-col mb-10 relative pl-16">
+<div class="form-input flex flex-col mb-10 relative pl-16">
 	<div
 		class="absolute top-0 left-0 text-lg font-light text-gray-500 border border-gray-500 py-0 px-4 rounded-3xl"
 	>
