@@ -5,6 +5,7 @@
 	import { gsap } from 'gsap';
 	import { onMount } from 'svelte';
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+	import NavBar from '$lib/components/NavBar/NavBar.svelte';
 
 	gsap.registerPlugin(ScrollTrigger);
 
@@ -18,6 +19,7 @@
 </script>
 
 <main>
+	<NavBar {timeline} />
 	<ContactHero {timeline} />
 	<FormSection {timeline} />
 	<Footer {timeline} showQuote={false} />
