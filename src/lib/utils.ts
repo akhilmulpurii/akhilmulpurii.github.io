@@ -18,3 +18,36 @@ export function getCentralTime() {
 
 	return nd.toLocaleTimeString();
 }
+
+export const contactFormInputs = [
+	{
+		label: "What's your name?",
+		type: 'text',
+		placeholder: 'Type your full name',
+		name: 'name'
+	},
+	{
+		label: "What's your email address?",
+		type: 'email',
+		placeholder: 'example@gmail.com',
+		name: 'email'
+	},
+	{
+		label: "What's your organization's name?",
+		type: 'text',
+		placeholder: "Type your organization's name",
+		name: 'organization'
+	},
+	{
+		label: 'What services are you interested in?',
+		type: 'text',
+		placeholder: 'Enter your services of interest',
+		name: 'services'
+	},
+	{
+		label: 'Tell me about your project',
+		type: 'textarea',
+		placeholder: 'Please describe your project in detail',
+		name: 'message'
+	}
+];

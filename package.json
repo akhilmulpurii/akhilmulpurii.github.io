@@ -37,10 +37,13 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@felte/validator-yup": "^1.1.3",
 		"@studio-freight/lenis": "^1.0.42",
+		"felte": "^1.2.14",
 		"gsap": "^3.12.5",
 		"lodash": "^4.17.21",
 		"moment-timezone": "^0.5.45",
-		"tailwind-merge": "^2.2.2"
+		"tailwind-merge": "^2.2.2",
+		"yup": "^1.4.0"
 	}
 }
