@@ -38,7 +38,7 @@
 					y: -100,
 					scrollTrigger: {
 						trigger: '#projectHeroSection',
-						start: 'top 50',
+						start: 'top 5',
 						scrub: true
 					}
 				}

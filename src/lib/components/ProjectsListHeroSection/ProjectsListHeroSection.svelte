@@ -13,7 +13,7 @@
 				y: -100,
 				scrollTrigger: {
 					trigger: '#projectListHeroSection',
-					start: 'top 100',
+					start: 'top 5',
 					scrub: true
 				}
 			})
