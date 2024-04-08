@@ -6,14 +6,6 @@
 
 	onMount(() => {
 		timeline
-			.from('.heading', {
-				opacity: 0,
-				y: 200
-			})
-			.from('.subheading', {
-				opacity: 0,
-				y: 200
-			})
 			.from('#heroNav', {
 				opacity: 0.5,
 				duration: 0.5
