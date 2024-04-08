@@ -71,6 +71,10 @@
 				slug={blog.slug.current}
 				mainImage={urlFor(blog.mainImage).url()}
 				isLast={index === filteredBlogs.length - 1}
+				author={blog.author}
+				authorImg={urlFor(blog.authorImg).url()}
+				authorRole={blog.authorRole}
+				publishedAt={new Date(blog.publishedAt)}
 			/>
 		{/each}
 	{:else}
