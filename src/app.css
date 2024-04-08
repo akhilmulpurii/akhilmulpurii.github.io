@@ -42,3 +42,85 @@ html {
 	color: #fff;
 	background: rgb(15, 15, 15);
 }
+
+.blogSection {
+	padding: 32px;
+	margin-top: 32px;
+	max-width: 800px;
+	margin: 0 auto;
+	font-size: 1.2rem;
+	line-height: 1.5;
+	color: #000;
+	font-weight: 400;
+	letter-spacing: 0.08rem;
+}
+
+.blogSection a {
+	color: #000;
+	text-decoration: underline;
+}
+
+.blogSection h1 {
+	font-size: 2.5rem;
+	font-weight: 400;
+	margin: 0;
+	margin-bottom: 32px;
+}
+
+.blogSection h2 {
+	font-size: 2rem;
+	font-weight: 400;
+	margin: 0;
+	margin-bottom: 32px;
+}
+
+.blogSection h3 {
+	font-size: 1.5rem;
+	font-weight: 400;
+	margin: 0;
+	margin-bottom: 32px;
+}
+
+.blogSection h4 {
+	font-size: 1.2rem;
+	font-weight: 400;
+	margin: 0;
+	margin-bottom: 32px;
+}
+
+.blogSection p {
+	margin: 0;
+	margin-bottom: 32px;
+}
+
+.blogSection ul {
+	margin: 0;
+	margin-bottom: 32px;
+	padding-left: 32px;
+}
+
+.blogSection li {
+	margin: 0;
+	margin-bottom: 16px;
+}
+
+.blogSection img {
+	width: 100%;
+	height: auto;
+	margin: 0;
+	margin-bottom: 32px;
+}
+
+.blogSection blockquote {
+	margin: 0;
+	margin-bottom: 32px;
+	padding-left: 32px;
+	border-left: 4px solid #000;
+}
+
+.blogSection code {
+	background-color: #000;
+	color: #fff;
+	padding: 4px;
+	border-radius: 4px;
+}

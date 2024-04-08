@@ -19,3 +19,8 @@ export async function getBlogPosts() {
 	const blogPosts = await client.fetch('*[_type == "blogPost"]');
 	return blogPosts;
 }
+
+export async function getBlogPost(slug: string) {
+	const blogPost = await client.fetch(`*[_type == "blogPost" && slug.current == "${slug}"][0]`);
+	return blogPost;
+}
