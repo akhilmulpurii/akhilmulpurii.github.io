@@ -14,7 +14,7 @@ import skymd from '$lib/assets/projects/skymd.png';
 import skymdLogo from '$lib/assets/projects/skymdLogo.png';
 
 export interface ProjectSection {
-	image: string;
+	image: string | undefined;
 	heading: string;
 	caption: string;
 }
@@ -80,19 +80,19 @@ const projects: Project[] = [
 			'HeyHey is the destination where you can book personalized video shout outs from your favorite celebrities for all occasions. Our mission is to deliver memorable moments and experiences to you from the artists you love most.',
 		sections: [
 			{
-				image: '/images/heyheyweb.png',
+				image: undefined,
 				heading: 'Quick & Accessible Web app at your finger tips.',
 				caption:
 					'HeyHey has a fast and responsive web app which allows users to purchase celebrity shoutouts as well as allows celebrities to manage their bookings through the celebrity portal.'
 			},
 			{
-				image: '/images/heyheyuser.png',
+				image: undefined,
 				heading: 'Cross-platform app to browse and book your favorite celebs.',
 				caption:
 					"Discover and book customized video shout-outs from your favourite actors, athletes, musicians, reality television stars, YouTubers and influencers! Reserve your unique HeyHey today, it's the perfect wedding, anniversary or birthday present."
 			},
 			{
-				image: '/images/heyheytalent.png',
+				image: undefined,
 				heading: 'App Dedicated for Celebrities',
 				caption:
 					'The app is completely built with UX keeping a celebrity in mind by providing a simple UI to record the shoutouts in the least possible clicks. The video gets processed in AWS & is sent back to the users after the request is completed.'
@@ -148,13 +148,13 @@ const projects: Project[] = [
 			'JustAct is an Online Dispute Resolution that offers Negotiation as a technology-assisted mediation that uses a Game Theory-based algorithm to throw up a settlement number and will use AI to improve over time.',
 		sections: [
 			{
-				image: '/images/justact-2.png',
+				image: undefined,
 				heading: 'What is JustAct?',
 				caption:
 					'JustAct is an Online Dispute Resolution that offers Negotiation as a technology-assisted mediation that uses a Game Theory-based algorithm to throw up a settlement number and will use AI to improve over time.'
 			},
 			{
-				image: '/images/justact-3.png',
+				image: undefined,
 				heading:
 					'JustAct will issue a signed Settlement Agreement for Negotiation and Mediation which are enforceable.',
 				caption:
@@ -193,13 +193,13 @@ const projects: Project[] = [
 			'Winekey makes it easy to plan your next client event, team bonding activity or group event. Browse experiences or talk to an event planner below',
 		sections: [
 			{
-				image: '/images/winekey.png',
+				image: undefined,
 				heading: 'Virtual Events & Wine tastings experiences',
 				caption:
 					'Winekey makes it easy to plan your next client event, team bonding activity or group event. Browse experiences or talk to an event planner below.'
 			},
 			{
-				image: '/images/winkey2.png',
+				image: undefined,
 				heading: 'Planning a corporate event?',
 				caption:
 					'Winekey customizes each virtual tasting to fit your organization’s needs. Hence we provide sofisticated order management & tracking system to fit your needs by analzing the requirements and targeting the correct expectations of the customers.'
@@ -222,7 +222,7 @@ const projects: Project[] = [
 			'My Visitly is a cross-platform application that provides sign-in/out capabilities to organizations working at premises during the COVID-19 pandemic. It offers a hands-free method of logging into the portal without the risk of physical contact.',
 		sections: [
 			{
-				image: '/images/visitly.png',
+				image: undefined,
 				heading: 'Contactless Easy Sign-In/Off',
 				caption:
 					'My Visitly is a cross-platform application that provides sign-in/out capabilities to organizations working at premises during the COVID-19 pandemic. It offers a hands-free method of logging into the portal without the risk of physical contact.'
@@ -247,7 +247,7 @@ const projects: Project[] = [
 			'Punch is a free messaging app that enables B2B ecommerce. From orders to payments and everything in between. Welcome to hassle free wholesale',
 		sections: [
 			{
-				image: '/images/punch.png',
+				image: undefined,
 				heading: 'Ease of Access with single app for Buyers & Sellers',
 				caption:
 					'Punch is a free messaging app that enables B2B ecommerce. From orders to payments and everything in between. Welcome to hassle free wholesale.'
@@ -272,13 +272,13 @@ const projects: Project[] = [
 			"RangDe APP is a Contractor's Personal Assistant to shop, learn & earn. Shop Paints, Waterproofing, Polishing material at best prices at your most convenience.",
 		sections: [
 			{
-				image: '/images/rangde.png',
+				image: undefined,
 				heading: 'Purchase range of paints with few clicks.',
 				caption:
 					'RangDe APP has a complete checkout system built within it as well as other services such as chat support using Freshchat & also has Zoho Creator Portal integrated for contractors.'
 			},
 			{
-				image: '/images/rangde2.png',
+				image: undefined,
 				heading: 'Helping contractors to move paints & washing business online.',
 				caption:
 					"RangDe APP is a Contractor's Personal Assistant to shop, learn & earn. Shop Paints, Waterproofing, Polishing material at best prices at your most convenience."
