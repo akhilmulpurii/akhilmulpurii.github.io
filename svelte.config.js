@@ -27,7 +27,7 @@ const config = {
 				'/projects/winekey',
 				'/projects/my-visitly',
 				'/projects/punchapp',
-				'/projects/rangde',
+				// '/projects/rangde',
 				'/blog/rnvsf'
 			]
 		}
