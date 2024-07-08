@@ -257,34 +257,34 @@ const projects: Project[] = [
 		playstore_url: 'https://play.google.com/store/apps/details?id=com.punchapp'
 	},
 
-	{
-		organizaton: 'F22 Labs',
+	// {
+	// 	organizaton: 'F22 Labs',
 
-		title: 'RangDe',
-		logo: '/images/rangde.png',
-		card_image: '',
-		short_description: 'B2B Paints & Waterproofing App',
-		urlSlug: 'rangde',
-		technologies: ['React Native', 'Firebase', 'AWS'],
-		platform: 'iOS, Android',
-		year: '2019',
-		description:
-			"RangDe APP is a Contractor's Personal Assistant to shop, learn & earn. Shop Paints, Waterproofing, Polishing material at best prices at your most convenience.",
-		sections: [
-			{
-				image: undefined,
-				heading: 'Purchase range of paints with few clicks.',
-				caption:
-					'RangDe APP has a complete checkout system built within it as well as other services such as chat support using Freshchat & also has Zoho Creator Portal integrated for contractors.'
-			},
-			{
-				image: undefined,
-				heading: 'Helping contractors to move paints & washing business online.',
-				caption:
-					"RangDe APP is a Contractor's Personal Assistant to shop, learn & earn. Shop Paints, Waterproofing, Polishing material at best prices at your most convenience."
-			}
-		],
-		playstore_url: 'https://play.google.com/store/apps/details?id=com.rangde'
-	}
+	// 	title: 'RangDe',
+	// 	logo: '/images/rangde.png',
+	// 	card_image: '',
+	// 	short_description: 'B2B Paints & Waterproofing App',
+	// 	urlSlug: 'rangde',
+	// 	technologies: ['React Native', 'Firebase', 'AWS'],
+	// 	platform: 'iOS, Android',
+	// 	year: '2019',
+	// 	description:
+	// 		"RangDe APP is a Contractor's Personal Assistant to shop, learn & earn. Shop Paints, Waterproofing, Polishing material at best prices at your most convenience.",
+	// 	sections: [
+	// 		{
+	// 			image: undefined,
+	// 			heading: 'Purchase range of paints with few clicks.',
+	// 			caption:
+	// 				'RangDe APP has a complete checkout system built within it as well as other services such as chat support using Freshchat & also has Zoho Creator Portal integrated for contractors.'
+	// 		},
+	// 		{
+	// 			image: undefined,
+	// 			heading: 'Helping contractors to move paints & washing business online.',
+	// 			caption:
+	// 				"RangDe APP is a Contractor's Personal Assistant to shop, learn & earn. Shop Paints, Waterproofing, Polishing material at best prices at your most convenience."
+	// 		}
+	// 	],
+	// 	playstore_url: 'https://play.google.com/store/apps/details?id=com.rangde'
+	// }
 ];
 export default projects;
