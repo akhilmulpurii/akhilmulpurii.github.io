@@ -10,15 +10,18 @@ import { Heading } from "./Heading";
 import { socials } from "@/constants/socials";
 import { Badge } from "./Badge";
 import { AnimatePresence, motion } from "framer-motion";
-import { SidebarContext } from "@/providers/SidebarProvider";
+import {
+  SidebarContext,
+  SidebarContextType,
+} from "@/providers/SidebarProvider";
 
 export const Sidebar = () => {
-  const { open, setOpen }: any = useContext(SidebarContext);
+  const sidebar: SidebarContextType = useContext(SidebarContext);
 
   return (
     <>
       <AnimatePresence>
-        {open && (
+        {sidebar?.open && (
           <motion.div
             initial={{ x: -200 }}
             animate={{ x: 0 }}
@@ -28,7 +31,7 @@ export const Sidebar = () => {
           >
             <div className="">
               <SidebarHeader />
-              <Navigation setOpen={setOpen} />
+              <Navigation setOpen={sidebar.setOpen} />
             </div>
             <Badge href="/resume" text="Read Resume" />
           </motion.div>

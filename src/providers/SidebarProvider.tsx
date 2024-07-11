@@ -4,9 +4,9 @@ import React, { useState, createContext } from "react";
 export type SidebarContextType = {
   open: boolean;
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
-};
+} | null;
 
-export const SidebarContext = createContext<any>(null);
+export const SidebarContext = createContext<SidebarContextType>(null);
 
 const SidebarProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
