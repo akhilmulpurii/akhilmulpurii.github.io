@@ -11,6 +11,7 @@ export const TechStack = () => {
 
       className: "h-10 w-14",
     },
+
     {
       title: "AWS",
       src: "/images/logos/aws.webp",
@@ -46,6 +47,30 @@ export const TechStack = () => {
       src: "/images/logos/vercel.png",
 
       className: "h-10 w-24",
+    },
+    {
+      title: "Express",
+      src: "/images/logos/express.png",
+
+      className: "h-10 w-16",
+    },
+    {
+      title: "Firebase",
+      src: "/images/logos/firebase.png",
+
+      className: "h-10 w-16",
+    },
+    {
+      title: "Flutter",
+      src: "/images/logos/flutter.png",
+
+      className: "h-10 w-14",
+    },
+    {
+      title: "TypeScript",
+      src: "/images/logos/typescript.png",
+
+      className: "h-10 w-14",
     },
   ];
   return (
