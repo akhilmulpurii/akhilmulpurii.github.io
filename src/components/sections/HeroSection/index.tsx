@@ -1,3 +1,4 @@
+import { AuroraBackground } from "@/components/ui/AuroraBackground";
 import { Libre_Baskerville, Bricolage_Grotesque } from "next/font/google";
 
 const LibreBaskerville = Libre_Baskerville({
@@ -16,7 +17,7 @@ interface HeroSectionProps {}
 
 const HeroSection: React.FunctionComponent<HeroSectionProps> = () => {
   return (
-    <section className="w-svw h-svh flex justify-center items-center">
+    <AuroraBackground>
       <h1 className="text-6xl text-center">
         <span className={BricolageGrotesque.className}>
           <span>Building the </span>
@@ -27,7 +28,7 @@ const HeroSection: React.FunctionComponent<HeroSectionProps> = () => {
           One Line of Code at a Time
         </span>
       </h1>
-    </section>
+    </AuroraBackground>
   );
 };
 
