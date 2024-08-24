@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+:root,
+:host {
+  --rem: 16;
+  --backgroundColor: #12191b;
+  --primaryColor: #0cc77f;
+}
+
+body,
+html {
+  background-color: var(--backgroundColor);
+  color: #fff;
+  font-family: "Raleway", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+::selection {
+  color: #fff;
+  background: var(--primaryColor);
+}
