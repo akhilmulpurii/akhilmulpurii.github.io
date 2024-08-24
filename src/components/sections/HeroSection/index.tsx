@@ -1,7 +1,8 @@
+"use client";
 import { AuroraBackground } from "@/components/ui/AuroraBackground";
-import { cn } from "@/lib/util";
 import { Libre_Baskerville, Bricolage_Grotesque } from "next/font/google";
-import Image from "next/image";
+import { motion } from "framer-motion";
+import clsx from "clsx";
 
 const LibreBaskerville = Libre_Baskerville({
   weight: "400",
@@ -20,16 +21,36 @@ interface HeroSectionProps {}
 const HeroSection: React.FunctionComponent<HeroSectionProps> = () => {
   return (
     <AuroraBackground>
-      <h1 className="text-6xl text-center z-10">
-        <span className={BricolageGrotesque.className}>
-          <span>Building the </span>
-          <span className="text-primary">Future</span>
-        </span>
-        ,<br />
-        <span className={LibreBaskerville.className}>
-          One Line of Code at a Time
-        </span>
-      </h1>
+      <motion.h1
+        initial={{ x: 100, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{
+          type: "spring",
+          stiffness: 260,
+          damping: 20,
+        }}
+        className={clsx(
+          "text-6xl text-center z-10",
+          BricolageGrotesque.className
+        )}
+      >
+        Building the <span className="text-primary">Future</span>
+      </motion.h1>
+      <motion.h1
+        initial={{ x: -100, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{
+          type: "spring",
+          stiffness: 260,
+          damping: 20,
+        }}
+        className={clsx(
+          "text-6xl text-center z-10",
+          LibreBaskerville.className
+        )}
+      >
+        One Line of Code at a Time
+      </motion.h1>
     </AuroraBackground>
   );
 };
