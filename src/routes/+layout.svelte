@@ -7,7 +7,7 @@
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import SplashScreen from '$lib/components/SplashScreen/SplashScreen.svelte';
 
-	let showSplash = true;
+	let showSplash = false;
 	// Listen for the custom event to hide the splash screen
 
 	onMount(() => {

@@ -1,16 +1,67 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Khand:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Khand:wght@300;400;500;600;700&family=Orbitron:wght@400..900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* libre-baskerville-latin-400-italic */
+@font-face {
+	font-family: 'Libre Baskerville';
+	font-style: italic;
+	font-display: swap;
+	font-weight: 400;
+	src:
+		url(https://cdn.jsdelivr.net/fontsource/fonts/libre-baskerville@latest/latin-400-italic.woff2)
+			format('woff2'),
+		url(https://cdn.jsdelivr.net/fontsource/fonts/libre-baskerville@latest/latin-400-italic.woff)
+			format('woff');
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304,
+		U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF,
+		U+FFFD;
+}
+
+@font-face {
+	font-family: 'Raleway';
+	font-style: normal;
+	font-display: swap;
+	font-weight: 100 900;
+	src: url(https://cdn.jsdelivr.net/fontsource/fonts/raleway:vf@latest/latin-wght-normal.woff2)
+		format('woff2-variations');
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304,
+		U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF,
+		U+FFFD;
+}
+
+@font-face {
+	font-family: 'Bricolage Grotesque Variable';
+	font-style: normal;
+	font-display: swap;
+	font-weight: 700;
+	src: url(https://cdn.jsdelivr.net/fontsource/fonts/bricolage-grotesque:vf@latest/latin-wght-normal.woff2)
+		format('woff2-variations');
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304,
+		U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF,
+		U+FFFD;
+}
+
+/* khand-latin-300-normal */
+@font-face {
+	font-family: 'Khand';
+	font-style: normal;
+	font-display: swap;
+	font-weight: 300;
+	src:
+		url(https://cdn.jsdelivr.net/fontsource/fonts/khand@latest/latin-300-normal.woff2)
+			format('woff2'),
+		url(https://cdn.jsdelivr.net/fontsource/fonts/khand@latest/latin-300-normal.woff) format('woff');
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304,
+		U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF,
+		U+FFFD;
+}
+
 body,
 html {
-	background-color: #fff;
-	color: #000;
-	font-family: 'Playfair', serif;
+	background-color: #12191b;
+	color: #fff;
+	font-family: 'Raleway', serif;
 	font-optical-sizing: auto;
 	font-style: normal;
 }
@@ -27,20 +78,30 @@ html {
 	font-style: normal;
 }
 
-.orbitron {
-	font-family: 'Orbitron', sans-serif;
+.bricolage-grotesque-bold {
+	font-family: 'Bricolage Grotesque Variable', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	font-optical-sizing: auto;
+	font-weight: 700;
 	font-style: normal;
+	font-variation-settings: 'wdth' 100;
+}
+
+.libre-baskerville-regular-italic {
+	font-family: 'Libre Baskerville', serif;
+	font-weight: 400;
+	font-style: italic;
 }
 
 :root,
 :host {
 	--rem: 16;
+	--backgroundColor: #12191b;
+	--primaryColor: #0cc77f;
 }
 
 ::selection {
 	color: #fff;
-	background: rgb(15, 15, 15);
+	background: var(--primaryColor);
 }
 
 .blogSection {
