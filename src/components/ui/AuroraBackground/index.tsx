@@ -1,5 +1,6 @@
 "use client";
 import { cn } from "@/lib/util";
+import Image from "next/image";
 import React, { ReactNode } from "react";
 
 interface AuroraBackgroundProps extends React.HTMLProps<HTMLDivElement> {
@@ -43,7 +44,19 @@ export const AuroraBackground = ({
                 `[mask-image:radial-gradient(ellipse_at_100%_0%,#12191b_0%,var(--transparent)_50%)]`
             )}
           ></div>
+          <Image
+            className={cn(
+              "absolute z-0 left-0 bottom-0 opacity-[0.02] w-full h-auto",
+              "[mask-image:radial-gradient(ellipse_at_0%_0%,#12191b_0%,var(--transparent)_100%)]"
+            )}
+            alt="Background Lines"
+            width={0}
+            height={0}
+            sizes="100vw"
+            src={"/images/vectors/lines.png"}
+          />
         </div>
+
         {children}
       </div>
     </main>
