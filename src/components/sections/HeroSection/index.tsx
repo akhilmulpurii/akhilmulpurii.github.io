@@ -29,6 +29,27 @@ const HeroSection: React.FunctionComponent<HeroSectionProps> = () => {
 
   return (
     <AuroraBackground>
+      <div className="absolute top-0 left-4">
+        <motion.h2
+          initial={{ x: -100, opacity: 0 }}
+          animate={{ x: inView1 ? 0 : 100, opacity: inView1 ? 1 : 0 }}
+          transition={{
+            type: "spring",
+            stiffness: 260,
+            damping: 20,
+          }}
+          className={clsx(
+            "text-[21.8vw] hidden lg:block font-extrabold leading-[0.88] text-[#151d1f]",
+            BricolageGrotesque.className
+          )}
+        >
+          SAI
+          <br />
+          AKHIL
+          <br />
+          MULPURI
+        </motion.h2>
+      </div>
       <motion.h1
         ref={ref1}
         initial={{ x: 100, opacity: 0 }}
