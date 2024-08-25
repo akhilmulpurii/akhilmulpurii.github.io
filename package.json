@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@studio-freight/lenis": "^1.0.42",
+    "@tabler/icons-react": "^3.12.0",
     "clsx": "^2.1.1",
     "framer-motion": "^11.3.30",
     "lodash": "^4.17.21",

@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <main>
       <HeroSection />
-      <div style={{ height: "900vh", background: "black" }} />
+      <div style={{ height: "900vh" }} />
     </main>
   );
 }

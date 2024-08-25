@@ -1,5 +1,5 @@
 "use client";
-import { cn } from "@/lib/util";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 import React, { ReactNode } from "react";
 
