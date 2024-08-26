@@ -1,8 +1,8 @@
 "use client";
 import { AuroraBackground } from "@/components/ui/AuroraBackground";
 import { Libre_Baskerville, Bricolage_Grotesque } from "next/font/google";
-import { motion, useAnimation, useInView } from "framer-motion";
-import { RefObject, useEffect, useRef, useState } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useEffect, useState } from "react";
 import clsx from "clsx";
 
 const LibreBaskerville = Libre_Baskerville({
