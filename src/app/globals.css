@@ -23,3 +23,7 @@ html {
   font-optical-sizing: auto;
   font-style: normal;
 }
+
+main {
+  padding-top: 72px;
+}
