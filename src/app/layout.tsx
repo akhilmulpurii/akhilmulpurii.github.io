@@ -12,6 +12,7 @@ import {
   IconTerminal2,
 } from "@tabler/icons-react";
 import NavBar from "@/components/ui/NavBar";
+import clsx from "clsx";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -71,7 +72,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body
+        className={clsx(
+          inter.className,
+          "max-w-[1376px] w-full flex flex-col mx-auto py-6 px-12"
+        )}
+      >
         <NavBar />
         {children}
       </body>

@@ -95,11 +95,11 @@ const NavBar: FunctionComponent<NavBarProps> = () => {
 
   return (
     <div
-      className={`absolute top-0 z-20 bg-white flex w-full py-6 px-12 flex-col border-b-[1px] border-b-border  transition-all duration-500 overflow-hidden ${
+      className={`absolute top-0 left-0 z-20 bg-white flex w-svw flex-col border-b-[1px] border-b-border  transition-all duration-500 overflow-hidden ${
         open ? "h-[90vh]" : "h-[72px]"
       } `}
     >
-      <nav className="flex w-full justify-between items-center ">
+      <nav className="flex w-full justify-between items-center max-w-[1376px] py-6 px-12 mx-auto ">
         <Link href="/">
           <Image
             decoding="async"
