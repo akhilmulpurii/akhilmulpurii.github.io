@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import { Raleway } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
-import { FloatingDock } from "@/components/ui/FloatingDock";
 import {
   IconBlockquote,
   IconBrandGithub,
@@ -12,8 +11,9 @@ import {
   IconMessage2,
   IconTerminal2,
 } from "@tabler/icons-react";
+import NavBar from "@/components/ui/NavBar";
 
-const raleway = Raleway({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"] });
 
 const links = [
   {
@@ -71,10 +71,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={raleway.className}>
-        <div className="flex fixed bottom-8 z-[100] -translate-x-1/2 left-1/2">
-          <FloatingDock items={links} />
-        </div>
+      <body className={inter.className}>
+        <NavBar />
         {children}
       </body>
     </html>

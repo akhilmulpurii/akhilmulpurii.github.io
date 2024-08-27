@@ -11,20 +11,15 @@
 :root,
 :host {
   --rem: 16;
-  --backgroundColor: #12191b;
-  --primaryColor: #0cc77f;
+  --backgroundColor: #fff;
+  --primaryColor: #282828;
 }
 
 body,
 html {
   background-color: var(--backgroundColor);
-  color: #fff;
+  color: var(--primaryColor);
   font-family: "Raleway", serif;
   font-optical-sizing: auto;
   font-style: normal;
-}
-
-::selection {
-  color: #fff;
-  background: var(--primaryColor);
 }

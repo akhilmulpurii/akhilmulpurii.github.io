@@ -26,8 +26,8 @@ const config: Config = {
         },
       },
       colors: {
-        primary: "#0cc77f",
-        bg: "#12191b",
+        primary: "#282828",
+        border: "#c2c2c2",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
