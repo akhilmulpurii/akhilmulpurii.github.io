@@ -134,7 +134,7 @@ const NavBarExtended: FunctionComponent<NavBarExtendedProps> = ({
 }) => {
   if (!open) return null;
   return (
-    <div className="w-full h-full flex flex-col py-10 items-start flex-1 flex-nowrap gap-5">
+    <div className="max-w-[1376px] mx-auto px-12 overflow-hidden w-full h-full flex flex-col py-10 items-start flex-1 flex-nowrap gap-5">
       {navLinks.map(({ title, link, links }, index) => (
         <NavBarItem
           key={index}
