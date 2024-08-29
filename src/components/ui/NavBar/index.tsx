@@ -171,8 +171,10 @@ const NavBarItem: FunctionComponent<NavBarItemProps> = ({
     <div className="outline-none flex flex-col justify-start shrink-0">
       <p className="text-primary text-sm opacity-80">0{number}</p>
     </div>
-    <div className="outline-none flex items-center justify-start shrink-0">
-      <h2 className="text-primary text-6xl font-semibold">{title}</h2>
+    <div className="outline-none flex md:flex-row flex-col items-start justify-center md:items-center md:justify-start shrink-0">
+      <h2 className="text-primary text-lg md:text-xl lg:text-6xl font-semibold">
+        {title}
+      </h2>
       {links?.length ? <SocialLinkSection links={links} /> : null}
     </div>
     <div
@@ -190,12 +192,12 @@ const SocialLinkSection: FunctionComponent<SocialLinkSectionProps> = ({
   links,
 }) => {
   return (
-    <div className="flex items-center gap-3">
-      <hr className="w-[1px] bg-border h-16 ml-6 mr-4" />
+    <div className="flex items-center gap-3 mt-3 md:mt-0">
+      <hr className="hidden md:flex w-[1px] bg-border h-16 ml-6 mr-4" />
       {links.map(({ href, Icon }) => (
         <Link
           href={href}
-          className="bg-slate-100 w-14 h-14 p-3 rounded-full hover:border-2 hover:border-slate-200 transition-all ease-linear duration-75"
+          className="bg-slate-100 w-8 h-8 md:w-14 md:h-14 p-2 md:p-3 rounded-full hover:border-2 hover:border-slate-200 transition-all ease-linear duration-75"
           key={href}
         >
           <Icon />
