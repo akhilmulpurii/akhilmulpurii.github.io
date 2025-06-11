@@ -7,18 +7,6 @@
 	import { onMount } from 'svelte';
 	import { gsap } from 'gsap';
 
-	export let timeline: gsap.core.Timeline;
-
-	onMount(() => {
-		const formInputs: HTMLDivElement[] = gsap.utils.toArray('.form-input');
-
-		formInputs.forEach((input) =>
-			timeline.from(input, {
-				opacity: 0
-			})
-		);
-	});
-
 	const schema = yup.object({
 		name: yup.string().trim().required('Full name is required'),
 		email: yup.string().trim().email('Please enter valid email').required('Email is required'),

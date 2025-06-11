@@ -2,57 +2,6 @@
 	import { onMount } from 'svelte';
 	import BadgePin from '../BadgePin/BadgePin.svelte';
 	import Header from '../Header/Header.svelte';
-	export let timeline: gsap.core.Timeline;
-
-	onMount(() => {
-		timeline
-			.from('#heroNav', {
-				opacity: 0.5,
-				duration: 0.5
-			})
-			.to('#heroNav', {
-				y: -100,
-				scrollTrigger: {
-					trigger: '#heroSection',
-					start: 'top 5',
-					scrub: true
-				}
-			})
-			.fromTo(
-				'.heading',
-				{
-					x: 0,
-					opacity: 1
-				},
-				{
-					x: -200,
-					opacity: 0,
-					scrollTrigger: {
-						trigger: '#heroSection',
-						start: 'top 0',
-						end: 'center 400',
-						scrub: true
-					}
-				}
-			)
-			.fromTo(
-				'.subheading',
-				{
-					x: 0,
-					opacity: 1
-				},
-				{
-					x: -200,
-					opacity: 0,
-					scrollTrigger: {
-						trigger: '#heroSection',
-						start: 'top 0',
-						end: 'center 100',
-						scrub: true
-					}
-				}
-			);
-	});
 </script>
 
 <section>

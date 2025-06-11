@@ -20,7 +20,7 @@
 
 <main>
 	<NavBar {timeline} />
-	<ContactHero {timeline} />
-	<FormSection {timeline} />
+	<ContactHero />
+	<FormSection />
 	<Footer {timeline} showQuote={false} />
 </main>
