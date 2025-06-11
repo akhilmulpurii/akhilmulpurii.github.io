@@ -87,7 +87,7 @@
 	});
 </script>
 
-<div>
+<div class="w-svw overflow-x-hidden">
 	<NavBar {timeline} />
 	<ProjectDetailHeroSection {timeline} {project} technologies={project.technologies} />
 	{#each project.sections as section, i}
