@@ -208,7 +208,7 @@ const projects: Project[] = [
 		web_url: 'https://winekey.co/'
 	},
 	{
-		organizaton: 'F22 Labs',
+		organizaton: 'Contract',
 
 		title: 'My Visitly',
 		logo: '',
@@ -255,7 +255,7 @@ const projects: Project[] = [
 		],
 		appstore_url: 'https://apps.apple.com/us/app/id1506871435',
 		playstore_url: 'https://play.google.com/store/apps/details?id=com.punchapp'
-	},
+	}
 
 	// {
 	// 	organizaton: 'F22 Labs',
