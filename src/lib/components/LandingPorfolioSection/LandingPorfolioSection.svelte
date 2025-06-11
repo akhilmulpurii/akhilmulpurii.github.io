@@ -50,23 +50,28 @@
 </script>
 
 <section id="landingPortfolioSection" class="title--works min-h-screen">
-	<div class="px-[50px] py-[32px]">
+	<div class="px-[2vw] py-[16px] md:px-[50px] md:py-[32px]">
 		<div class="flex flex-row">
 			<div class="flex flex-col">
 				<h2
 					id="landingPortfolioTitle"
-					class="text-[12rem] z-10 uppercase overflow-hidden leading-[10rem] bg-clip-text text-transparent drop-shadow-2xl bg-gradient-to-b from-black/100 to-black/80"
+					class="text-6xl mb-4 text-center md:text-left leading-[3.75rem] md:text-[12rem] md:leading-[10rem] z-10 uppercase overflow-hidden bg-clip-text text-transparent drop-shadow-2xl bg-gradient-to-b from-black/100 to-black/80"
 					data-animation="split"
 				>
 					PORTFOLIO
 				</h2>
-				<p id="landingPortfolioCaption" class="h4 lh-130 text-2xl max-w-2xl">
+				<p
+					id="landingPortfolioCaption"
+					class="h4 lh-130 text-xl max-w-xl md:text-2xl md:max-w-2xl text-center md:text-left"
+				>
 					Discover a glimpse into my portfolio, a culmination of recent endeavors where design meets
 					purpose in website development.
 				</p>
 			</div>
 		</div>
-		<div class="overflow-hidden grid gap-x-[8vw] mt-12" style="grid-template-columns: 0.8fr 1.2fr;">
+		<div
+			class="overflow-hidden grid gap-x-[2vw] md:gap-x-[8vw] mt-12 grid-cols-2 md:grid-cols-[0.8fr_1.2fr]"
+		>
 			{#each p1 as project}
 				<ProjectCard
 					technologies={project.technologies}
@@ -78,7 +83,9 @@
 				/>
 			{/each}
 		</div>
-		<div class="overflow-hidden grid gap-x-[8vw] mt-12" style="grid-template-columns: 1.2fr 0.8fr;">
+		<div
+			class="overflow-hidden grid gap-x-[2vw] md:gap-x-[8vw] mt-12 grid-cols-2 md:grid-cols-[1.2fr_0.8fr]"
+		>
 			{#each p2 as project}
 				<ProjectCard
 					technologies={project.technologies}
