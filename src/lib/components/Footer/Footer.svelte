@@ -58,8 +58,10 @@
 	});
 </script>
 
-<section class="footer-section w-full mt-24 flex flex-col items-center justify-center bg-white">
-	<div class="w-full px-[50px] text-black flex flex-col">
+<section
+	class="footer-section w-full mt-12 md:mt-24 flex flex-col items-center justify-center bg-white"
+>
+	<div class="w-full px-[16px] md:px-[50px] text-black flex flex-col">
 		{#if showQuote}
 			<div class="w-full text-7xl">
 				<h1
