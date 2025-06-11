@@ -131,7 +131,7 @@
 	<div class="flex flex-col w-full">
 		<hr class="border-gray-200" />
 		<p
-			class=" font-extralight text-center my-3 mx-[50px] text-gray-500 flex items-center justify-start"
+			class=" font-extralight text-center my-3 mx-[50px] text-gray-500 opacity-0 md:opacity-100 flex items-center justify-start"
 		>
 			Manifested with 💛 {moment().format('YYYY')} Sai Akhil Mulpuri
 		</p>

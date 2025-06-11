@@ -20,7 +20,7 @@
 	});
 </script>
 
-<div>
+<div class="w-svw overflow-x-hidden">
 	<NavBar {timeline} />
 	<HeroSection {timeline} />
 	<SubHeroSection {timeline} />
