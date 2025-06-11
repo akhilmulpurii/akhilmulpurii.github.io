@@ -17,20 +17,22 @@
 	</div>
 	<div class="flex flex-col mt-2">
 		<div>
-			<p class="uppercase">Platform: {platform}</p>
+			<p class="uppercase"><span class="hidden md:inline">Platform: </span>{platform}</p>
 		</div>
-		<div class="flex items-end relative">
+		<div class="flex md:flex-row flex-col md:items-end relative">
 			<p
-				class="text-4xl uppercase after:top-[95%] after:absolute after:transition-all after:bg-gradient-to-r after:from-amber-500 after:via-orange-300 after:to-amber-400 after:h-[3px] after:w-0 after:left-0 group-hover:after:w-20"
+				class="text-2xl leading-none md:text-4xl uppercase after:top-[95%] after:absolute after:transition-all after:bg-gradient-to-r after:from-amber-500 after:via-orange-300 after:to-amber-400 after:h-[3px] after:w-0 after:left-0 group-hover:after:w-20"
 			>
 				{title}
 			</p>
-			<p class="text-lg ml-2">/{year}</p>
+			<p class="text-lg leading-none md:ml-2 md:mb-[6px]">
+				<span class="hidden md:inline">/ </span>{year}
+			</p>
 		</div>
-		<div>
+		<div class="mt-1 md:mt-0">
 			{#each technologies as tech}
 				<div
-					class="relative mr-2 mt-3 select-none items-center whitespace-nowrap rounded-lg bg-gray-900/10 py-1.5 px-3 font-sans text-xs font-bold uppercase text-gray-900 inline-block"
+					class="relative mr-[4px] mt-[4px] md:mr-2 md:mt-3 select-none items-center whitespace-nowrap rounded-sm bg-gray-900/10 py-1.5 px-2 md:px-3 font-sans text-xs font-semibold md:font-bold uppercase text-gray-900 inline-block"
 				>
 					<span class="z-2 relative">{tech}</span>
 				</div>
