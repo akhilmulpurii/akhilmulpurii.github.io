@@ -29,7 +29,9 @@
 </script>
 
 <section class="min-h-svh w-svw relative">
-	<div class="w-full h-full grid grid-cols-3 gap-16 p-16 projectListGrid">
+	<div
+		class="w-full h-full grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-16 p-2 md:p-16 projectListGrid"
+	>
 		{#each projects as project}
 			<ProjectCard
 				title={project.title}

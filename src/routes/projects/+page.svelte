@@ -18,7 +18,7 @@
 	});
 </script>
 
-<div>
+<div class="w-svw overflow-x-hidden">
 	<NavBar {timeline} />
 	<ProjectsListHeroSection {timeline} />
 	<ProjectListSection {timeline} />
