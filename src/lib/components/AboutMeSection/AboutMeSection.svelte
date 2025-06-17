@@ -88,7 +88,7 @@
 	});
 </script>
 
-<section class="w-svw flex items-center justify-center md:h-[80vh]">
+<section class="w-svw flex items-center justify-center md:min-h-[80vh]">
 	<div
 		class="playfair img-container w-full h-full p-8 relative overflow-hidden flex flex-col items-center md:items-start justify-center"
 	>
