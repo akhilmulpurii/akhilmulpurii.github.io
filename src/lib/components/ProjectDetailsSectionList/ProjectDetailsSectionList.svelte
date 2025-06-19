@@ -18,7 +18,11 @@
 			<h5 class="text-xl mt-4">{caption}</h5>
 		</div>
 		<div class="flex justify-center items-center mt-6 md:mt-0 w-full">
-			<img class="w-full aspect-square object-cover rounded-md" src={image} alt="{heading} image" />
+			<img
+				class="w-full aspect-square object-contain rounded-md"
+				src={image}
+				alt="{heading} image"
+			/>
 		</div>
 	</div>
 </section>
