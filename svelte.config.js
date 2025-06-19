@@ -24,10 +24,7 @@ const config = {
 				'/projects/skymd',
 				'/projects/justact',
 				'/projects/hxouse',
-				'/projects/winekey',
 				'/projects/my-visitly',
-				'/projects/punchapp',
-				// '/projects/rangde',
 				'/blog/rnvsf'
 			]
 		}
