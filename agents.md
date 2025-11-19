@@ -2,98 +2,90 @@ agents.md
 
 Purpose
 
-This document defines the core creative principles, architectural boundaries, and behavioral rules for building the portfolio from scratch using Next.js. It serves as a north-star for all decisions—design, code, interaction, and workflow.
+This document defines the creative vision, architectural principles, and behavioral rules for building the portfolio from scratch using Next.js. It is designed to guide all design, interaction, and development decisions.
 
 ⸻
 
 Core Creative Principles
 
-The portfolio should feel alive, but not noisy. Interactivity is the soul, not ornamentation. Focus on:
-	•	Smooth parallax movement that responds to scroll and pointer activity.
-	•	Subtle micro-interactions that make the UI feel tactile.
-	•	Light, intentional animations—never ornamental flourishes that push users away from the content.
-	•	Zero 3D elements unless absolutely required; depth should come from motion, shadows, and layering.
-	•	Clean spatial hierarchy: whitespace, alignment, and rhythm.
-
-Your aesthetic north star: fluid, modern, minimal, reactive.
+The portfolio should feel cinematic, immersive, and alive. Focus on:
+	•	Interactive, parallax-based UI elements rather than static layouts.
+	•	Smooth, responsive micro-interactions to make the UI feel tactile.
+	•	Layered depth through motion, shadows, and scaling, without using 3D models.
+	•	Strong visual hierarchy using whitespace, typography, and layout rhythm.
+	•	A fantasy-cinematic vibe inspired by DUNE, Game of Thrones, Lord of the Rings, and Narnia.
+	•	Colorful yet restrained palette, used to guide attention and set mood.
+	•	Clean, modern design with artistic touches reminiscent of inspirations like Figurefilm, Cappen, Anuchome, Symphony of Vines, and Eat Hungry Tiger.
 
 ⸻
 
 Technical Principles (Next.js)
 
-The project is built from scratch in Next.js (App Router). Everything follows a component-driven architecture.
+The project is built from scratch using Next.js (App Router). Component-driven architecture is essential.
 
-Global structure
-	•	Use the App Router (app/) with server components by default.
-	•	Integrate client components only where interactivity is required.
-	•	Maintain a clear separation between UI, animations, and logic.
+Global Structure
+	•	Use App Router (app/) with server components by default.
+	•	Client components only for interactive sections.
+	•	Maintain separation of UI, animations, and data logic.
 
 Routing & Layout
-	•	Use nested layouts to control shared UI sections.
-	•	Keep pages lightweight; push complexity into reusable components.
+	•	Nested layouts for shared UI.
+	•	Lightweight pages with reusable components.
+	•	Maintain cinematic full-page sections where appropriate.
 
 Data & Content
-	•	All project data, experience timelines, and text content should live in an isolated module (lib/data.ts) to avoid scattering literals.
+	•	All projects, experience, and content stored in a single module (lib/data.ts) for easy refactoring.
+	•	Optionally, fetch GitHub repos and auto-generate AI-summarized sections to include in the portfolio.
 
-Animations
-	•	Use Framer Motion for motion primitives.
-	•	Keep animation duration short and smooth.
-	•	Use transforms (translate, scale, opacity) for performant rendering.
+Animations & Interactivity
+	•	Framer Motion for parallax, scroll-based, and hover interactions.
+	•	Smooth transitions, layered motion, and responsive micro-interactions.
+	•	Avoid 3D; use scale, opacity, and movement to create depth.
 
 ⸻
 
 Visual System
-	•	Typography: strong contrast between display style for hero sections and neutral readable body copy.
-	•	Color: pick a restrained palette (3–5 tones) and stick to it.
-	•	Layers: foreground elements should respond more dramatically to parallax than background elements.
-	•	Shadows: use soft, cinematic shadows to hint at depth.
+	•	Typography: dramatic display fonts for hero sections, neutral fonts for body.
+	•	Color palette: 3-5 complementary tones, used to emphasize content.
+	•	Shadows & layering: subtle, cinematic to imply depth.
+	•	Backgrounds can be interactive or slightly animated for a dynamic feel.
 
 ⸻
 
-Interaction Intent
-
-Interactions exist for two reasons:
-	1.	Communicate personality.
-	2.	Guide user attention.
-
-Everything must have a purpose. Avoid clickbait micro-interactions or chaotic movements.
+Interaction Philosophy
+	•	All interactions should guide attention or enhance immersion.
+	•	Avoid chaotic movements; every animation has purpose.
+	•	Scroll-based storytelling: sections flow into each other cinematically.
 
 ⸻
 
 Component Design Rules
-	•	Every component must be small, focused, and composable.
-	•	No global CSS sprawl; use modular styles or Tailwind.
-	•	Components with motion should isolate that logic.
-	•	Avoid over-abstracting early. Let patterns emerge naturally.
+	•	Small, focused, composable components.
+	•	Motion logic isolated per component.
+	•	Use Tailwind or modular CSS; avoid global styles.
+	•	Components should be reusable and maintainable.
 
 ⸻
 
-Performance Philosophy
-	•	Prefer server components where possible.
-	•	Lazy-load heavy sections on scroll intersection.
-	•	Always prioritize time-to-interaction over animation fidelity.
+Performance & Optimization
+	•	Server components preferred where possible.
+	•	Lazy-load heavy sections with intersection observer.
+	•	Prioritize TTI (Time to Interactive) over animation complexity.
 
 ⸻
 
-Code Quality Rules
-	•	Absolute imports enabled.
-	•	Each component folder gets:
+Code Quality & Maintenance
+	•	Absolute imports and TypeScript enforced.
+	•	Each component folder includes:
 	•	index.tsx
-	•	styles.css or Tailwind class usage
-	•	optional motion.ts (for animation variants)
-	•	No mixing unrelated responsibilities.
+	•	styles.css or Tailwind classes
+	•	Optional motion.ts for animation variants
+	•	Update agents.md when foundational changes are needed.
 
 ⸻
 
-Build & Maintenance Rules
-	•	Keep agents.md and claude.md as architectural guidance.
-	•	Update this file only when foundational constraints shift.
-	•	Treat this document as the “constitution” of the portfolio.
-
-⸻
-
-Tooling Preferences
-	•	Next.js App Router
+Tooling & Libraries
+	•	Next.js (App Router)
 	•	Framer Motion
 	•	Tailwind CSS
 	•	TypeScript
@@ -101,20 +93,13 @@ Tooling Preferences
 
 ⸻
 
-What This Document Prevents
-	•	Feature creep.
-	•	Over-engineering animations.
-	•	Throwing random libraries into the mix.
-	•	Letting the portfolio devolve into a chaotic experiment.
+Summary
 
-⸻
-
-What This Document Encourages
-	•	A cohesive identity.
-	•	Purpose-driven interactions.
-	•	Clean code architecture.
-	•	A delightful experience that invites curiosity.
-
-⸻
+This document ensures:
+	•	Cohesive cinematic fantasy design.
+	•	Interactive, layered parallax elements.
+	•	Purpose-driven, tactile interactions.
+	•	Clean, maintainable, component-driven Next.js architecture.
+	•	Optional AI-generated GitHub summary sections integrated seamlessly.
 
 End of agents.md.
