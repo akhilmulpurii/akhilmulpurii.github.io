@@ -67,10 +67,11 @@ export default function Codex() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.1 * index }}
-                  className="flex items-center gap-3 p-3 rounded-lg hover:bg-white/5 transition-colors border border-transparent hover:border-white/5"
+                  whileHover={{ scale: 1.05 }}
+                  className="flex items-center gap-3 p-3 rounded-lg hover:bg-white/5 transition-all border border-transparent hover:border-primary/20 hover:shadow-[0_0_15px_rgba(197,160,89,0.2)] group"
                 >
-                  <div className="w-1.5 h-1.5 rounded-full bg-primary shadow-[0_0_5px_var(--color-primary)]" />
-                  <span className="text-sm tracking-wide text-foreground/80">{skill}</span>
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary shadow-[0_0_5px_var(--color-primary)] group-hover:shadow-[0_0_10px_var(--color-primary)] transition-shadow" />
+                  <span className="text-sm tracking-wide text-foreground/80 group-hover:text-foreground transition-colors">{skill}</span>
                 </motion.div>
               ))}
             </div>
