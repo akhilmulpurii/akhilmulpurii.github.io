@@ -2,61 +2,62 @@
 
 import { motion } from "framer-motion";
 import { socialLinks } from "@/lib/data";
-import Link from "next/link";
 import { Mail } from "lucide-react";
+import Link from "next/link";
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-24 px-6 bg-background relative z-10">
+    <section id="contact" className="py-32 px-6 relative z-10">
       <div className="max-w-4xl mx-auto text-center">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-4xl md:text-6xl font-bold mb-8 text-primary"
-        >
-          Get in Touch
-        </motion.h2>
-        
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
-          className="text-xl text-muted-foreground mb-12"
-        >
-          Ready to start your next quest? Let's build something legendary together.
-        </motion.p>
-
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.4 }}
-          className="flex flex-col md:flex-row items-center justify-center gap-6"
+          transition={{ duration: 0.8 }}
         >
-          <Link
-            href="mailto:hello@example.com"
-            className="flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-full font-bold hover:bg-primary/90 transition-colors"
-          >
-            <Mail size={20} />
-            Say Hello
-          </Link>
-          
-          <div className="flex items-center gap-4">
-            {socialLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                target="_blank"
-                className="px-6 py-4 border border-white/10 rounded-full hover:bg-white/5 transition-colors text-muted-foreground hover:text-foreground"
-              >
-                {link.name}
-              </Link>
-            ))}
+          <h2 className="text-4xl md:text-6xl font-display font-bold mb-8 text-glow-subtle">
+            Begin Your Quest
+          </h2>
+          <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
+            Ready to forge something legendary? Send a raven, and let us discuss how we can build the future together.
+          </p>
+
+          <div className="flex flex-col items-center gap-8">
+            <motion.a
+              href="mailto:hello@example.com"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground rounded-full font-bold tracking-wide hover:bg-primary/90 transition-colors shadow-[0_0_20px_rgba(197,160,89,0.3)]"
+            >
+              <Mail className="w-5 h-5" />
+              Send a Message
+            </motion.a>
+
+            <div className="flex items-center gap-8 mt-8">
+              {socialLinks.map((link, index) => (
+                <motion.div
+                  key={link.name}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.1 * index }}
+                >
+                  <Link
+                    href={link.href}
+                    target="_blank"
+                    className="text-muted-foreground hover:text-primary transition-colors uppercase tracking-widest text-sm"
+                  >
+                    {link.name}
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </motion.div>
       </div>
+
+      {/* Footer Decoration */}
+      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
     </section>
   );
 }

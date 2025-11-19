@@ -34,6 +34,31 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 10px var(--color-primary), 0 0 20px var(--color-primary);
+  }
+  
+  .text-glow-subtle {
+    text-shadow: 0 0 5px rgba(197, 160, 89, 0.5);
+  }
+
+  .cinematic-shadow {
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .glass-panel {
+    background: rgba(26, 35, 50, 0.3);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
+  letter-spacing: 0.05em;
+}
+
+html {
+  scroll-behavior: smooth;
 }

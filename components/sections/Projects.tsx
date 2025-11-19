@@ -2,9 +2,8 @@
 
 import { motion } from "framer-motion";
 import { projects } from "@/lib/data";
-import Image from "next/image";
+import { ExternalLink, Github } from "lucide-react";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
 
 const container = {
   hidden: { opacity: 0 },
@@ -17,70 +16,86 @@ const container = {
 };
 
 const item = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 },
+  hidden: { opacity: 0, y: 50 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" as const } },
 };
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-24 px-6 bg-background relative z-10">
+    <section id="projects" className="py-32 px-6 relative z-10">
       <div className="max-w-7xl mx-auto">
-        <motion.h2
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-6xl font-bold mb-16 text-center text-primary"
+          transition={{ duration: 0.8 }}
+          className="mb-20 text-center"
         >
-          Selected Works
-        </motion.h2>
+          <h2 className="text-4xl md:text-6xl font-display font-bold mb-6 text-glow-subtle">
+            Featured Works
+          </h2>
+          <div className="h-1 w-24 bg-primary mx-auto rounded-full opacity-50" />
+        </motion.div>
 
         <motion.div
           variants={container}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 gap-12"
         >
           {projects.map((project) => (
             <motion.div
               key={project.id}
               variants={item}
-              className="group relative bg-secondary/30 border border-white/5 rounded-xl overflow-hidden hover:border-primary/50 transition-colors duration-500"
+              className="group relative"
             >
-              <div className="aspect-video relative overflow-hidden">
-                {/* Placeholder for image */}
-                <div className="absolute inset-0 bg-gradient-to-br from-muted to-background group-hover:scale-105 transition-transform duration-700" />
-                {/* Actual Image component would go here */}
-                <div className="absolute inset-0 flex items-center justify-center text-muted-foreground/20 text-4xl font-bold">
-                  {project.title}
+              <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-accent/20 rounded-2xl blur opacity-0 group-hover:opacity-100 transition duration-500" />
+              <div className="relative glass-panel rounded-xl overflow-hidden h-full flex flex-col transition-transform duration-500 group-hover:-translate-y-2">
+                {/* Image Placeholder */}
+                <div className="h-64 bg-muted/50 relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent z-10" />
+                  {/* In a real app, use Next.js Image here */}
+                  <div className="w-full h-full bg-secondary/30 flex items-center justify-center text-muted-foreground">
+                    [Project Image: {project.title}]
+                  </div>
                 </div>
-              </div>
 
-              <div className="p-6">
-                <div className="flex justify-between items-start mb-4">
-                  <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
+                <div className="p-8 flex-1 flex flex-col">
+                  <h3 className="text-2xl font-display font-bold mb-3 text-primary group-hover:text-glow-subtle transition-all">
                     {project.title}
                   </h3>
-                  <Link
-                    href={project.link}
-                    target="_blank"
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    <ArrowUpRight size={24} />
-                  </Link>
-                </div>
-                <p className="text-muted-foreground mb-6 line-clamp-2">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-3 py-1 text-xs uppercase tracking-wider bg-white/5 text-muted-foreground rounded-full border border-white/5"
+                  <p className="text-muted-foreground mb-6 flex-1 leading-relaxed">
+                    {project.description}
+                  </p>
+                  
+                  <div className="flex flex-wrap gap-3 mb-8">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="text-xs uppercase tracking-wider px-3 py-1 rounded-full border border-white/10 bg-white/5 text-foreground/80"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="flex items-center gap-6 mt-auto">
+                    <Link
+                      href={project.link}
+                      target="_blank"
+                      className="flex items-center gap-2 text-sm uppercase tracking-widest hover:text-primary transition-colors"
                     >
-                      {tag}
-                    </span>
-                  ))}
+                      <Github className="w-4 h-4" /> Code
+                    </Link>
+                    <Link
+                      href={project.link}
+                      target="_blank"
+                      className="flex items-center gap-2 text-sm uppercase tracking-widest hover:text-primary transition-colors"
+                    >
+                      <ExternalLink className="w-4 h-4" /> Live Demo
+                    </Link>
+                  </div>
                 </div>
               </div>
             </motion.div>
