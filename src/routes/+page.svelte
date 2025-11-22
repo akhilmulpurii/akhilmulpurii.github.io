@@ -5,14 +5,34 @@
 
 	gsap.registerPlugin(ScrollTrigger);
 
-	let cursor: HTMLDivElement;
-	let cursorFollower: HTMLDivElement;
+	let cursorR: HTMLDivElement;
+	let cursorG: HTMLDivElement;
+	let cursorB: HTMLDivElement;
 
 	onMount(() => {
-		// Custom Cursor Logic
+		// RGB Split Cursor Logic
 		const moveCursor = (e: MouseEvent) => {
-			gsap.to(cursor, { x: e.clientX, y: e.clientY, duration: 0.1, ease: 'power2.out' });
-			gsap.to(cursorFollower, { x: e.clientX, y: e.clientY, duration: 0.5, ease: 'power2.out' });
+			// Red channel - Fast
+			gsap.to(cursorR, {
+				x: e.clientX,
+				y: e.clientY,
+				duration: 0.1,
+				ease: 'power2.out'
+			});
+			// Green channel - Medium
+			gsap.to(cursorG, {
+				x: e.clientX,
+				y: e.clientY,
+				duration: 0.2,
+				ease: 'power2.out'
+			});
+			// Blue channel - Slow (Laggy)
+			gsap.to(cursorB, {
+				x: e.clientX,
+				y: e.clientY,
+				duration: 0.3,
+				ease: 'power2.out'
+			});
 		};
 		window.addEventListener('mousemove', moveCursor);
 
@@ -59,14 +79,18 @@
 <div
 	class="relative w-full min-h-screen bg-void text-off-white overflow-hidden cursor-none selection:bg-acid-green selection:text-void"
 >
-	<!-- Custom Cursor -->
+	<!-- RGB Split Cursor -->
 	<div
-		bind:this={cursor}
-		class="fixed top-0 left-0 w-4 h-4 bg-acid-green rounded-full pointer-events-none z-[9999] mix-blend-difference -translate-x-1/2 -translate-y-1/2"
+		bind:this={cursorR}
+		class="fixed top-0 left-0 w-4 h-4 border border-red-500 rounded-full pointer-events-none z-[9999] mix-blend-screen -translate-x-1/2 -translate-y-1/2"
 	></div>
 	<div
-		bind:this={cursorFollower}
-		class="fixed top-0 left-0 w-12 h-12 border border-acid-green rounded-full pointer-events-none z-[9998] mix-blend-difference -translate-x-1/2 -translate-y-1/2 transition-transform duration-300"
+		bind:this={cursorG}
+		class="fixed top-0 left-0 w-4 h-4 border border-green-500 rounded-full pointer-events-none z-[9999] mix-blend-screen -translate-x-1/2 -translate-y-1/2"
+	></div>
+	<div
+		bind:this={cursorB}
+		class="fixed top-0 left-0 w-4 h-4 border border-blue-500 rounded-full pointer-events-none z-[9999] mix-blend-screen -translate-x-1/2 -translate-y-1/2"
 	></div>
 
 	<!-- Background Ambient Light -->
