@@ -8,11 +8,32 @@
 
 body,
 html {
-	background-color: #fff;
-	color: #000;
-	font-family: 'Playfair', serif;
+	background-color: #050505;
+	color: #E0E0E0;
+	font-family: 'Khand', sans-serif;
 	font-optical-sizing: auto;
 	font-style: normal;
+	overflow-x: hidden;
+}
+
+.glass {
+	background: rgba(255, 255, 255, 0.03);
+	backdrop-filter: blur(10px);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-heavy {
+	background: rgba(255, 255, 255, 0.05);
+	backdrop-filter: blur(20px);
+	border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.text-glow {
+	text-shadow: 0 0 10px rgba(204, 255, 0, 0.5);
+}
+
+.text-glow-violet {
+	text-shadow: 0 0 10px rgba(127, 0, 255, 0.5);
 }
 
 .raleway {

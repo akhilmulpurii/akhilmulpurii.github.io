@@ -4,14 +4,26 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				background: 'hsl(240, 10%, 5%)'
+				background: 'hsl(240, 10%, 5%)',
+				void: '#050505',
+				charcoal: '#121212',
+				'acid-green': '#CCFF00',
+				'hyper-violet': '#7F00FF',
+				'off-white': '#E0E0E0',
+				'stark-white': '#FFFFFF'
+			},
+			fontFamily: {
+				sans: ['Khand', 'sans-serif'],
+				mono: ['Orbitron', 'monospace'],
+				serif: ['Playfair', 'serif']
 			},
 			animation: {
 				first: 'moveVertical 30s ease infinite',
 				second: 'moveInCircle 20s reverse infinite',
 				third: 'moveInCircle 40s linear infinite',
 				fourth: 'moveHorizontal 40s ease infinite',
-				fifth: 'moveInCircle 20s ease infinite'
+				fifth: 'moveInCircle 20s ease infinite',
+				'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite'
 			},
 			keyframes: {
 				moveHorizontal: {
