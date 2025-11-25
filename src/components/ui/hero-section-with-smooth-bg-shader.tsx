@@ -1,10 +1,10 @@
 "use client";
 
-import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
 
 const MeshGradient = dynamic(
-  () => import("@paper-design/shaders-react").then((m) => m.MeshGradient),
+  () => import("./patched-mesh-gradient").then((m) => m.MeshGradientPatched),
   { ssr: false, loading: () => null },
 );
 
