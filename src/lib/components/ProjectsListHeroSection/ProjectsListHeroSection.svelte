@@ -1,10 +1,5 @@
-<script lang="ts">
-	import Header from '../Header/Header.svelte';
-</script>
-
 <section id="projectListHeroSection" class="h-[80vh] md:h-svh w-svw overflow-hidden">
 	<div class="innerProjectListDiv w-full h-full flex flex-col justify-between items-center">
-		<Header />
 		<div class="text-right content-div">
 			<h1
 				id="projectListTitle"

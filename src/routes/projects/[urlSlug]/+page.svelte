@@ -1,6 +1,4 @@
 <script lang="ts">
-	import Footer from '$lib/components/Footer/Footer.svelte';
-	import NavBar from '$lib/components/NavBar/NavBar.svelte';
 	import ProjectDetailHeroSection from '$lib/components/ProjectDetailHeroSection/ProjectDetailHeroSection.svelte';
 	import ProjectDetailsSectionList from '$lib/components/ProjectDetailsSectionList/ProjectDetailsSectionList.svelte';
 	import { gsap } from 'gsap';
@@ -18,10 +16,8 @@
 </script>
 
 <div class="w-svw overflow-x-hidden">
-	<NavBar />
 	<ProjectDetailHeroSection {project} technologies={project.technologies} />
 	{#each project.sections as section, i}
 		<ProjectDetailsSectionList {section} reverse={i % 2 == 0} />
 	{/each}
-	<Footer />
 </div>

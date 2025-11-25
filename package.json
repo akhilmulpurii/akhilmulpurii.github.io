@@ -45,6 +45,7 @@
 		"felte": "^1.2.14",
 		"gsap": "^3.12.5",
 		"lodash": "^4.17.21",
+		"lucide-svelte": "^0.554.0",
 		"moment-timezone": "^0.5.45",
 		"tailwind-merge": "^2.2.2",
 		"yup": "^1.4.0"

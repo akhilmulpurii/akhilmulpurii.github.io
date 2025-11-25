@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Header from '$lib/components/Header/Header.svelte';
 	import { type Project } from '$lib/projects';
 	export let project: Project;
 	export let technologies: string[];
@@ -9,7 +8,6 @@
 	id="projectHeroSection"
 	class="h-svh pb-20 w-svw flex flex-col items-center justify-between"
 >
-	<Header />
 	<div class="flex flex-col items-center space-y-3 md:space-y-5">
 		<img id="projectLogo" src={project.logo} alt="logo" class="h-7 md:h-10 invert" />
 		<span
