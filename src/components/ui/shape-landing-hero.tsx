@@ -166,7 +166,10 @@ function HeroGeometric({
             animate="visible"
             className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.08] mb-8 md:mb-12"
           >
-            <span className="text-sm text-white/60 tracking-wide">{badge}</span>
+            <span className="text-sm text-white/60 tracking-wide">
+              {badge}
+              <span className="ml-3 inline-flex h-2.5 w-2.5 items-center justify-center rounded-full bg-[#f4a261] shadow-[0_0_0_8px_rgba(244,162,97,0.18)]" />
+            </span>
           </motion.div>
 
           <motion.div
