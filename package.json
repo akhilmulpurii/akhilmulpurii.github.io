@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "fetch:github": "node scripts/fetch-github.ts"
   },
   "dependencies": {
     "@paper-design/shaders-react": "^0.0.66",
