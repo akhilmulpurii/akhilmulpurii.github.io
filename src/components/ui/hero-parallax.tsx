@@ -123,8 +123,9 @@ export const HeroParallax = ({
 export const Header = () => {
   return (
     <div className="z-[100000] relative left-0 top-0 mx-auto w-full max-w-6xl px-4 py-14 text-center md:py-20">
-      <div className="mb-4 inline-flex items-center justify-center gap-2 rounded-full border border-[#f4a261]/50 bg-[#0f0a06]/80 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#f7d7a3] shadow-[0_12px_32px_rgba(0,0,0,0.35)]">
+      <div className="relative inline-flex items-center justify-center gap-3 rounded-full border border-white/10 bg-white/5 px-5 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-[#f0cfa2] shadow-[0_15px_60px_rgba(0,0,0,0.35)] backdrop-blur mb-4">
         Case studies
+        <span className="inline-flex h-2.5 w-2.5 items-center justify-center rounded-full bg-[#f4a261] shadow-[0_0_0_8px_rgba(244,162,97,0.18)]" />
       </div>
       <h1 className="text-3xl font-black tracking-tight text-[#f7d7a3] sm:text-4xl md:text-5xl drop-shadow-[0_12px_40px_rgba(0,0,0,0.5)]">
         Shipping immersive experiences
