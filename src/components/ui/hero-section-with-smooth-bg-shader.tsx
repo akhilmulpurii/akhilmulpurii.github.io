@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 const MeshGradient = dynamic(
   () => import("@paper-design/shaders-react").then((m) => m.MeshGradient),
-  { ssr: false },
+  { ssr: false, loading: () => null },
 );
 
 interface HeroSectionProps {
@@ -53,9 +53,20 @@ export function HeroSection({
 }: HeroSectionProps) {
   const [dimensions, setDimensions] = useState({ width: 1920, height: 1080 });
   const [mounted, setMounted] = useState(false);
+  const [shaderReady, setShaderReady] = useState(false);
 
   useEffect(() => {
     setMounted(true);
+    try {
+      const canvas = document.createElement("canvas");
+      const gl =
+        canvas.getContext("webgl2") ||
+        canvas.getContext("webgl") ||
+        (canvas.getContext("experimental-webgl") as WebGLRenderingContext | null);
+      setShaderReady(Boolean(gl));
+    } catch {
+      setShaderReady(false);
+    }
     const update = () =>
       setDimensions({
         width: window.innerWidth,
@@ -77,7 +88,10 @@ export function HeroSection({
       className={`relative w-full ${minHeightClassName} overflow-hidden bg-background flex items-center justify-center ${className}`}
     >
       <div className="absolute inset-0 h-full w-full">
-        {mounted && (
+        {!shaderReady && (
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_20%,rgba(244,162,97,0.14),transparent_38%),radial-gradient(circle_at_80%_18%,rgba(231,111,81,0.12),transparent_36%),radial-gradient(circle_at_48%_90%,rgba(240,207,162,0.1),transparent_40%)]" />
+        )}
+        {mounted && shaderReady && (
           <>
             <MeshGradient
               width={dimensions.width}
