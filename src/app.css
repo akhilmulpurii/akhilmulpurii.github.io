@@ -40,6 +40,7 @@ html {
 	font-optical-sizing: auto;
 	font-style: normal;
 	transition: background-color 200ms ease, color 200ms ease;
+	overflow-x: hidden;
 }
 
 .raleway {

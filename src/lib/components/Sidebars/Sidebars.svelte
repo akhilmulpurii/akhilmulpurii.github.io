@@ -102,7 +102,7 @@
 		</button>
 	</div>
 
-	<main class="md:px-[120px] px-4">
+	<main class="md:pl-[96px] md:pr-[96px] px-4 w-full overflow-x-hidden">
 		<slot />
 	</main>
 </div>
