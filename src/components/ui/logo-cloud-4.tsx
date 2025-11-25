@@ -20,7 +20,7 @@ export function LogoCloud({ logos }: LogoCloudProps) {
         className="-top-px pointer-events-none absolute inset-x-6 h-[1px] bg-gradient-to-r from-transparent via-[#f4a261]/50 to-transparent opacity-80"
       />
 
-      <InfiniteSlider gap={42} reverse duration={18} durationOnHover={8}>
+      <InfiniteSlider gap={42} reverse duration={18}>
         {logos.map((logo) => (
           <img
             alt={logo.alt}
