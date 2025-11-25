@@ -1,12 +1,12 @@
 <section id="subheroSection" class="h-svh w-svw overflow-hidden">
 	<div id="subheroInner" class="flex flex-col justify-center my-auto w-full h-full">
 		<h2
-			class="playfair opacity-100 bg-clip-text text-transparent drop-shadow-2xl bg-gradient-to-b from-black/100 to-black/80 font-semibold text-right left subheading"
+			class="playfair opacity-100 bg-clip-text text-transparent drop-shadow-2xl bg-gradient-to-b from-[var(--color-heading-from)] to-[var(--color-heading-to)] font-semibold text-right left subheading"
 		>
 			CREATIVE WEB
 		</h2>
 		<h2
-			class="playfair opacity-100 bg-clip-text text-transparent drop-shadow-2xl bg-gradient-to-b from-black/100 to-black/80 font-semibold text-right right subheading"
+			class="playfair opacity-100 bg-clip-text text-transparent drop-shadow-2xl bg-gradient-to-b from-[var(--color-heading-from)] to-[var(--color-heading-to)] font-semibold text-right right subheading"
 		>
 			DEVELOPER
 		</h2>

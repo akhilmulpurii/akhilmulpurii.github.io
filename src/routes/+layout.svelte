@@ -5,10 +5,13 @@
 	import Lenis from '@studio-freight/lenis';
 	import { gsap } from 'gsap';
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+	import { initTheme } from '$lib/stores/theme';
 
 	// Listen for the custom event to hide the splash screen
 
 	onMount(() => {
+		const cleanupTheme = initTheme();
+
 		gsap.registerPlugin(ScrollTrigger);
 
 		const lenis = new Lenis();
@@ -18,6 +21,10 @@
 			lenis.raf(time * 2000);
 		});
 		gsap.ticker.lagSmoothing(0);
+
+		return () => {
+			cleanupTheme();
+		};
 	});
 </script>
 

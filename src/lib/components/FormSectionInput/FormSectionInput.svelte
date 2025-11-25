@@ -10,7 +10,7 @@
 
 <div class="form-input flex flex-col mb-10 relative pl-16">
 	<div
-		class="absolute top-0 left-0 text-lg font-light text-gray-500 border border-gray-500 py-0 px-4 rounded-3xl"
+		class="absolute top-0 left-0 text-lg font-light text-[var(--color-ink-muted)] border soft-border py-0 px-4 rounded-3xl"
 	>
 		0{position}
 	</div>
@@ -19,14 +19,14 @@
 	</label>
 	{#if type === 'textarea'}
 		<textarea
-			class="bg-transparent shadow-none outline-none font-light border-b-2 border-gray-200/80 py-4 px-0 transition-all duration-200 ease-in-out placeholder:text-gray-500 focus:border-amber-500"
+			class="bg-transparent shadow-none outline-none font-light border-b-2 border-[var(--color-border)] py-4 px-0 transition-all duration-200 ease-in-out placeholder:text-[var(--color-ink-muted)] focus:border-amber-500"
 			{placeholder}
 			{name}
 			id={name}
 		/>
 	{:else}
 		<input
-			class="bg-transparent shadow-none outline-none font-light border-b-2 border-gray-200/80 py-4 px-0 transition-all duration-200 ease-in-out placeholder:text-gray-500 focus:border-amber-500"
+			class="bg-transparent shadow-none outline-none font-light border-b-2 border-[var(--color-border)] py-4 px-0 transition-all duration-200 ease-in-out placeholder:text-[var(--color-ink-muted)] focus:border-amber-500"
 			{type}
 			{placeholder}
 			{name}

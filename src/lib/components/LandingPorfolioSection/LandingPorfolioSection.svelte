@@ -12,7 +12,7 @@
 			<div class="flex flex-col">
 				<h2
 					id="landingPortfolioTitle"
-					class="text-6xl mb-4 text-center md:text-left leading-[3.75rem] md:text-[12rem] md:leading-[10rem] z-10 uppercase overflow-hidden bg-clip-text text-transparent drop-shadow-2xl bg-gradient-to-b from-black/100 to-black/80"
+					class="text-6xl mb-4 text-center md:text-left leading-[3.75rem] md:text-[12rem] md:leading-[10rem] z-10 uppercase overflow-hidden bg-clip-text text-transparent drop-shadow-2xl bg-gradient-to-b from-[var(--color-heading-from)] to-[var(--color-heading-to)]"
 					data-animation="split"
 				>
 					PORTFOLIO

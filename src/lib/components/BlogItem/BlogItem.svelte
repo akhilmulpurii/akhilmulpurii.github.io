@@ -19,18 +19,18 @@
 			<div class="flex flex-col">
 				<div class="flex items-center">
 					<span class="font-semibold text-lg leading-3">{author}</span>
-					<span class="my-0 mx-2 text-gray-400">•</span>
-					<span class="text-sm text-gray-400 font-medium"
+					<span class="my-0 mx-2 ink-muted">•</span>
+					<span class="text-sm ink-muted font-medium"
 						>{moment(publishedAt).format('MMM DD YYYY')}</span
 					>
 				</div>
-				<span class="text-xs text-gray-400">{authorRole}</span>
+				<span class="text-xs ink-muted">{authorRole}</span>
 			</div>
 		</div>
 		<div class="flex justify-between flex-col md:flex-row">
 			<div class="flex flex-col flex-[1] md:max-w-[70vw] w-full tracking-[0.5px]">
 				<h2 class="text-[2rem] font-semibold mb-4">{title}</h2>
-				<p class="text-lg text-gray-500 text-justify text-ellipsis max-h-[400px] overflow-hidden">
+				<p class="text-lg ink-muted text-justify text-ellipsis max-h-[400px] overflow-hidden">
 					{description}
 				</p>
 			</div>
@@ -45,5 +45,5 @@
 {#if isLast}
 	<div class="h-28" />
 {:else}
-	<hr />
+	<hr class="border soft-border" />
 {/if}

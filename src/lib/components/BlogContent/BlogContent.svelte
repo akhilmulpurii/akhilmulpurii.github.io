@@ -17,7 +17,7 @@
 	<div class="p-8 mx-auto my-0 md:mt-8 flex flex-col items-center justify-center max-w-[800px]">
 		<div class="flex flex-row flex-wrap w-full justify-center items-center mb-4">
 			{#each tags as tag}
-				<div class="text-[1rem] text-gray-400 uppercase font-light tracking-[0.08rem] mx-2 my-0">
+				<div class="text-[1rem] ink-muted uppercase font-light tracking-[0.08rem] mx-2 my-0">
 					{tag}
 				</div>
 			{/each}
@@ -40,12 +40,12 @@
 				<div class="flex flex-col">
 					<div class="flex items-center">
 						<span class="font-semibold text-lg leading-3">{author}</span>
-						<span class="my-0 mx-2 text-gray-400">•</span>
-						<span class="text-sm text-gray-400 font-medium"
+						<span class="my-0 mx-2 ink-muted">•</span>
+						<span class="text-sm ink-muted font-medium"
 							>{moment(publishedAt).format('MMM DD YYYY')}</span
 						>
 					</div>
-					<span class="text-xs text-gray-400">{authorRole}</span>
+					<span class="text-xs ink-muted">{authorRole}</span>
 				</div>
 			</div>
 		</div>

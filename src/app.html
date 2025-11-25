@@ -4,6 +4,20 @@
 		<meta charset="utf-8" />
 		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script>
+			(function () {
+				try {
+					var stored = localStorage.getItem('theme-preference');
+					var systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+					var choice = stored === 'light' || stored === 'dark' ? stored : 'system';
+					var theme = choice === 'system' ? (systemDark ? 'dark' : 'light') : choice;
+					document.documentElement.dataset.theme = theme;
+					document.documentElement.style.colorScheme = theme;
+				} catch (e) {
+					console.warn('Could not set initial theme', e);
+				}
+			})();
+		</script>
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">

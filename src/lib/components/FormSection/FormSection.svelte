@@ -42,7 +42,7 @@
 		{/each}
 		<button
 			type="submit"
-			class="w-fit flex justify-center items-center py-3 px-5 border-2 border-amber-500 rounded-3xl bg-transparent text-black font-semibold cursor-pointer outline-none transition-all duration-200 ease-in-out hover:text-white hover:bg-amber-500 active:scale-95"
+			class="w-fit flex justify-center items-center py-3 px-5 border-2 border-amber-500 rounded-3xl bg-transparent text-[var(--color-ink-strong)] font-semibold cursor-pointer outline-none transition-all duration-200 ease-in-out hover:text-white hover:bg-amber-500 active:scale-95"
 		>
 			SEND MESSAGE <span class="ml-3 font-black">→</span>
 		</button>

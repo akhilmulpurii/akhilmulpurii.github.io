@@ -8,7 +8,7 @@
 			<Header />
 			<div id="hero-title" class="flex flex-col h-[100vh] justify-center items-center">
 				<h1
-					class="select-none playfair z-[2] text-[30vw] md:text-[33vw] leading-[33vw] font-bold text-center opacity-100 bg-clip-text text-transparent drop-shadow-2xl bg-gradient-to-b from-black/100 to-black/80"
+					class="select-none playfair z-[2] text-[30vw] md:text-[33vw] leading-[33vw] font-bold text-center opacity-100 bg-clip-text text-transparent drop-shadow-2xl bg-gradient-to-b from-[var(--color-heading-from)] to-[var(--color-heading-to)]"
 				>
 					AKHIL
 				</h1>

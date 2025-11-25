@@ -6,13 +6,40 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+	color-scheme: light;
+	--color-bg: #f7f6f3;
+	--color-surface: rgba(255, 255, 255, 0.7);
+	--color-surface-strong: rgba(255, 255, 255, 0.9);
+	--color-ink-strong: #0f172a;
+	--color-ink-muted: #475569;
+	--color-border: rgba(15, 23, 42, 0.14);
+	--color-accent: #f59e0b;
+	--color-heading-from: #0f172a;
+	--color-heading-to: #1f2937;
+}
+
+[data-theme='dark'] {
+	color-scheme: dark;
+	--color-bg: #0b1220;
+	--color-surface: rgba(16, 24, 40, 0.82);
+	--color-surface-strong: rgba(24, 36, 58, 0.9);
+	--color-ink-strong: #e2e8f0;
+	--color-ink-muted: #94a3b8;
+	--color-border: rgba(226, 232, 240, 0.16);
+	--color-accent: #fbbf24;
+	--color-heading-from: #e2e8f0;
+	--color-heading-to: #cbd5e1;
+}
+
 body,
 html {
-	background-color: #fff;
-	color: #000;
+	background-color: var(--color-bg);
+	color: var(--color-ink-strong);
 	font-family: 'Playfair', serif;
 	font-optical-sizing: auto;
 	font-style: normal;
+	transition: background-color 200ms ease, color 200ms ease;
 }
 
 .raleway {
@@ -40,7 +67,30 @@ html {
 
 ::selection {
 	color: #fff;
-	background: rgb(15, 15, 15);
+	background: var(--color-accent);
+}
+
+:global(.ink-strong) {
+	color: var(--color-ink-strong);
+}
+
+:global(.ink-muted) {
+	color: var(--color-ink-muted);
+}
+
+:global(.surface-card) {
+	background-color: var(--color-surface-strong);
+	color: var(--color-ink-strong);
+}
+
+:global(.surface-frost) {
+	background-color: var(--color-surface);
+	border: 1px solid var(--color-border);
+	backdrop-filter: blur(12px);
+}
+
+:global(.soft-border) {
+	border-color: var(--color-border);
 }
 
 .blogSection {
@@ -50,13 +100,13 @@ html {
 	margin: 0 auto;
 	font-size: 1.2rem;
 	line-height: 1.5;
-	color: #000;
+	color: var(--color-ink-strong);
 	font-weight: 400;
 	letter-spacing: 0.08rem;
 }
 
 .blogSection a {
-	color: #000;
+	color: var(--color-ink-strong);
 	text-decoration: underline;
 }
 
@@ -115,11 +165,11 @@ html {
 	margin: 0;
 	margin-bottom: 32px;
 	padding-left: 32px;
-	border-left: 4px solid #000;
+	border-left: 4px solid var(--color-border);
 }
 
 .blogSection code {
-	background-color: #000;
+	background-color: var(--color-ink-strong);
 	color: #fff;
 	padding: 4px;
 	border-radius: 4px;
