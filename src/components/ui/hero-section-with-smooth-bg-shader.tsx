@@ -1,5 +1,12 @@
-import { MeshGradient } from "@paper-design/shaders-react";
+"use client";
+
+import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
+
+const MeshGradient = dynamic(
+  () => import("@paper-design/shaders-react").then((m) => m.MeshGradient),
+  { ssr: false },
+);
 
 interface HeroSectionProps {
   title?: string;
