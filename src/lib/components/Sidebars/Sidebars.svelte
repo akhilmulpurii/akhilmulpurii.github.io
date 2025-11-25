@@ -81,7 +81,7 @@
 	</div>
 
 	<div
-		class="md:hidden fixed bottom-[12px] left-1/2 -translate-x-1/2 inline-flex items-center gap-[10px] px-[14px] py-[12px] border border-[var(--color-border)] bg-[linear-gradient(145deg,rgba(255,255,255,0.14),rgba(255,255,255,0.04)),var(--color-surface)] shadow-[0_12px_40px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-[10px] rounded-none z-[30]"
+		class="md:hidden fixed bottom-[12px] left-1/2 -translate-x-1/2 inline-flex items-center gap-[10px] px-[14px] py-[12px] border border-[rgba(255,255,255,0.06)] bg-[linear-gradient(135deg,rgba(0,0,0,0.42),rgba(0,0,0,0.12)),rgba(12,12,12,0.9)] shadow-[0_12px_44px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.02)] backdrop-blur-[10px] rounded-none z-[30]"
 	>
 		<nav class="flex items-center gap-2">
 			{#each navLinks as link}
@@ -118,12 +118,12 @@
 		padding: 14px 10px;
 		width: 68px;
 		border-radius: 0;
-		border: 1px solid var(--color-border);
-		background: linear-gradient(145deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.04)),
-			var(--color-surface);
+		border: 1px solid rgba(255, 255, 255, 0.06);
+		background: linear-gradient(135deg, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.12)),
+			rgba(12, 12, 12, 0.9);
 		box-shadow:
-			0 18px 60px rgba(0, 0, 0, 0.18),
-			inset 0 1px 0 rgba(255, 255, 255, 0.08);
+			0 20px 70px rgba(0, 0, 0, 0.4),
+			inset 0 1px 0 rgba(255, 255, 255, 0.02);
 		z-index: 30;
 		backdrop-filter: blur(16px);
 		justify-content: space-between;
@@ -157,7 +157,7 @@
 	}
 
 	.rail-btn:hover {
-		background-color: rgba(255, 255, 255, 0.08);
+		background-color: rgba(255, 255, 255, 0.06);
 		border-color: var(--color-border);
 	}
 

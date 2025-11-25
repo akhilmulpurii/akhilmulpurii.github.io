@@ -21,15 +21,15 @@
 
 [data-theme='dark'] {
 	color-scheme: dark;
-	--color-bg: #0b0f19;
-	--color-surface: rgba(19, 24, 38, 0.8);
-	--color-surface-strong: rgba(26, 32, 48, 0.92);
-	--color-ink-strong: #e4e7ec;
-	--color-ink-muted: #98a2b3;
-	--color-border: rgba(228, 231, 236, 0.16);
-	--color-accent: #f5c256;
-	--color-heading-from: #e4e7ec;
-	--color-heading-to: #cbd5e1;
+	--color-bg: #050505;
+	--color-surface: rgba(20, 20, 20, 0.8);
+	--color-surface-strong: rgba(30, 30, 30, 0.92);
+	--color-ink-strong: #e8e8e8;
+	--color-ink-muted: #a3a3a3;
+	--color-border: rgba(255, 255, 255, 0.12);
+	--color-accent: #f2c94c;
+	--color-heading-from: #f1f1f1;
+	--color-heading-to: #d4d4d4;
 }
 
 body,
