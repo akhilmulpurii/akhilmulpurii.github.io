@@ -3,170 +3,98 @@
 import Link from "next/link";
 import { DIcons } from "dicons";
 
-const navigation = {
-  categories: [
-    {
-      id: "women",
-      name: "Women",
+const socials = [
+  { href: "mailto:mulpuriakhil@icloud.com", label: "Email", icon: DIcons.Mail },
+  { href: "https://x.com/FartVader02", label: "X", icon: DIcons.X },
+  {
+    href: "https://www.instagram.com/geeky_akhil",
+    label: "Instagram",
+    icon: DIcons.Instagram,
+  },
+  {
+    href: "https://github.com/akhilmulpurii",
+    label: "GitHub",
+    icon: DIcons.GitGraph,
+  },
+  {
+    href: "https://www.linkedin.com/in/samulpuri",
+    label: "LinkedIn",
+    icon: DIcons.LinkedIn,
+  },
+  {
+    href: "https://www.youtube.com/@AkhilMulpuri",
+    label: "YouTube",
+    icon: DIcons.YouTube,
+  },
+];
 
-      sections: [
-        {
-          id: "about",
-          name: "About",
-          items: [
-            { name: "About", href: "/about" },
-            { name: "Works", href: "/agency/works" },
-            { name: "Pricing", href: "/pricing" },
-          ],
-        },
-        {
-          id: "features",
-          name: "Features",
-          items: [
-            { name: "Products", href: "/products" },
-            { name: "Agency", href: "/agency" },
-            { name: "Dashboard", href: "/dashboard" },
-          ],
-        },
-        {
-          id: "products",
-          name: "Products",
-          items: [
-            { name: "DIcons", href: "/products/dicons" },
-            { name: "DShapes", href: "/products/dshapes" },
-            { name: "Graaadients", href: "/products/graaadients" },
-          ],
-        },
-        {
-          id: "designs",
-          name: "Designs",
-          items: [
-            { name: "Design", href: "/designs" },
-            { name: "Components", href: "/components" },
-            { name: "Blogs", href: "/blogs" },
-          ],
-        },
-        {
-          id: "other",
-          name: "Others",
-          items: [
-            { name: "Graphic", href: "/graphic" },
-            { name: "3D Icons", href: "/products/3dicons" },
-            { name: "Colors", href: "/products/colors/generate" },
-          ],
-        },
-        {
-          id: "company",
-          name: "Company",
-          items: [
-            { name: "Contact", href: "/contact" },
-            { name: "Terms", href: "/terms" },
-            { name: "Privacy", href: "/privacy" },
-          ],
-        },
-      ],
-    },
-  ],
-};
-
-const Underline = `hover:-translate-y-1 border border-dotted rounded-xl p-2.5 transition-transform `;
+const iconButton =
+  "inline-flex h-11 w-11 items-center justify-center text-[#f7f5ef] transition-colors duration-150 hover:text-[#f4a261] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f4a261]/70";
 
 export function FooterSection() {
   return (
-    <footer className="border-ali/20 :px-4 mx-auto w-full border-b   border-t  px-2">
-      <div className="relative mx-auto grid  max-w-7xl items-center justify-center gap-6 p-10 pb-0 md:flex ">
-        {/* Quote Section */}
-        <p className="bg-transparent text-center text-xs leading-4 text-primary/60 md:text-left">
-          <h1>
-            “कर्मण्ये वाधिकारस्ते मा फलेषु कदाचन |<br />
-            मा कर्मफलहेतु र्भूर्मा ते सङ्गो ऽस्त्वकर्मणि ||”
-          </h1>
-          <br />
-          <h2>
-            Translation: “You have control over your actions alone, never over
-            their fruits. Live not for the fruits of action, nor attach yourself
-            to inaction.” - Bhagavad Gita (Chapter 2, Verse 47) spoken by Lord
-            Krishna to Arjuna.
-          </h2>
-        </p>
-      </div>
+    <footer className="relative isolate w-full overflow-hidden bg-[#0f0a06] px-4 py-14">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-10 opacity-90"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle at 18% 18%, rgba(244,162,97,0.12), transparent 30%), radial-gradient(circle at 82% 12%, rgba(231,111,81,0.12), transparent 30%), radial-gradient(circle at 52% 88%, rgba(255,214,170,0.1), transparent 40%)",
+          backgroundColor: "#0f0a06",
+        }}
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-10"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(255,214,170,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,214,170,0.08) 1px, transparent 1px)",
+          backgroundSize: "64px 64px",
+          maskImage:
+            "radial-gradient(circle at 50% 42%, rgba(0,0,0,0.26), transparent 68%)",
+          WebkitMaskImage:
+            "radial-gradient(circle at 50% 42%, rgba(0,0,0,0.26), transparent 68%)",
+        }}
+      />
 
-      <div className="flex flex-wrap justify-center mt-10 gap-y-6">
-        <div className="flex flex-wrap items-center justify-center gap-6 gap-y-4 px-6">
-          <Link
-            aria-label="Logo"
-            href="mailto:mulpuriakhil@icloud.com"
-            rel="noreferrer"
-            target="_blank"
-            className={Underline}
-          >
-            <DIcons.Mail strokeWidth={1.5} className="h-5 w-5" />
-          </Link>
-          <Link
-            aria-label="Logo"
-            href="https://x.com/FartVader02"
-            rel="noreferrer"
-            target="_blank"
-            className={Underline}
-          >
-            <DIcons.X className="h-5 w-5" />
-          </Link>
-          <Link
-            aria-label="Logo"
-            href="https://www.instagram.com/geeky_akhil"
-            rel="noreferrer"
-            target="_blank"
-            className={Underline}
-          >
-            <DIcons.Instagram className="h-5 w-5" />
-          </Link>
-          <Link
-            aria-label="Logo"
-            href="https://github.com/akhilmulpurii"
-            rel="noreferrer"
-            target="_blank"
-            className={Underline}
-          >
-            <DIcons.GitGraph className="h-5 w-5" />
-          </Link>
-          <Link
-            aria-label="Logo"
-            href="https://www.linkedin.com/in/samulpuri"
-            rel="noreferrer"
-            target="_blank"
-            className={Underline}
-          >
-            <DIcons.LinkedIn className="h-5 w-5" />
-          </Link>
-          <Link
-            aria-label="Logo"
-            href="https://www.youtube.com/@AkhilMulpuri"
-            rel="noreferrer"
-            target="_blank"
-            className={Underline}
-          >
-            <DIcons.YouTube className="h-5 w-5" />
-          </Link>
+      <div className="mx-auto flex w-full max-w-6xl flex-col gap-10">
+        <div className="relative w-full">
+          <div className="flex flex-col gap-3 text-center text-[#f7f5ef] sm:text-left">
+            <span className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[#f7f5ef]">
+              Guiding Principle
+            </span>
+            <p className="text-xl font-semibold leading-relaxed text-[#f7f5ef] sm:text-2xl">
+              “कर्मण्ये वाधिकारस्ते मा फलेषु कदाचन | मा कर्मफलहेतु र्भूर्मा ते
+              सङ्गो ऽस्त्वकर्मणि ||”
+            </p>
+            <p className="text-sm leading-7 text-[#f7f5ef]/80 sm:text-base">
+              “You have control over your actions alone, never over their
+              fruits. Live not for the fruits of action, nor attach yourself to
+              inaction.” — Bhagavad Gita 2.47
+            </p>
+          </div>
         </div>
-      </div>
 
-      <div className="mx-auto mb-10 mt-10 flex flex-col justify-between text-center text-xs md:max-w-7xl">
-        <div className="flex flex-row items-center justify-center gap-1 text-slate-600 dark:text-slate-400">
-          <span> © </span>
-          <span>{new Date().getFullYear()}</span>
-          <span>Made with</span>
-          <DIcons.Heart className="text-red-600 mx-1 h-4 w-4 animate-pulse" />
-          <span> by </span>
-          <span className="hover:text-ali dark:hover:text-ali cursor-pointer text-black dark:text-white">
+        <div className="flex flex-wrap items-center justify-center gap-4">
+          {socials.map(({ href, label, icon: Icon }) => (
             <Link
-              aria-label="Logo"
-              className="font-bold"
-              href="https://www.instagram.com/geeky_akhil"
+              key={label}
+              href={href}
+              aria-label={label}
               target="_blank"
+              rel="noreferrer"
+              className={iconButton}
             >
-              Akhil Mulprui {""}
+              <Icon className="h-5 w-5 " />
             </Link>
-          </span>
+          ))}
+        </div>
+
+        <div className="flex flex-col items-center justify-center gap-2 text-xs text-[#f5f1e8]/80">
+          <div className="flex items-center gap-2">
+            <span>© {new Date().getFullYear()}</span>
+            <span className="text-[#f5f1e8]">Akhil Mulpuri</span>
+          </div>
         </div>
       </div>
     </footer>
