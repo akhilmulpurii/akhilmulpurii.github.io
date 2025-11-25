@@ -122,13 +122,16 @@ export const HeroParallax = ({
 
 export const Header = () => {
   return (
-    <div className="relative left-0 top-0 mx-auto w-full max-w-6xl px-4 py-14 md:py-20">
-      <h1 className="text-3xl font-black tracking-tight text-[#f7f5ef] sm:text-4xl md:text-5xl">
-        Case studies in motion
+    <div className="z-[100000] relative left-0 top-0 mx-auto w-full max-w-6xl px-4 py-14 text-center md:py-20">
+      <div className="mb-4 inline-flex items-center justify-center gap-2 rounded-full border border-[#f4a261]/50 bg-[#0f0a06]/80 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#f7d7a3] shadow-[0_12px_32px_rgba(0,0,0,0.35)]">
+        Case studies
+      </div>
+      <h1 className="text-3xl font-black tracking-tight text-[#f7d7a3] sm:text-4xl md:text-5xl drop-shadow-[0_12px_40px_rgba(0,0,0,0.5)]">
+        Shipping immersive experiences
       </h1>
-      <p className="mt-4 max-w-3xl text-sm leading-relaxed text-[#f7f5ef] sm:text-base">
-        Selected product launches and redesigns where motion-first UX, clear
-        storytelling, and reliable delivery moved the metrics that matter.
+      <p className="mt-4 mx-auto max-w-3xl text-sm leading-relaxed text-[#f3dfbe]/78 sm:text-base">
+        Motion-led narratives, measurable outcomes, and delivery that respects
+        craft and timelines.
       </p>
     </div>
   );
@@ -159,7 +162,7 @@ export const ProductCard = ({
       <a href={product.link} className="block group-hover/product:shadow-2xl ">
         <img
           src={product.thumbnail}
-          className="absolute rounded-xl inset-0 h-full w-full object-cover object-center transition-transform duration-300"
+          className="absolute inset-0 h-full w-full rounded-xl object-cover object-center transition-transform duration-300"
           height="600"
           width="600"
           alt={product.title}
