@@ -1,3 +1,4 @@
+import ContactUsSection from "@/components/sections/contact-us-section";
 import { HeroSection } from "@/components/sections/hero-section";
 import TechStackSection from "@/components/sections/tech-stack-section";
 
@@ -6,6 +7,7 @@ export default function Home() {
     <div className="flex flex-col min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
       <HeroSection />
       <TechStackSection />
+      <ContactUsSection />
     </div>
   );
 }
