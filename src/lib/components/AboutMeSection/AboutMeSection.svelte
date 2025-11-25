@@ -1,91 +1,10 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import Photography from '$lib/assets/photography.jpeg';
 	import Portrait from '$lib/assets/aboutPortrait.jpeg';
 	import Temple from '$lib/assets/aboutTemple.jpeg';
-	import { gsap } from 'gsap';
 
 	const filter =
 		'brightness-[105%] grayscale-[100%] contrast-[100%] hue-rotate-0 invert-0 opacity-100 saturate-[100%] sepia-[20%]';
-
-	export let timeline: gsap.core.Timeline;
-
-	onMount(() => {
-		gsap.utils.toArray('.img-container').forEach((container: any) => {
-			const image = document.getElementById('parallax-img');
-
-			timeline
-				.from(image, {
-					yPercent: -30,
-					ease: 'none'
-				})
-				.to(image, {
-					yPercent: 30,
-					ease: 'none',
-					scrollTrigger: {
-						trigger: container,
-						scrub: true,
-						pin: false
-					}
-				})
-				.fromTo(
-					'#about-title',
-					{
-						opacity: 0,
-						y: -50
-					},
-					{
-						opacity: 1,
-						y: 0,
-						scrollTrigger: {
-							trigger: container,
-							start: 'top 80%',
-							end: 'bottom 80%',
-							scrub: true,
-							pin: false
-						}
-					}
-				)
-				.fromTo(
-					'.about-caption',
-					{
-						opacity: 0,
-						x: 50
-					},
-					{
-						opacity: 1,
-						x: 0,
-						scrollTrigger: {
-							trigger: container,
-							start: 'top 50%',
-							end: 'bottom 60%',
-							scrub: true,
-							pin: false
-						}
-					}
-				)
-				.fromTo(
-					'.about-tile-img',
-					{
-						opacity: 0,
-						scale: 0.7,
-						y: 20
-					},
-					{
-						opacity: 1,
-						scale: 1,
-						y: 0,
-						scrollTrigger: {
-							trigger: container,
-							start: 'top 40%',
-							end: 'bottom 40%',
-							scrub: true,
-							pin: false
-						}
-					}
-				);
-		});
-	});
 </script>
 
 <section class="w-svw flex items-center justify-center md:min-h-[80vh]">

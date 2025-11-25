@@ -6,26 +6,15 @@
 	import { urlFor } from '$lib/sanityClient.js';
 	import { gsap } from 'gsap';
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-	import { onMount } from 'svelte';
 
 	gsap.registerPlugin(ScrollTrigger);
 
-	let timeline: gsap.core.Timeline = gsap.timeline({ id: 'landingPageAnimation' });
-
-	onMount(() => {
-		return () => {
-			timeline.kill();
-		};
-	});
-
 	export let data;
 	const { blogPost } = data;
-
-	console.log(blogPost);
 </script>
 
 <main>
-	<NavBar {timeline} />
+	<NavBar />
 	<Header />
 	<BlogContent
 		body={blogPost.body}
@@ -38,5 +27,5 @@
 		authorRole={blogPost.authorRole}
 		publishedAt={new Date(blogPost.publishedAt)}
 	/>
-	<Footer {timeline} />
+	<Footer />
 </main>

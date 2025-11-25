@@ -2,49 +2,6 @@
 	import projects from '$lib/projects';
 	import _ from 'lodash';
 	import ProjectCard from '../ProjectCard/ProjectCard.svelte';
-	import { onMount } from 'svelte';
-
-	export let timeline: gsap.core.Timeline;
-
-	onMount(() => {
-		timeline
-			.fromTo(
-				'#landingPortfolioTitle',
-				{
-					y: 50,
-					opacity: 0
-				},
-				{
-					y: 0,
-					opacity: 1,
-					scrollTrigger: {
-						scrub: true,
-						trigger: '#landingPortfolioSection',
-						start: '-=650',
-						end: '+=400'
-					}
-				}
-			)
-			.fromTo(
-				'#landingPortfolioCaption',
-				{
-					y: 80,
-					opacity: 0
-				},
-				{
-					y: 0,
-					delay: 0.2,
-					opacity: 1,
-					duration: 1,
-					scrollTrigger: {
-						scrub: true,
-						trigger: '#landingPortfolioSection',
-						start: '-=650',
-						end: '+=400'
-					}
-				}
-			);
-	});
 
 	const [p1, p2] = _.chunk(_.take(projects, 4), 2);
 </script>

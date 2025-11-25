@@ -1,27 +1,4 @@
-<script lang="ts">
-	import { onMount } from 'svelte';
-
-	export let timeline: gsap.core.Timeline;
-	let boxRef: HTMLElement;
-
-	onMount(() => {
-		timeline.fromTo(
-			boxRef,
-			{
-				opacity: 0,
-				y: -100
-			},
-			{
-				opacity: 1,
-				y: 0,
-				duration: 0.6
-			}
-		);
-	});
-</script>
-
 <div
-	bind:this={boxRef}
 	class="fixed z-[999999999] bottom-6 left-1/2 -translate-x-1/2 transition-transform duration-300 flex justify-center"
 >
 	<nav

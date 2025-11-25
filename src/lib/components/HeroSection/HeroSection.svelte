@@ -1,45 +1,5 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import Header from '../Header/Header.svelte';
-
-	export let timeline: gsap.core.Timeline;
-
-	onMount(() => {
-		timeline
-			.from('#heroNav', {
-				opacity: 0.5,
-				duration: 0.5
-			})
-			.fromTo(
-				'#hero-title',
-				{
-					opacity: 1,
-					scale: 1
-				},
-				{
-					opacity: 0,
-					scale: 0.9,
-					scrollTrigger: {
-						trigger: '#heroSection',
-						start: 'top top',
-						endTrigger: '#subheroSection',
-						end: 'bottom 0%',
-						scrub: true,
-						pin: true,
-						markers: false
-					}
-				},
-				0
-			)
-			.to('#heroNav', {
-				y: -100,
-				scrollTrigger: {
-					trigger: '#heroSection',
-					start: 'top 5',
-					scrub: true
-				}
-			});
-	});
 </script>
 
 <section id="heroSection" class="h-svh w-svw overflow-hidden">

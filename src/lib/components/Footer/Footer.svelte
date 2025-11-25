@@ -1,61 +1,7 @@
 <script lang="ts">
-	export let timeline: gsap.core.Timeline;
 	import Logo from '$lib/assets/logo.svg';
 	import moment from 'moment-timezone';
-	import { onMount } from 'svelte';
-
 	export let showQuote = false;
-
-	onMount(() => {
-		if (showQuote)
-			timeline
-				.fromTo(
-					'#footer-title',
-					{
-						opacity: 0,
-						scale: 0.9
-					},
-					{
-						opacity: 1,
-						scale: 1,
-						y: 0,
-						scrollTrigger: {
-							trigger: '.footer-section',
-							start: '-=750',
-							end: 'center 50%',
-							scrub: true
-						}
-					}
-				)
-				.fromTo(
-					'#footer-caption-1',
-					{ opacity: 0, x: -50 },
-					{
-						opacity: 1,
-						x: 0,
-						scrollTrigger: {
-							trigger: '.footer-section',
-							start: '-=550',
-							end: 'center 50%',
-							scrub: true
-						}
-					}
-				)
-				.fromTo(
-					'#footer-caption-2',
-					{ opacity: 0, x: 50 },
-					{
-						opacity: 1,
-						x: 0,
-						scrollTrigger: {
-							trigger: '.footer-section',
-							start: '-=550',
-							end: 'center 50%',
-							scrub: true
-						}
-					}
-				);
-	});
 </script>
 
 <section
