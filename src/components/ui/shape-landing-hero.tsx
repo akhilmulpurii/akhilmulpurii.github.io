@@ -59,12 +59,26 @@ function ElegantShape({
             "absolute inset-0 rounded-full",
             "bg-gradient-to-r to-transparent",
             gradient,
-            "backdrop-blur-[2px] border-2 border-white/[0.15]",
-            "shadow-[0_8px_32px_0_rgba(255,255,255,0.1)]",
+            "backdrop-blur-[2px] border-2 border-white/[0.1]",
+            "shadow-[0_18px_45px_rgba(240,148,92,0.18)]",
             "after:absolute after:inset-0 after:rounded-full",
-            "after:bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.2),transparent_70%)]"
+            "after:bg-[radial-gradient(circle_at_42%_46%,rgba(255,214,170,0.28),transparent_68%)]"
           )}
         />
+        <div className="absolute inset-[12%] rounded-full bg-[radial-gradient(circle_at_35%_50%,rgba(247,185,120,0.22),transparent_60%)] blur-[3px]" />
+        <motion.div
+          aria-hidden
+          animate={{ rotate: [-10, 6, -4, 0] }}
+          transition={{
+            duration: 14,
+            repeat: Number.POSITIVE_INFINITY,
+            ease: "easeInOut",
+          }}
+          className="absolute inset-[8%] rounded-[999px] bg-gradient-to-br from-[#f6c48f]/35 via-transparent to-[#e76f51]/35"
+          style={{ mixBlendMode: "screen" }}
+        />
+        <div className="absolute inset-[18%] rotate-[12deg] rounded-[999px] bg-gradient-to-r from-[#fce5c6]/18 via-[#f7d7a3]/24 to-transparent backdrop-blur-[1.5px]" />
+        <div className="absolute inset-[26%] -rotate-[10deg] rounded-[999px] bg-[conic-gradient(from_200deg_at_50%_50%,rgba(244,162,97,0.12),transparent_60%,rgba(231,111,81,0.18),transparent_90%)]" />
       </motion.div>
     </motion.div>
   );
@@ -93,8 +107,8 @@ function HeroGeometric({
   };
 
   return (
-    <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-[#030303]">
-      <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/[0.05] via-transparent to-rose-500/[0.05] blur-3xl" />
+    <div className="relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-[#0f0a06]">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,183,94,0.08),transparent_40%),radial-gradient(circle_at_80%_10%,rgba(232,111,62,0.1),transparent_38%),radial-gradient(circle_at_50%_85%,rgba(255,214,170,0.08),transparent_45%)] blur-3xl" />
 
       <div className="absolute inset-0 overflow-hidden">
         <ElegantShape
@@ -102,7 +116,7 @@ function HeroGeometric({
           width={600}
           height={140}
           rotate={12}
-          gradient="from-indigo-500/[0.15]"
+          gradient="from-[#f4a261]/[0.22]"
           className="left-[-10%] md:left-[-5%] top-[15%] md:top-[20%]"
         />
 
@@ -111,7 +125,7 @@ function HeroGeometric({
           width={500}
           height={120}
           rotate={-15}
-          gradient="from-rose-500/[0.15]"
+          gradient="from-[#e76f51]/[0.22]"
           className="right-[-5%] md:right-[0%] top-[70%] md:top-[75%]"
         />
 
@@ -120,7 +134,7 @@ function HeroGeometric({
           width={300}
           height={80}
           rotate={-8}
-          gradient="from-violet-500/[0.15]"
+          gradient="from-[#d67f4a]/[0.2]"
           className="left-[5%] md:left-[10%] bottom-[5%] md:bottom-[10%]"
         />
 
@@ -129,7 +143,7 @@ function HeroGeometric({
           width={200}
           height={60}
           rotate={20}
-          gradient="from-amber-500/[0.15]"
+          gradient="from-[#f2c48c]/[0.2]"
           className="right-[15%] md:right-[20%] top-[10%] md:top-[15%]"
         />
 
@@ -138,7 +152,7 @@ function HeroGeometric({
           width={150}
           height={40}
           rotate={-25}
-          gradient="from-cyan-500/[0.15]"
+          gradient="from-[#f08c42]/[0.22]"
           className="left-[20%] md:left-[25%] top-[5%] md:top-[10%]"
         />
       </div>
@@ -150,7 +164,7 @@ function HeroGeometric({
             variants={fadeUpVariants}
             initial="hidden"
             animate="visible"
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] mb-8 md:mb-12"
+            className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.08] mb-8 md:mb-12"
           >
             <span className="text-sm text-white/60 tracking-wide">{badge}</span>
           </motion.div>
@@ -161,14 +175,14 @@ function HeroGeometric({
             initial="hidden"
             animate="visible"
           >
-            <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold mb-6 md:mb-8 tracking-tight">
-              <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80">
+            <h1 className="text-6xl sm:text-8xl md:text-9xl font-bold mb-6 md:mb-8 tracking-tight">
+              <span className="bg-clip-text text-transparent bg-gradient-to-b from-[#f9e7c8] to-[#f0cfa2]">
                 {title1}
               </span>
               <br />
               <span
                 className={cn(
-                  "bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-white/90 to-rose-300 "
+                  "bg-clip-text text-transparent bg-gradient-to-r from-[#f4a261] via-[#f7d7a3] to-[#e76f51]"
                 )}
               >
                 {title2}
@@ -182,7 +196,7 @@ function HeroGeometric({
             initial="hidden"
             animate="visible"
           >
-            <p className="text-base sm:text-lg md:text-xl text-white/40 mb-8 leading-relaxed font-light tracking-wide max-w-xl mx-auto px-4">
+            <p className="text-base sm:text-lg md:text-xl text-[#f6dfc3]/70 mb-8 leading-relaxed font-light tracking-wide max-w-xl mx-auto px-4">
               Transforming tomorrow with tech-infused narratives, my software
               creates fair and fun experiences for all.
             </p>
@@ -190,7 +204,7 @@ function HeroGeometric({
         </div>
       </div>
 
-      <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-transparent to-[#030303]/80 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0f0a06] via-transparent to-[#0f0a06]/85 pointer-events-none" />
     </div>
   );
 }
