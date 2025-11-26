@@ -165,7 +165,7 @@ const projects: Project[] = [
     urlSlug: "skymd",
     platform: "Web, iOS, Android",
     web_url: "https://www.skymd.com/",
-    short_description: "",
+    short_description: "A nationwide teledermatology platform on mobile & web",
     description:
       "SkyMD is a nationwide teledermatology platform that enables patients to consult board-certified dermatologists via mobile or web. The app supports image uploads, appointment scheduling, prescriptions, and follow-ups.",
     sections: [
@@ -225,7 +225,7 @@ const projects: Project[] = [
     year: "2020",
     urlSlug: "hxouse",
     platform: "iOS, Android",
-    short_description: "",
+    short_description: "Creative Entrepreneurship Platform",
     description:
       "HXOUSE is a Toronto-based think-center for creative entrepreneurship. This mobile app supports event scheduling, content sharing, and mentorship opportunities for artists and creators.",
     sections: [
