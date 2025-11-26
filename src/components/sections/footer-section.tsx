@@ -75,7 +75,7 @@ export function FooterSection() {
           </div>
         </div>
 
-        <div className="flex flex-wrap items-center justify-center gap-4">
+        <div className="flex flex-wrap items-center justify-start gap-4 -ml-2">
           {socials.map(({ href, label, icon: Icon }) => (
             <Link
               key={label}
@@ -90,7 +90,7 @@ export function FooterSection() {
           ))}
         </div>
 
-        <div className="flex flex-col items-center justify-center gap-2 text-xs text-[#f5f1e8]/80">
+        <div className="flex flex-col items-start justify-center gap-2 text-xs text-[#f5f1e8]/80">
           <div className="flex items-center gap-2">
             <span>© {new Date().getFullYear()}</span>
             <span className="text-[#f5f1e8]">Akhil Mulpuri</span>
