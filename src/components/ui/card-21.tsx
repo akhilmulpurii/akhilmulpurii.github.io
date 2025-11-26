@@ -1,3 +1,4 @@
+import Image from "next/image";
 import * as React from "react";
 import { cn } from "@/lib/utils";
 import { ArrowRightIcon } from "@radix-ui/react-icons";
@@ -42,11 +43,17 @@ const DestinationCard = React.forwardRef<HTMLDivElement, DestinationCardProps>(
           }}
         >
           {/* Background Image with Parallax Zoom */}
-          <div
-            className="absolute inset-0 bg-cover bg-center 
-                       transition-transform duration-500 ease-in-out group-hover:scale-110"
-            style={{ backgroundImage: `url(${imageUrl})` }}
-          />
+          <div className="absolute inset-0 overflow-hidden">
+            <Image
+              src={imageUrl}
+              alt={location}
+              fill
+              sizes="(min-width: 1280px) 360px, (min-width: 768px) 320px, 100vw"
+              className="h-full w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110 will-change-transform"
+              loading="lazy"
+              priority={false}
+            />
+          </div>
 
           {/* Themed Gradient Overlay */}
           <div
