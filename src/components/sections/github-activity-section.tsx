@@ -1,6 +1,6 @@
 "use client";
 
-import activity from "@/../public/data/github-activity.json";
+import activity from "../../../public/data/github-activity.json";
 
 type Repo = {
   name: string;
