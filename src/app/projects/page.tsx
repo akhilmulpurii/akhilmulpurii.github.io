@@ -1,0 +1,4 @@
+// sample next.js page.tsx file
+export default function ProjectsPage() {
+  return <div>Projects Page</div>;
+}
