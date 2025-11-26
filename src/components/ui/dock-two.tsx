@@ -71,7 +71,7 @@ const Dock = React.forwardRef<HTMLDivElement, DockProps>(
       <div
         ref={ref}
         className={cn(
-          "pointer-events-none fixed inset-x-0 bottom-6 flex justify-center px-4",
+          "pointer-events-none fixed inset-x-0 bottom-6 flex justify-center px-4 z-50",
           "bg-gradient-to-b from-transparent via-transparent to-black/0",
           className
         )}
