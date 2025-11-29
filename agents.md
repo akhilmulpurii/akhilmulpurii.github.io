@@ -10,4 +10,4 @@ This project uses an LLM coding agent (Codex CLI) for automations and code gener
 
 ## Portfolio scope (upcoming work)
 
-- **AI Page:** Dynamic AI-driven feed surfacing news/articles (RSS or similar), “AI-fied” presentation layer.
+- **AI Page (/trending):** Dynamic AI-driven feed surfacing news/articles (RSS or similar), “AI-fied” presentation layer.
