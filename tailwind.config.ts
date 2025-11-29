@@ -53,6 +53,7 @@ const config: Config = {
       fontFamily: {
         sans: ["var(--font-geist-sans)", "system-ui", "sans-serif"],
         mono: ["var(--font-geist-mono)", "SFMono-Regular", "monospace"],
+        rozha: ["var(--font-rozha)", "serif"],
       },
       keyframes: {
         "accordion-down": {
