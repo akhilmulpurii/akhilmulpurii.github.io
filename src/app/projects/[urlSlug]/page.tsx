@@ -76,14 +76,14 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         {/* REDESIGNED CASE STUDY SECTIONS: "The Deconstructed Archive" */}
         <div className="flex flex-col gap-0 pb-40">
           {/* Hero Shot (Preserved as introduction) */}
-          {project.images?.[0] && (
+          {project.card_image && (
             <div className="w-full h-[70vh] relative mb-20">
               <div
                 className="absolute inset-4 md:inset-10 border border-dashed opacity-30 pointer-events-none z-20"
                 style={{ borderColor: textColor }}
               />
               <Image
-                src={project.images[0]}
+                src={project.card_image}
                 alt={project.title}
                 fill
                 className="object-cover"
