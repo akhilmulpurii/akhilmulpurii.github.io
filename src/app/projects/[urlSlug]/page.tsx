@@ -77,9 +77,13 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           )}
         </div>
 
-        <FooterSection />
+        <FooterSection
+          themeColor={primary}
+          backgroundColor={background}
+          textColor={textColor}
+        />
       </div>
-      <DockNavigation />
+      <DockNavigation themeColor={primary} backgroundColor={background} />
     </main>
   );
 }

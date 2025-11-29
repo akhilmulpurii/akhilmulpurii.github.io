@@ -227,7 +227,7 @@ const projects: Project[] = [
       {
         image: justactSection2,
         heading:
-          "JustAct will issue a signed Settlement Agreement for Negotiation and Mediation which are enforceable.",
+          "Signed and enforceable settlement agreements for every negotiation.",
         caption:
           "JustAct offers you ready, relaxed resolution that embodies the spirit of ADR in its purest form by using independent and credible resolution techniques / professionals who are trained to resolve disputes amicably. It also offers all ADR services – Negotiation, Mediation / Conciliation and Arbitration in one place.",
       },
