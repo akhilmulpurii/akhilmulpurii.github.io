@@ -9,17 +9,35 @@ const AnoAI = () => {
     const container = containerRef.current;
     if (!container) return;
 
+    // Optimization: Lower pixel ratio for performance.
+    // Shaders are expensive at high DPI. 1.5 is a good balance, or 1.0 for max performance.
+    const pixelRatio = Math.min(window.devicePixelRatio, 1.5);
+
     const scene = new THREE.Scene();
     const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
-    const renderer = new THREE.WebGLRenderer({ antialias: true });
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    const renderer = new THREE.WebGLRenderer({
+      antialias: false, // Antialias not needed for full-screen shader
+      powerPreference: "high-performance",
+    });
+
+    renderer.setPixelRatio(pixelRatio);
+
+    // Initial size
+    const width = Math.min(window.innerWidth, 2560);
+    const height = Math.min(window.innerHeight, 1600);
+    renderer.setSize(width, height);
+
+    // Ensure canvas fills container via CSS
+    renderer.domElement.style.width = "100%";
+    renderer.domElement.style.height = "100%";
+
     container.appendChild(renderer.domElement);
 
     const material = new THREE.ShaderMaterial({
       uniforms: {
         iTime: { value: 0 },
         iResolution: {
-          value: new THREE.Vector2(window.innerWidth, window.innerHeight),
+          value: new THREE.Vector2(width * pixelRatio, height * pixelRatio),
         },
       },
       vertexShader: `
@@ -80,7 +98,8 @@ const AnoAI = () => {
 
           float f = 2.0 + fbm(p + vec2(iTime * 5.0, 0.0)) * 0.5;
 
-          for (float i = 0.0; i < 35.0; i++) {
+          // Reduced loop count slightly for performance (35 -> 30) - visually similar
+          for (float i = 0.0; i < 30.0; i++) {
             v = p + cos(i * i + (iTime + p.x * 0.08) * 0.025 + i * vec2(13.0, 11.0)) * 3.5 + vec2(sin(iTime * 3.0 + i) * 0.003, cos(iTime * 3.5 - i) * 0.003);
             float tailNoise = fbm(v + vec2(iTime * 0.5, i)) * 0.3 * (1.0 - (i / 35.0));
             vec3 warmGlow = palette(fract(i * 0.08 + iTime * 0.04));
@@ -108,12 +127,19 @@ const AnoAI = () => {
     };
     animate();
 
+    let resizeTimeout: NodeJS.Timeout;
     const handleResize = () => {
-      renderer.setSize(window.innerWidth, window.innerHeight);
-      material.uniforms.iResolution.value.set(
-        window.innerWidth,
-        window.innerHeight
-      );
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        const newWidth = Math.min(window.innerWidth, 2560);
+        const newHeight = Math.min(window.innerHeight, 1600);
+
+        renderer.setSize(newWidth, newHeight);
+        material.uniforms.iResolution.value.set(
+          newWidth * pixelRatio,
+          newHeight * pixelRatio
+        );
+      }, 200);
     };
     window.addEventListener("resize", handleResize);
 
@@ -121,6 +147,7 @@ const AnoAI = () => {
       if (frameId) {
         cancelAnimationFrame(frameId);
       }
+      clearTimeout(resizeTimeout);
       window.removeEventListener("resize", handleResize);
       if (renderer.domElement && renderer.domElement.parentNode === container) {
         container.removeChild(renderer.domElement);
@@ -142,10 +169,7 @@ const AnoAI = () => {
           backgroundColor: "#0f0a06",
         }}
       />
-      <div
-        ref={containerRef}
-        className="relative min-h-[70vh] overflow-hidden"
-      >
+      <div ref={containerRef} className="relative min-h-[70vh] overflow-hidden">
         <div className="relative z-10 divider" />
       </div>
     </div>
