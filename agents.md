@@ -9,7 +9,5 @@ This project uses an LLM coding agent (Codex CLI) for automations and code gener
 - **Conventions:** Keep edits ASCII-only unless the file already uses Unicode; prefer `apply_patch` for single-file changes; avoid destructive git commands unless explicitly requested.
 
 ## Portfolio scope (upcoming work)
-- **Home:** Hero (name/role/tagline), sliding tech carousel, GitHub activity, featured project case studies, work principles, contact email form, footer.
-- **Projects:** Dynamic projects list; each links to a `[urlSlug]` detail page with deep info.
+
 - **AI Page:** Dynamic AI-driven feed surfacing news/articles (RSS or similar), “AI-fied” presentation layer.
-- **Design:** Theming support, mostly custom Aceternity UI-inspired components, and Framer Motion animations across sections.
