@@ -8,15 +8,18 @@ import {
   MotionValue,
 } from "motion/react";
 
-export const HeroParallax = ({
-  products,
-}: {
-  products: {
-    title: string;
-    link: string;
-    thumbnail: string;
-  }[];
-}) => {
+export interface ProductItem {
+  title: string;
+  link: string;
+  thumbnail: string;
+  logo?: string;
+  shortDescription?: string;
+  technologies?: string[];
+  year?: string;
+  platform?: string;
+}
+
+export const HeroParallax = ({ products }: { products: ProductItem[] }) => {
   const firstRow = products.slice(0, 5);
   const secondRow = products.slice(5, 10);
   const thirdRow = products.slice(10, 15);
@@ -142,11 +145,7 @@ export const ProductCard = ({
   product,
   translate,
 }: {
-  product: {
-    title: string;
-    link: string;
-    thumbnail: string;
-  };
+  product: ProductItem;
   translate: MotionValue<number>;
 }) => {
   return (
@@ -160,19 +159,103 @@ export const ProductCard = ({
       key={product.title}
       className="group/product h-96 w-[30rem] relative shrink-0"
     >
-      <a href={product.link} className="block group-hover/product:shadow-2xl ">
+      <a
+        href={product.link}
+        className="block relative h-full w-full overflow-hidden bg-neutral-900"
+      >
+        {/* Image Layer */}
         <img
           src={product.thumbnail}
-          className="absolute inset-0 h-full w-full rounded-xl object-cover object-center transition-transform duration-300"
+          className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-700 group-hover/product:scale-110 group-hover/product:grayscale-[100%] group-hover/product:contrast-125"
           height="600"
           width="600"
           alt={product.title}
         />
+
+        {/* Artistic Overlays */}
+        <div className="absolute inset-0 bg-[#f4a261] mix-blend-multiply opacity-0 transition-opacity duration-500 group-hover/product:opacity-40" />
+        <div className="absolute inset-0 bg-black/20 opacity-0 transition-opacity duration-500 group-hover/product:opacity-100" />
+
+        {/* Noise Texture */}
+        <div
+          className="absolute inset-0 opacity-0 group-hover/product:opacity-20 pointer-events-none mix-blend-overlay"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+          }}
+        />
+
+        {/* Abstract Logo Watermark (Background) */}
+        {product.logo && (
+          <div className="absolute -bottom-10 -right-10 h-64 w-64 opacity-0 rotate-12 transition-all duration-700 ease-out group-hover/product:opacity-10 group-hover/product:rotate-0 group-hover/product:scale-110 pointer-events-none mix-blend-screen">
+            <img
+              src={product.logo}
+              alt=""
+              className="h-full w-full object-contain grayscale invert"
+            />
+          </div>
+        )}
+
+        {/* Content Layout - Editorial/Gallery Style */}
+        <div className="absolute inset-0 p-8 flex flex-col justify-between">
+          {/* Top Meta: Logo & Platform */}
+          <div className="flex justify-between items-start">
+            {/* Logo in Top Left */}
+            <div className="h-8 w-auto max-w-[120px] opacity-0 -translate-y-4 transition-all duration-500 group-hover/product:opacity-100 group-hover/product:translate-y-0">
+              {product.logo && (
+                <img
+                  src={product.logo}
+                  alt=""
+                  className="h-full w-full object-contain grayscale brightness-0 invert"
+                />
+              )}
+            </div>
+
+            {/* Platform - Vertical */}
+            <span
+              className="font-mono text-[9px] uppercase tracking-[0.2em] text-white/60 opacity-0 -translate-y-4 transition-all duration-500 delay-100 group-hover/product:opacity-100 group-hover/product:translate-y-0"
+              style={{ writingMode: "vertical-rl" }}
+            >
+              {product.platform}
+            </span>
+          </div>
+
+          {/* Center/Bottom: Title & Description */}
+          <div className="relative z-10">
+            {/* Animated Line */}
+            <div className="h-px w-0 bg-white/40 mb-4 transition-all duration-700 ease-out group-hover/product:w-full opacity-40" />
+
+            <div className="flex items-baseline justify-between gap-4 translate-y-8 opacity-0 transition-all duration-500 group-hover/product:translate-y-0 group-hover/product:opacity-100">
+              <h2 className="text-3xl font-black text-white tracking-tighter uppercase mix-blend-difference">
+                {product.title}
+              </h2>
+              <span className="font-mono text-[10px] text-[#f4a261] tracking-[0.2em]">
+                {product.year}
+              </span>
+            </div>
+
+            <div className="flex items-end justify-between mt-3 translate-y-8 opacity-0 transition-all duration-500 delay-75 group-hover/product:translate-y-0 group-hover/product:opacity-100">
+              <p className="text-xs text-white/70 font-light leading-relaxed max-w-[75%] line-clamp-2">
+                {product.shortDescription}
+              </p>
+
+              {/* Minimal Arrow Link */}
+              <div className="h-8 w-8 shrink-0 rounded-full border border-white/20 flex items-center justify-center group-hover/product:bg-white group-hover/product:text-black transition-colors duration-300">
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  className="-rotate-45"
+                >
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
       </a>
-      <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none"></div>
-      <h2 className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white">
-        {product.title}
-      </h2>
     </motion.div>
   );
 };
