@@ -75,23 +75,54 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
         {/* REDESIGNED CASE STUDY SECTIONS: "The Deconstructed Archive" */}
         <div className="flex flex-col gap-0 pb-40">
-          {/* Hero Shot (Preserved as introduction) */}
+          {/* Hero Shot - Cinematic Gallery View */}
           {project.card_image && (
-            <div className="w-full h-[70vh] relative mb-20">
-              <div
-                className="absolute inset-4 md:inset-10 border border-dashed opacity-30 pointer-events-none z-20"
-                style={{ borderColor: textColor }}
-              />
-              <Image
-                src={project.card_image}
-                alt={project.title}
-                fill
-                className="object-cover"
-                priority
-              />
+            <div className="w-full h-[60vh] md:h-[90vh] relative mb-20 flex items-center justify-center overflow-hidden group">
+              {/* 1. Atmospheric Blurred Background */}
+              <div className="absolute inset-0 z-0">
+                <Image
+                  src={project.card_image}
+                  alt=""
+                  fill
+                  className="object-cover blur-[60px] opacity-40 scale-110"
+                />
+                <div className="absolute inset-0 bg-black/10 mix-blend-multiply" />
+                {/* Noise Texture */}
+                <div
+                  className="absolute inset-0 opacity-30 mix-blend-overlay"
+                  style={{
+                    backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+                  }}
+                />
+              </div>
+
+              {/* 2. Main Square Image Container */}
+              <div className="relative z-10 w-[85vw] h-[85vw] md:w-auto md:h-[80vh] md:aspect-square shadow-2xl bg-neutral-900/20 backdrop-blur-sm">
+                {/* Corner Accents */}
+                <div
+                  className="absolute -top-4 -left-4 w-8 h-8 border-t-2 border-l-2 transition-all duration-500 group-hover:-top-6 group-hover:-left-6"
+                  style={{ borderColor: primary }}
+                />
+                <div
+                  className="absolute -bottom-4 -right-4 w-8 h-8 border-b-2 border-r-2 transition-all duration-500 group-hover:-bottom-6 group-hover:-right-6"
+                  style={{ borderColor: primary }}
+                />
+
+                <Image
+                  src={project.card_image}
+                  alt={project.title}
+                  fill
+                  className="object-cover"
+                  priority
+                />
+
+                {/* Inner Border */}
+                <div className="absolute inset-0 border border-white/10 pointer-events-none" />
+              </div>
+
               {/* Technical Marker */}
-              <div className="absolute bottom-8 right-8 z-20 font-mono text-xs uppercase tracking-widest bg-black/50 text-white px-2 py-1 backdrop-blur-sm">
-                FIG. 01 — MAIN VIEW
+              <div className="absolute bottom-8 right-8 z-20 font-mono text-xs uppercase tracking-widest bg-black/80 text-white px-3 py-1.5 backdrop-blur-md border border-white/10">
+                FIG. 01 — CARD_VIEW_REF
               </div>
             </div>
           )}
