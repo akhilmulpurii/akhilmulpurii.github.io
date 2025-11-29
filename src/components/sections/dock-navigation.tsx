@@ -33,7 +33,7 @@ export function DockNavigation({
     // If light mode: use white with opacity to keep it clean, or the background color
     // Let's use the background color but ensure it has opacity for glass effect
     dockBg = hexToRgba(backgroundColor, 0.85);
-    
+
     // Correction: If it's light mode, using the exact background color might blend in too much.
     // Let's add a slight shadow or border correction in Dock component, but here just pass the color.
     // Actually, for light mode, a slightly darker or lighter glass is nice.
@@ -53,11 +53,6 @@ export function DockNavigation({
           onClick: () => router.push("/projects"),
         },
         { icon: Mail, label: "Contact", onClick: scrollToContact },
-        {
-          icon: Flame,
-          label: "Trending",
-          onClick: () => router.push("/trending"),
-        },
       ]}
     />
   );
