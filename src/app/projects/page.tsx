@@ -6,7 +6,7 @@ import ProjectListCardSection from "@/components/sections/project-list-card-sect
 const ProjectPage = () => {
   return (
     <div>
-      <ProjectHeroSection />
+      {/* <ProjectHeroSection /> */}
       <ProjectListCardSection />
       <FooterSection />
       <DockNavigation />

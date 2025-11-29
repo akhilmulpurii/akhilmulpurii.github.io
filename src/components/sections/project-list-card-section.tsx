@@ -22,8 +22,9 @@ const ProjectListCardSection = () => {
               location={project.title}
               stats={project.short_description || project.description}
               imageUrl={project.card_image}
+              logo={project.logo}
               href={`/projects/${project.urlSlug}`}
-              themeColor={"8 32% 20%"}
+              themeColor="26 87% 67%"
             />
           ))}
         </div>

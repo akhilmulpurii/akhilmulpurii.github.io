@@ -205,7 +205,7 @@ export const ProductCard = ({
                 <img
                   src={product.logo}
                   alt=""
-                  className="h-full w-full object-contain grayscale brightness-0 invert"
+                  className="h-full w-full object-contain grayscale contrast-125 brightness-125"
                 />
               )}
             </div>
