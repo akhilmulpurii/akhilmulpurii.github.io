@@ -5,8 +5,19 @@ import dynamic from "next/dynamic";
 
 const MeshGradient = dynamic(
   () => import("./patched-mesh-gradient").then((m) => m.MeshGradientPatched),
-  { ssr: false, loading: () => null },
+  { ssr: false, loading: () => null }
 );
+
+// Move WebGL check outside to run once
+const checkWebGL = () => {
+  if (typeof window === "undefined") return false;
+  try {
+    const canvas = document.createElement("canvas");
+    return !!(window.WebGL2RenderingContext && canvas.getContext("webgl2"));
+  } catch {
+    return false;
+  }
+};
 
 interface HeroSectionProps {
   title?: string;
@@ -51,30 +62,44 @@ export function HeroSection({
   fontFamily = "Satoshi, sans-serif",
   fontWeight = 500,
 }: HeroSectionProps) {
-  const [dimensions, setDimensions] = useState({ width: 1920, height: 1080 });
+  const [dimensions, setDimensions] = useState({ width: 1200, height: 800 }); // Reasonable default
   const [mounted, setMounted] = useState(false);
   const [shaderReady, setShaderReady] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
-    try {
-      const canvas = document.createElement("canvas");
-      const gl =
-        canvas.getContext("webgl2") ||
-        canvas.getContext("webgl") ||
-        (canvas.getContext("experimental-webgl") as WebGLRenderingContext | null);
-      setShaderReady(Boolean(gl));
-    } catch {
-      setShaderReady(false);
-    }
-    const update = () =>
-      setDimensions({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      });
+    // Defer state updates to avoid synchronous render warnings and ensure hydration match
+    const timer = setTimeout(() => {
+      setMounted(true);
+      setShaderReady(checkWebGL());
+    }, 0);
+
+    // Debounced resize handler
+    let timeoutId: NodeJS.Timeout;
+
+    const update = () => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        // Limit max resolution for performance on huge screens
+        // 2560px width is usually enough for gradients even on 4k/5k screens
+        const width = Math.min(window.innerWidth, 2560);
+        const height = Math.min(window.innerHeight, 1600);
+
+        setDimensions({
+          width,
+          height,
+        });
+      }, 200); // 200ms debounce
+    };
+
+    // Initial call to set correct dimensions
     update();
+
     window.addEventListener("resize", update);
-    return () => window.removeEventListener("resize", update);
+    return () => {
+      window.removeEventListener("resize", update);
+      clearTimeout(timeoutId);
+      clearTimeout(timer);
+    };
   }, []);
 
   const handleButtonClick = () => {
