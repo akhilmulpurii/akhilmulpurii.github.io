@@ -1,53 +1,27 @@
-import { twMerge } from 'tailwind-merge';
+import { type ClassValue, clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
 
-export function cn(...inputs: string[]) {
-	return twMerge(inputs.join(' '));
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
 }
 
-export function getCentralTime() {
-	const d = new Date();
+// Helper to determine if a color is light or dark
+export function getLuminance(hex: string) {
+  const c = hex.substring(1); // strip #
+  const rgb = parseInt(c, 16); // convert rrggbb to decimal
+  const r = (rgb >> 16) & 0xff; // extract red
+  const g = (rgb >> 8) & 0xff; // extract green
+  const b = (rgb >> 0) & 0xff; // extract blue
 
-	// convert to msec
-	// add local time zone offset
-	// get UTC time in msec
-	const utc = d.getTime() + d.getTimezoneOffset() * 60000;
-
-	// create new Date object for different city
-	// using supplied offset
-	const nd = new Date(utc + 3600000 * -6);
-
-	return nd.toLocaleTimeString();
+  const luma = 0.2126 * r + 0.7152 * g + 0.0722 * b; // SMPTE C-REC.709 luminance
+  return luma;
 }
 
-export const contactFormInputs = [
-	{
-		label: "What's your name?",
-		type: 'text',
-		placeholder: 'Type your full name',
-		name: 'name'
-	},
-	{
-		label: "What's your email address?",
-		type: 'email',
-		placeholder: 'example@gmail.com',
-		name: 'email'
-	},
-	{
-		label: "What's your organization's name?",
-		type: 'text',
-		placeholder: "Type your organization's name",
-		name: 'organization'
-	},
-	{
-		label: 'What services are you interested in?',
-		type: 'text',
-		placeholder: 'Enter your services of interest',
-		name: 'services'
-	},
-	{
-		label: 'Tell me about your project',
-		type: 'textarea',
-		placeholder: 'Please describe your project in detail',
-		name: 'message'
-	}
-];
+export function hexToRgba(hex: string, alpha: number) {
+  const c = hex.substring(1);
+  const rgb = parseInt(c, 16);
+  const r = (rgb >> 16) & 0xff;
+  const g = (rgb >> 8) & 0xff;
+  const b = (rgb >> 0) & 0xff;
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+}

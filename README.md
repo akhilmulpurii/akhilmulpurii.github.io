@@ -1,150 +1,36 @@
-<div align="center">
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-# 🎨 Akhil Mulpuri - Portfolio
+## Getting Started
 
-### Designer & Full-Stack Developer
-
-*Where design meets purpose in modern web development*
-
-[![Live Portfolio](https://img.shields.io/badge/Live-Demo-00C7B7?style=for-the-badge&logo=vercel&logoColor=white)](https://akhilmulpurii.github.io/)
-[![Built with SvelteKit](https://img.shields.io/badge/SvelteKit-FF3E00?style=for-the-badge&logo=svelte&logoColor=white)](https://kit.svelte.dev/)
-
-</div>
-
----
-
-## 📖 About
-
-A minimalist portfolio website showcasing my journey as a designer and developer. Built with a creative approach and analytical mindset, this site presents a curated selection of projects where functionality meets aesthetic excellence.
-
----
-
-## 🚀 Tech Stack
-
-This portfolio is built with modern web technologies for optimal performance and developer experience:
-
-- **Framework:** [SvelteKit](https://kit.svelte.dev/) - Fast, efficient, and elegant
-- **Styling:** CSS3 with custom design system
-- **Deployment:** GitHub Pages & Vercel
-- **Performance:** Optimized for speed and SEO
-
----
-
-## 🛠️ Getting Started
-
-### Prerequisites
-
-Make sure you have Node.js (v16 or higher) installed on your machine.
-
-### Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/akhilmulpurii/akhilmulpurii.github.io.git
-   cd akhilmulpurii.github.io
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   # or
-   pnpm install
-   # or
-   yarn install
-   ```
-
-3. **Start the development server**
-   ```bash
-   npm run dev
-   
-   # or open in browser automatically
-   npm run dev -- --open
-   ```
-
-   The site will be available at `http://localhost:5173`
-
----
-
-## 📦 Building for Production
-
-Create an optimized production build:
+First, run the development server:
 
 ```bash
-npm run build
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-Preview the production build locally:
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-```bash
-npm run preview
-```
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
----
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## 🚢 Deployment
+## Learn More
 
-### GitHub Pages
+To learn more about Next.js, take a look at the following resources:
 
-This repository is automatically deployed to GitHub Pages at [akhilmulpurii.github.io](https://akhilmulpurii.github.io/)
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
----
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## 📂 Project Structure
+## Deploy on Vercel
 
-```
-akhilmulpurii.github.io/
-├── src/
-│   ├── routes/          # SvelteKit routes & pages
-│   ├── lib/             # Reusable components & utilities
-│   └── app.html         # HTML template
-├── static/              # Static assets (images, fonts, etc.)
-├── svelte.config.js     # SvelteKit configuration
-└── package.json         # Project dependencies
-```
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
----
-
-## ✨ Features
-
-- 🎯 **Minimalist Design** - Clean, focused user experience
-- ⚡ **Lightning Fast** - Optimized performance with SvelteKit
-- 📱 **Fully Responsive** - Works seamlessly across all devices
-- 🎨 **Custom Animations** - Smooth, engaging interactions
-- 🔍 **SEO Optimized** - Built with best practices
-- ♿ **Accessible** - WCAG compliant design
-
----
-
-## 🎨 Design Philosophy
-
-This portfolio embodies a minimalist approach with attention to:
-- **Clarity** - Information presented with purpose
-- **Elegance** - Clean aesthetics without clutter
-- **Performance** - Fast load times and smooth interactions
-- **Responsiveness** - Seamless experience across devices
-
----
-
-## 🤝 Connect
-
-Interested in collaborating or want to discuss a project?
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/samulpuri/)
-[![Email](https://img.shields.io/badge/Email-Contact-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:mulpuriakhil@icloud.com)
-[![GitHub](https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/akhilmulpurii)
-
----
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
----
-
-<div align="center">
-
-**Built with ❤️ using SvelteKit**
-
-⭐ Star this repo if you like it!
-
-</div>
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
