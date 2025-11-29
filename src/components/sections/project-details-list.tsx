@@ -5,6 +5,7 @@ interface ProjectDetailsListProps {
   sections: ProjectSection[];
   primaryColor: string;
   textColor: string;
+  backgroundColor: string;
   isDark: boolean;
 }
 
@@ -12,6 +13,7 @@ export function ProjectDetailsList({
   sections,
   primaryColor,
   textColor,
+  backgroundColor,
   isDark,
 }: ProjectDetailsListProps) {
   return (
@@ -43,8 +45,9 @@ export function ProjectDetailsList({
                 <h2
                   className="text-5xl md:text-6xl font-anton uppercase leading-[0.9] mb-8"
                   style={{
-                    color: "transparent",
-                    WebkitTextStroke: `1px ${isDark ? textColor : primaryColor}`,
+                    color: backgroundColor,
+                    WebkitTextStroke: `4px ${isDark ? textColor : primaryColor}`,
+                    paintOrder: "stroke fill",
                   }}
                 >
                   {section.heading}

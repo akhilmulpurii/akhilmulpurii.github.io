@@ -72,6 +72,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               sections={project.sections}
               primaryColor={primary}
               textColor={textColor}
+              backgroundColor={background}
               isDark={isDark}
             />
           )}
