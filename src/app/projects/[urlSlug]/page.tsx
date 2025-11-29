@@ -119,11 +119,6 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 {/* Inner Border */}
                 <div className="absolute inset-0 border border-white/10 pointer-events-none" />
               </div>
-
-              {/* Technical Marker */}
-              <div className="absolute bottom-8 right-8 z-20 font-mono text-xs uppercase tracking-widest bg-black/80 text-white px-3 py-1.5 backdrop-blur-md border border-white/10">
-                FIG. 01 — CARD_VIEW_REF
-              </div>
             </div>
           )}
 
