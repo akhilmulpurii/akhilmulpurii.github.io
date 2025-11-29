@@ -51,6 +51,7 @@ export interface Project {
   appstore_url?: string;
   playstore_url?: string;
   web_url?: string;
+  color_schemes: string[]; // Usually 3 colors in the order of Color 1, Color 2, Background Color
 }
 
 const projects: Project[] = [
@@ -84,6 +85,11 @@ const projects: Project[] = [
     appstore_url:
       "https://apps.apple.com/in/app/noisefit-health-fitness/id1498457147",
     playstore_url: "https://play.google.com/store/apps/details?id=com.noisefit",
+    color_schemes: [
+      "#618eb7", // Primary
+      "#81cdd1", // Secondary
+      "#23252b", // Background
+    ],
   },
   {
     organizaton: "F22 Labs",
@@ -123,6 +129,11 @@ const projects: Project[] = [
       "https://apps.apple.com/us/app/heyhey-talent-fan-videos/id1509874968",
     playstore_url: "https://play.google.com/store/apps/details?id=com.heyhey",
     web_url: "https://heyheyglobal.com/",
+    color_schemes: [
+      "#f15d5a", // Primary
+      "#ffd8e0", // Secondary
+      "#fefefe", // Background
+    ],
   },
   {
     organizaton: "F22 Labs",
@@ -151,6 +162,11 @@ const projects: Project[] = [
         caption:
           "Rich editorial content helps users understand diamonds, pricing, sustainability, and craftsmanship while building trust through transparency.",
       },
+    ],
+    color_schemes: [
+      "#ffffff", // Primary
+      "#1c1794", // Primary
+      "#020056", // Background
     ],
   },
   {
@@ -182,6 +198,11 @@ const projects: Project[] = [
           "Built with HIPAA-compliant systems and integrated with AWS for secure storage and efficient processing of medical records.",
       },
     ],
+    color_schemes: [
+      "#150f54", // Background
+      "#aee6f8", // Primary
+      "#def4f8", // Secondary
+    ],
   },
   {
     organizaton: "F22 Labs",
@@ -212,6 +233,11 @@ const projects: Project[] = [
       },
     ],
     web_url: "https://justact.co.in/",
+    color_schemes: [
+      "#0a838b", // Primary
+      "#283462", // Secondary
+      "#f6fcf8", // Background
+    ],
   },
 
   {
@@ -242,6 +268,11 @@ const projects: Project[] = [
           "Provides exclusive access to mentors, creative leaders, and industry professionals via interactive sessions.",
       },
     ],
+    color_schemes: [
+      "#ffffff", // Secondary
+      "#000000", // Background
+      "#04060a", // Primary
+    ],
   },
   {
     organizaton: "Contract",
@@ -268,6 +299,11 @@ const projects: Project[] = [
     appstore_url: "https://apps.apple.com/us/app/my-visitly/id1500199942",
     playstore_url:
       "https://play.google.com/store/apps/details?id=com.visitlyapp",
+    color_schemes: [
+      "#6cd6ec", // Primary
+      "#1ee6ba", // Secondary
+      "#457086", // Background
+    ],
   },
 ];
 export default projects;
