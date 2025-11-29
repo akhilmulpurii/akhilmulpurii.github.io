@@ -1,16 +1,21 @@
 "use client";
 
-import { HeroParallax } from "@/components/ui/hero-parallax";
+import { HeroParallax, ProductItem } from "@/components/ui/hero-parallax";
 import projects from "@/lib/projects";
 
-type CaseStudy = {
-  thumbnail: string;
+interface ProjectGroup {
   title: string;
   link: string;
-};
+  logo: string;
+  shortDescription: string;
+  technologies: string[];
+  year: string;
+  platform: string;
+  thumbs: string[];
+}
 
-const buildCaseStudies = (): CaseStudy[] => {
-  const grouped = projects.map((project) => {
+const buildCaseStudies = (): ProductItem[] => {
+  const grouped: ProjectGroup[] = projects.map((project) => {
     const thumbs =
       project.images && project.images.length > 0
         ? project.images
@@ -21,12 +26,17 @@ const buildCaseStudies = (): CaseStudy[] => {
     return {
       title: project.title,
       link: project.urlSlug ? `/projects/${project.urlSlug}` : "#",
+      logo: project.logo,
+      shortDescription: project.short_description,
+      technologies: project.technologies,
+      year: project.year,
+      platform: project.platform,
       thumbs,
     };
   });
 
   // Round-robin interleave to avoid clustering the same project consecutively.
-  const results: CaseStudy[] = [];
+  const results: ProductItem[] = [];
   let remaining = grouped.some((g) => g.thumbs.length > 0);
   while (remaining) {
     remaining = false;
@@ -34,10 +44,15 @@ const buildCaseStudies = (): CaseStudy[] => {
       if (!group.thumbs.length) continue;
       const thumbnail = group.thumbs.shift();
       if (!thumbnail) continue;
-      const entry: CaseStudy = {
+      const entry: ProductItem = {
         thumbnail,
         title: group.title,
         link: group.link,
+        logo: group.logo,
+        shortDescription: group.shortDescription,
+        technologies: group.technologies,
+        year: group.year,
+        platform: group.platform,
       };
       if (results.length && results[results.length - 1].title === entry.title) {
         // If the same project would repeat, try to insert earlier spot.
