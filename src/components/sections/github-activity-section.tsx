@@ -224,7 +224,7 @@ function ContributionTile({ className = "" }: { className?: string }) {
           loading="lazy"
           style={{
             filter:
-              "saturate(1.4) hue-rotate(-18deg) brightness(0.95) contrast(1.05)",
+              "saturate(0.4) hue-rotate(80deg) brightness(0.97) contrast(1.05) invert(1)",
           }}
         />
       </div>
