@@ -10,13 +10,13 @@ const shouldInclude = (repo: any) =>
   !repo.private &&
   !IGNORE_REPOS.has(repo.full_name);
 
-const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
+const GH_TOKEN = process.env.GH_TOKEN;
 
 const headers: Record<string, string> = {
   "User-Agent": "akhilmulpurii-portfolio",
 };
-if (GITHUB_TOKEN) {
-  headers.Authorization = `Bearer ${GITHUB_TOKEN}`;
+if (GH_TOKEN) {
+  headers.Authorization = `Bearer ${GH_TOKEN}`;
 }
 
 type WeeklyStat = { total: number; days: number[] };
@@ -80,8 +80,8 @@ async function fetchTotalCommitsViaLink(fullName: string) {
 }
 
 async function fetchReposGraphql() {
-  if (!GITHUB_TOKEN) {
-    throw new Error("GITHUB_TOKEN is required for GraphQL repo fetch.");
+  if (!GH_TOKEN) {
+    throw new Error("GH_TOKEN is required for GraphQL repo fetch.");
   }
   const query = `
     query($login: String!) {
@@ -113,7 +113,7 @@ async function fetchReposGraphql() {
     method: "POST",
     headers: {
       ...headers,
-      Authorization: `Bearer ${GITHUB_TOKEN}`,
+      Authorization: `Bearer ${GH_TOKEN}`,
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ query, variables: { login: USER } }),
@@ -137,7 +137,7 @@ async function fetchReposGraphql() {
 
 async function fetchRepos() {
   const baseRepos =
-    GITHUB_TOKEN !== undefined ? await fetchReposGraphql() : await fetchReposRest();
+    GH_TOKEN !== undefined ? await fetchReposGraphql() : await fetchReposRest();
   const result = [];
   for (const repo of baseRepos) {
     // Skip ignored/archived/private from REST when using GraphQL (already filtered).
