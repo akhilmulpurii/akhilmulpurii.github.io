@@ -1,10 +1,23 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { DotFilledIcon } from "@radix-ui/react-icons";
+import { memo } from "react";
 
-function ElegantShape({
+const fadeUpVariants: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1,
+      delay: 0.5 + i * 0.2,
+      ease: [0.25, 0.46, 0.45, 0.94],
+    },
+  }),
+};
+
+const ElegantShape = memo(function ElegantShape({
   className,
   delay = 0,
   width = 400,
@@ -82,7 +95,7 @@ function ElegantShape({
       </motion.div>
     </motion.div>
   );
-}
+});
 
 function HeroGeometric({
   badge = "Design Collective",
@@ -93,19 +106,6 @@ function HeroGeometric({
   title1?: string;
   title2?: string;
 }) {
-  const fadeUpVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: (i: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-        delay: 0.5 + i * 0.2,
-        ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number],
-      },
-    }),
-  } as const;
-
   return (
     <div className="relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-[#0f0a06]">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,183,94,0.08),transparent_40%),radial-gradient(circle_at_80%_10%,rgba(232,111,62,0.1),transparent_38%),radial-gradient(circle_at_50%_85%,rgba(255,214,170,0.08),transparent_45%)] blur-3xl" />
